@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شراكة استراتيجية | NexGen Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --accent: #ff4e50;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gold: #ffd700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        @font-face {
+            font-family: 'Tajawal';
+            src: url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Artistic Header */
+        .artistic-header {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            margin-bottom: 80px;
+        }
+        
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            z-index: -2;
+        }
+        
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            padding: 40px;
+            backdrop-filter: blur(5px);
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            transform: perspective(1000px) rotateX(5deg);
+            transition: all 0.5s ease;
+        }
+        
+        .header-content:hover {
+            transform: perspective(1000px) rotateX(0);
+            box-shadow: 0 35px 60px -10px rgba(0,0,0,0.6);
+        }
+        
+        .logo {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, white, #f3f3f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .logo:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        /* Artistic Navigation */
+        .artistic-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .nav-container {
+            display: flex;
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-container:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            z-index: -1;
+            border-radius: 55px;
+            opacity: 0.7;
+            filter: blur(10px);
+        }
+        
+        .nav-pill {
+            padding: 15px 30px;
+            margin: 0 5px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: 700;
+            color: var(--dark);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .nav-pill:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.4s ease;
+            border-radius: 40px;
+        }
+        
+        .nav-pill:hover, .nav-pill.active {
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .nav-pill:hover:before, .nav-pill.active:before {
+            opacity: 1;
+        }
+        
+        /* Artistic Sections */
+        .artistic-section {
+            background: white;
+            margin-bottom: 80px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            position: relative;
+            display: none;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .artistic-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-header {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
+            opacity: 0.1;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .section-content {
+            padding: 50px;
+        }
+        
+        /* Artistic Cards */
+        .artistic-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .artistic-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .artistic-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .artistic-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+        
+        .artistic-card:hover:before {
+            opacity: 0.05;
+        }
+        
+        .card-header {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
+            opacity: 0.1;
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+        
+        .card-body {
+            padding: 30px;
+        }
+        
+        .card-body h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Artistic Table */
+        .artistic-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 40px 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .artistic-table th {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .artistic-table td {
+            padding: 20px;
+            text-align: center;
+            background: white;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .artistic-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .artistic-table tr:hover td {
+            background: #f9f9f9;
+        }
+        
+        /* Artistic Form */
+        .artistic-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+        
+        .form-header {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .form-body {
+            padding: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+            background: white;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto 0;
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(106, 17, 203, 0.4);
+        }
+        
+        /* Artistic Footer */
+        .artistic-footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
+            opacity: 0.05;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, white, #f3f3f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .logo {
+                font-size: 3.5rem;
+            }
+            
+            .artistic-cards {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                border-radius: 20px;
+            }
+            
+            .nav-pill {
+                margin: 5px 0;
+            }
+            
+            .section-content {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Artistic Header -->
+    <header class="artistic-header">
+        <div class="header-bg"></div>
+        <div class="header-overlay"></div>
+        <div class="header-content floating">
+            <h1 class="logo">NexGen Academy</h1>
+            <p class="tagline">شراكة استراتيجية لإعادة تعريف التعليم الحديث</p>
+            <p>انضم إلى شبكة شركائنا المتميزين واستفد من برامجنا التعليمية الفريدة</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Artistic Navigation -->
+        <nav class="artistic-nav">
+            <div class="nav-container">
+                <div class="nav-pill active" onclick="showSection('about')">عن الأكاديمية</div>
+                <div class="nav-pill" onclick="showSection('programs')">برامج الشراكة</div>
+                <div class="nav-pill" onclick="showSection('benefits')">مزايا الشراكة</div>
+                <div class="nav-pill" onclick="showSection('commissions')">نظام العمولات</div>
+                <div class="nav-pill" onclick="showSection('join')">انضم إلينا</div>
+            </div>
+        </nav>
+
+        <!-- About Section -->
+        <section id="about" class="artistic-section active">
+            <div class="section-header">
+                <h2>🌟 عن NexGen Academy</h2>
+            </div>
+            <div class="section-content">
+                <p>تأسست NexGen Academy في عام 2015 بهدف إحداث ثورة في مجال التعليم التفاعلي. نحن نقدم تجارب تعليمية فريدة تجمع بين أحدث المناهج النظرية والتطبيق العملي في بيئات محاكاة متقدمة.</p>
+                
+                <div class="artistic-cards">
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                            <h3>رؤيتنا</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>أن نكون الرواد العالميين في تقديم حلول التعليم التفاعلي التي تربط بين المعرفة النظرية والتطبيق العملي.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                            <h3>رسالتنا</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>تمكين الأفراد والمؤسسات من خلال برامج تعليمية مبتكرة تلبي متطلبات سوق العمل المستقبلية.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-star"></i></div>
+                            <h3>قيمنا</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>الابتكار، الجودة، الشراكات الاستراتيجية، والالتزام بتميز تجربة المتعلم.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>📊 إنجازاتنا بالأرقام</h3>
+                <div class="artistic-cards">
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-users"></i></div>
+                            <h3>+15,000</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>طالب استفاد من برامجنا التعليمية</p>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-globe"></i></div>
+                            <h3>12</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>دولة نقدم فيها برامجنا التعليمية</p>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                            <h3>+200</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>شريك استراتيجي حول العالم</p>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-medal"></i></div>
+                            <h3>25</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>جائزة وتكريم في مجال التعليم</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="artistic-section">
+            <div class="section-header">
+                <h2>🎓 برامج الشراكة</h2>
+            </div>
+            <div class="section-content">
+                <p>نقدم مجموعة متنوعة من برامج الشراكة المصممة خصيصاً لتلبية احتياجات شركائنا من المؤسسات والأفراد:</p>
+                
+                <div class="artistic-cards">
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-gem"></i></div>
+                            <h3>الشراكة الماسية</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>عمولة تصل إلى 30%</li>
+                                <li>5 مقاعد مجانية سنوياً</li>
+                                <li>حضور فعاليات VIP</li>
+                                <li>إدراج الشعار في جميع المواد</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-crown"></i></div>
+                            <h3>الشراكة الذهبية</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>عمولة تصل إلى 25%</li>
+                                <li>3 مقاعد مجانية سنوياً</li>
+                                <li>دعوات للفعاليات الخاصة</li>
+                                <li>إدراج الشعار في المواد المختارة</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-star"></i></div>
+                            <h3>الشراكة الفضية</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>عمولة تصل إلى 20%</li>
+                                <li>مقعدين مجانيين سنوياً</li>
+                                <li>خصومات إضافية للموظفين</li>
+                                <li>شهادة شريك معتمد</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>📌 تفاصيل البرامج التعليمية</h3>
+                <div class="artistic-table-container">
+                    <table class="artistic-table">
+                        <thead>
+                            <tr>
+                                <th>نوع البرنامج</th>
+                                <th>المدة</th>
+                                <th>الشهادة</th>
+                                <th>متوسط العائد</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>برامج المهارات القيادية</td>
+                                <td>3-6 أشهر</td>
+                                <td>معتمدة دولياً</td>
+                                <td>25% عمولة</td>
+                            </tr>
+                            <tr>
+                                <td>رحلات تعليمية دولية</td>
+                                <td>1-4 أسابيع</td>
+                                <td>شهادة مشاركة</td>
+                                <td>30% عمولة</td>
+                            </tr>
+                            <tr>
+                                <td>ورش العمل المتخصصة</td>
+                                <td>1-3 أيام</td>
+                                <td>شهادة حضور</td>
+                                <td>20% عمولة</td>
+                            </tr>
+                            <tr>
+                                <td>برامج التدريب الداخلي</td>
+                                <td>1-3 أشهر</td>
+                                <td>شهادة خبرة</td>
+                                <td>15% عمولة</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="artistic-section">
+            <div class="section-header">
+                <h2>💎 مزايا الشراكة</h2>
+            </div>
+            <div class="section-content">
+                <p>انضم إلى شبكة شركائنا المتميزين واستفد من مجموعة واسعة من المزايا الحصرية:</p>
+                
+                <div class="artistic-cards">
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3>مزايا مالية</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>عمولات تنافسية تصل إلى 30%</li>
+                                <li>مكافآت ربع سنوية للأداء المتميز</li>
+                                <li>علاوات على تحقيق الأهداف</li>
+                                <li>خصومات خاصة للشركاء</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+                            <h3>مزايا تسويقية</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>إدراج شعار شركتك في جميع المواد</li>
+                                <li>حملات تسويقية مشتركة</li>
+                                <li>صفحة مخصصة على موقعنا</li>
+                                <li>دعوات للمشاركة في المعارض</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>مزايا تعليمية</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>مقاعد مجانية في البرامج</li>
+                                <li>خصومات للموظفين والعملاء</li>
+                                <li>وصول حصري للموارد التعليمية</li>
+                                <li>ورش عمل خاصة للشركاء</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>🏆 مزايا إضافية للشركاء المتميزين</h3>
+                <div class="artistic-cards">
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                            <h3>برنامج التميز</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>احصل على مزايا إضافية عند تحقيق أهداف محددة:</p>
+                            <ul>
+                                <li>رحلات تعليمية مجانية</li>
+                                <li>استشارات استراتيجية مجانية</li>
+                                <li>حضور مؤتمرات دولية</li>
+                                <li>تكريم سنوي في حفل الشركاء</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                            <h3>برنامج الولاء</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>كلما طالت مدة شراكتك، زادت مزاياك:</p>
+                            <ul>
+                                <li>زيادة نسبة العمولة مع الوقت</li>
+                                <li>مقاعد إضافية مجانية</li>
+                                <li>عروض حصرية للشركاء القدامى</li>
+                                <li>أولوية في البرامج المحدودة</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commissions Section -->
+        <section id="commissions" class="artistic-section">
+            <div class="section-header">
+                <h2>💰 نظام العمولات</h2>
+            </div>
+            <div class="section-content">
+                <p>نظام العمولات لدينا مصمم ليكون الأكثر تنافسية وشفافية في السوق:</p>
+                
+                <h3>📈 هيكل العمولات المتدرج</h3>
+                <div class="artistic-table-container">
+                    <table class="artistic-table">
+                        <thead>
+                            <tr>
+                                <th>عدد الطلاب/الشهر</th>
+                                <th>نسبة العمولة</th>
+                                <th>المكافآت الإضافية</th>
+                                <th>مثال (بقيمة 1000$ للطالب)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1-5 طلاب</td>
+                                <td>15%</td>
+                                <td>شهادة شريك</td>
+                                <td>150$ لكل طالب</td>
+                            </tr>
+                            <tr>
+                                <td>6-15 طالب</td>
+                                <td>20%</td>
+                                <td>مقعدين مجانيين</td>
+                                <td>200$ لكل طالب</td>
+                            </tr>
+                            <tr>
+                                <td>16-30 طالب</td>
+                                <td>25%</td>
+                                <td>3 مقاعد مجانية + دعوات VIP</td>
+                                <td>250$ لكل طالب</td>
+                            </tr>
+                            <tr>
+                                <td>31+ طالب</td>
+                                <td>30%</td>
+                                <td>5 مقاعد مجانية + رحلة تعليمية</td>
+                                <td>300$ لكل طالب</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3>💳 طرق الدفع</h3>
+                <div class="artistic-cards">
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-money-bill-wave"></i></div>
+                            <h3>التحويل البنكي</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>تحويل مباشر إلى حسابك البنكي خلال 5 أيام عمل من نهاية كل شهر</p>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-wallet"></i></div>
+                            <h3>المحفظة الإلكترونية</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>دفع فوري عبر PayPal أو Payoneer أو غيرها من المنصات</p>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-gift"></i></div>
+                            <h3>رصيد تعليمي</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>تحويل العمولات إلى رصيد يمكن استخدامه في برامجنا التعليمية بخصم إضافي 10%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>📊 لوحة تحكم الشركاء</h3>
+                <p>نوفر لك لوحة تحكم متكاملة لمتابعة أداء شراكتك:</p>
+                <ul>
+                    <li>تتبع عدد الطلاب المسجلين</li>
+                    <li>حساب العمولات المستحقة</li>
+                    <li>تحميل التقارير المالية</li>
+                    <li>إدارة المواد التسويقية</li>
+                    <li>طلب الدعم الفني</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Join Section -->
+        <section id="join" class="artistic-section">
+            <div class="section-header">
+                <h2>🚀 انضم إلى شبكة شركائنا</h2>
+            </div>
+            <div class="section-content">
+                <p>خطوات بسيطة تفصلك عن بدء شراكتك مع NexGen Academy:</p>
+                
+                <div class="artistic-cards">
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon">1</div>
+                            <h3>تقديم الطلب</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>املأ نموذج الطلب أدناه بالمعلومات الأساسية عن شركتك</p>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon">2</div>
+                            <h3>الاجتماع التعريفي</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>لقاء مع مدير الشراكة لشرح التفاصيل والإجابة على استفساراتك</p>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon">3</div>
+                            <h3>توقيع الاتفاقية</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>توقيع وثائق الشراكة الرسمية</p>
+                        </div>
+                    </div>
+                    
+                    <div class="artistic-card">
+                        <div class="card-header">
+                            <div class="card-icon">4</div>
+                            <h3>بدء الشراكة</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>حصولك على المواد التسويقية ورابط الإحالة الخاص بك</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artistic-form">
+                    <div class="form-header">
+                        <h3><i class="fas fa-file-signature"></i> نموذج طلب الشراكة</h3>
+                    </div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label for="company-name">اسم المؤسسة/الشركة</label>
+                            <input type="text" id="company-name" class="form-control" placeholder="الرجاء إدخال اسم المؤسسة">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-person">اسم الشخص المسؤول</label>
+                            <input type="text" id="contact-person" class="form-control" placeholder="الاسم الكامل">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="position">المنصب</label>
+                            <input type="text" id="position" class="form-control" placeholder="المنصب الوظيفي">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني الرسمي</label>
+                            <input type="email" id="email" class="form-control" placeholder="example@company.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+966 5X XXX XXXX">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="website">الموقع الإلكتروني (إن وجد)</label>
+                            <input type="url" id="website" class="form-control" placeholder="https://www.example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="partnership-type">نوع الشراكة المطلوبة</label>
+                            <select id="partnership-type" class="form-control">
+                                <option value="">-- اختر نوع الشراكة --</option>
+                                <option value="diamond">الشراكة الماسية</option>
+                                <option value="gold">الشراكة الذهبية</option>
+                                <option value="silver">الشراكة الفضية</option>
+                                <option value="custom">شراكة مخصصة</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">ملاحظات إضافية</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="أخبرنا المزيد عن مؤسستك وأهدافك من الشراكة"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">إرسال الطلب <i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Artistic Footer -->
+    <footer class="artistic-footer">
+        <div class="footer-overlay"></div>
+        <div class="footer-content">
+            <div class="footer-logo">NexGen Academy</div>
+            <p>الجيل القادم من التعليم التفاعلي والشراكات الاستراتيجية</p>
+            
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                    <span>partners@nexgen.edu</span>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                    <span>+966 12 345 6789</span>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                    <span>الرياض، المملكة العربية السعودية</span>
+                </div>
+            </div>
+            
+            <p>© 2023 NexGen Academy. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.artistic-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update active nav pill
+            document.querySelectorAll('.nav-pill').forEach(pill => {
+                pill.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Scroll to section smoothly
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Animate sections on scroll
+        const sections = document.querySelectorAll('.artistic-section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
