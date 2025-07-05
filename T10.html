@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة MasterTrade Istanbul | Nexgen Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #1e3c72;
+            --primary: #2a5298;
+            --primary-light: #3a66c0;
+            --accent: #ffd700;
+            --accent-dark: #d4b000;
+            --light: #f8f9ff;
+            --white: #ffffff;
+            --gray: #e9ecef;
+            --dark: #333333;
+            --success: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 80px 40px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 40%);
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            padding: 20px;
+            border: 3px solid var(--accent);
+        }
+
+        .logo i {
+            font-size: 70px;
+            color: var(--primary-dark);
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            display: inline-block;
+        }
+
+        .main-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .subtitle {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .main-description {
+            font-size: 18px;
+            line-height: 2;
+            margin: 30px auto;
+            opacity: 0.95;
+            max-width: 900px;
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            min-width: 180px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(30, 60, 114, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
+
+        .nav-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo i {
+            font-size: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 40px;
+            border-bottom: 1px solid var(--gray);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 22px;
+            color: var(--primary-light);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .content-card {
+            background: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            z-index: -1;
+        }
+
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(30, 60, 114, 0.2);
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .skill-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .skill-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--gray);
+            position: relative;
+            padding-right: 35px;
+            font-size: 17px;
+        }
+
+        .skill-list li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Phases Container */
+        .phases-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .phase-card {
+            background: linear-gradient(135deg, var(--light) 0%, var(--white) 100%);
+            border: 2px solid #e8f2ff;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+        }
+
+        .phase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(30, 60, 114, 0.2);
+        }
+
+        .phase-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+        }
+
+        .phase-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Marketing Section */
+        .marketing-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 80px 40px;
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .benefit-icon {
+            font-size: 48px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        /* Partnership Section */
+        .partners-section {
+            background: var(--light);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .partner-logo {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .partner-logo i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .partner-name {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--primary-dark);
+            text-align: center;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: var(--primary);
+            border: 4px solid var(--light);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+
+        .left {
+            right: 0;
+        }
+
+        .right {
+            right: 50%;
+        }
+
+        .left::after {
+            right: -12px;
+        }
+
+        .right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 25px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            position: relative;
+            border-left: 4px solid var(--primary);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 22px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 40px;
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .cta-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .cta-subtitle {
+            font-size: 24px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--accent);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            background: var(--white);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-color: var(--accent);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--accent);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        /* Social Links */
+        .social-links {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 60px 40px;
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .social-links h3 {
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-item {
+            background: rgba(255,255,255,0.1);
+            padding: 25px 30px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            min-width: 280px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .social-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+
+        .social-item h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-item a {
+            color: var(--accent);
+            text-decoration: none;
+            word-break: break-all;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-item a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 30px;
+            font-size: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header { padding: 60px 20px 40px; }
+            .main-title { font-size: 36px; }
+            .subtitle { font-size: 22px; }
+            .section { padding: 60px 20px; }
+            .section-title { font-size: 30px; }
+            
+            .timeline::after {
+                right: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-right: 70px;
+                padding-left: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .right {
+                right: 0%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-grid, .benefits-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .schedule-table {
+                font-size: 14px;
+            }
+            
+            .schedule-table th, .schedule-table td {
+                padding: 15px 10px;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stat-card {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-card > div {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>أكاديمية الجيل القادم</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about">عن الرحلة</a>
+                <a href="#benefits">المميزات</a>
+                <a href="#program">البرنامج</a>
+                <a href="#partners">الشركاء</a>
+                <a href="#contact">التسجيل</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header" id="about">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                </div>
+                
+                <h1 class="main-title">أكاديمية الجيل القادم</h1>
+                <div class="subtitle">Nexgen Academy</div>
+                <h2 class="subtitle">"MasterTrade Istanbul" -- رحلتك نحو الاحتراف في عالم التداول💯</h2>
+                
+                <p class="main-description">
+                    رحلة "MasterTrade Istanbul" في إسطنبول هي تجربة تعليمية فريدة تمتد لعشرة أيام، تهدف إلى تمكين المشاركين من اكتساب المهارات الأساسية والمتقدمة في مجال التداول والاستثمار، من خلال الجمع بين التعلم النظري، التطبيق العملي، والتفاعل مع خبراء المجال.
+                </p>
+                
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">أيام تدريب مكثف</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">رضا المشاركين</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">نسبة النجاح</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">خبير ومحاضر</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marketing Section -->
+        <div class="marketing-section" id="benefits">
+            <div class="section-title">لماذا رحلة "MasterTrade Istanbul"؟</div>
+            <div class="section-subtitle">استثمر في مستقبلك مع برنامج تدريبي فريد يجمع بين التعليم والترفيه والتطبيق العملي</div>
+            
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="benefit-title">مهارات تداول متقدمة</h3>
+                    <p>اكتساب مهارات متقدمة في التحليل الفني والاقتصادي وإدارة المخاطر من خلال تدريب عملي مباشر</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3 class="benefit-title">شبكة علاقات مهنية</h3>
+                    <p>فرصة للتواصل المباشر مع خبراء الصناعة والمتداولين المحترفين وبناء شبكة علاقات قوية</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-globe"></i></div>
+                    <h3 class="benefit-title">تجربة عالمية</h3>
+                    <p>مزيج فريد من التدريب المكثف والأنشطة السياحية في مدينة إسطنبول التاريخية</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-certificate"></i></div>
+                    <h3 class="benefit-title">شهادات معتمدة</h3>
+                    <p>حصول المشاركين على شهادات معتمدة معترف بها في مجال التداول والاستثمار</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Educational Objectives Section -->
+        <div class="section">
+            <h2 class="section-title">الأهداف التعليمية والعلمية</h2>
+            <div class="section-subtitle">ما الخبرات التي سيتم اكتسابها من ناحية علمية للمشاركين</div>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-title">
+                        <div class="card-icon"><i class="fas fa-money-bill-wave"></i></div>
+                        أساسيات الفوركس
+                    </div>
+                    <ul class="skill-list">
+                        <li>أساسيات الفوركس (Forex Basics)</li>
+                        <li>أدوات التداول والمفاهيم الأساسية</li>
+                        <li>الحسابات وأنواع الأوامر</li>
+                        <li>التحليل والخروج من السوق</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-title">
+                        <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                        احتراف التحليل الفني
+                    </div>
+                    <ul class="skill-list">
+                        <li>الاتجاهات وفن قراءة السوق</li>
+                        <li>فن الدعوم والمقاومات المتقدم</li>
+                        <li>القنوات السعرية وحركة السوق</li>
+                        <li>الفيبوناتشي -- أدوات التنبؤ بحركة السوق</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-title">
+                        <div class="card-icon"><i class="fas fa-brain"></i></div>
+                        السيولة الذكية
+                    </div>
+                    <ul class="skill-list">
+                        <li>الهيكلة وفهم التغيرات في السوق</li>
+                        <li>الأوردر بلوك واستراتيجيات التراكم الذكي</li>
+                        <li>تحليل السيولة -- القمم والقيعان</li>
+                        <li>استراتيجيات السيولة الذكية (SMT)</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-title">
+                        <div class="card-icon"><i class="fas fa-landmark"></i></div>
+                        التحليل الاقتصادي
+                    </div>
+                    <ul class="skill-list">
+                        <li>أساسيات المنهج الاقتصادي</li>
+                        <li>آليات التحكم في السياسة النقدية والمالية</li>
+                        <li>النمو الاقتصادي: علاقته بالتضخم وتأثيراته</li>
+                        <li>تحليل اجتماعات البنوك المركزية وأهميتها</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Practical Objectives Section -->
+        <div class="section">
+            <h2 class="section-title">الأهداف التطبيقية والخبرات العملية</h2>
+            <div class="section-subtitle">المهارات العملية التي سيتم اكتسابها أثناء الرحلة وبعدها</div>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-title">
+                        <div class="card-icon"><i class="fas fa-tools"></i></div>
+                        مهارات تطبيقية
+                    </div>
+                    <ul class="skill-list">
+                        <li>فهم الأسواق المالية العالمية والقدرة على تحليل كافة الأسواق تحليلاً فنياً بكافة الأدوات</li>
+                        <li>مهارات التداول وتحليل الأسواق اقتصادياً وفنياً معاً باستخدام كل الأساليب والأدوات</li>
+                        <li>تحليل الأسواق بكل الاستراتيجيات الخاصة بالسيولة الذكية ودمجها بالمؤشرات الفنية</li>
+                        <li>مهارات حماية الأموال والأصول المالية من التضخم</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <div class="card-title">
+                        <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+                        تطوير شخصي ومهني
+                    </div>
+                    <ul class="skill-list">
+                        <li>مهارات التنبؤ بالمخاطر العالمية وتأثيرها على الأسواق العالمية بل وعلى العالم</li>
+                        <li>تطبيق استراتيجيات التداول في بيئة محاكاة حقيقية مع جلسات تداول مباشرة</li>
+                        <li>تعزيز مهارات التفكير النقدي وإدارة المخاطر تحت ضغوط السوق</li>
+                        <li>تنمية مهارات التواصل والعرض التقديمي مع ورش عمل خاصة بالتسويق الشخصي</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-card" style="grid-column: 1 / -1; margin-top: 30px;">
+                <div class="card-title">
+                    <div class="card-icon"><i class="fas fa-robot"></i></div>
+                    تقنيات الذكاء الاصطناعي
+                </div>
+                <p style="font-size: 18px; line-height: 1.8;">
+                    تقديم محاضرة توعوية حول كيفية التعامل مع تقنيات الذكاء الاصطناعي لاستخدامها في تنظيم الأفكار وتحسين الأداء الإداري والشخصي، والحصول على أعمال باستخدام أقوى البرامج والمواقع القائمة على هذه التقنيات
+                </p>
+            </div>
+        </div>
+
+        <!-- Partners Section -->
+        <div class="section partners-section" id="partners">
+            <h2 class="section-title">شركاؤنا في النجاح</h2>
+            <div class="section-subtitle">نعمل مع أبرز المؤسسات والشركات في مجال التداول والاستثمار</div>
+            
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <i class="fas fa-building"></i>
+                    <div class="partner-name">TradePlus</div>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-chart-pie"></i>
+                    <div class="partner-name">InvestSmart</div>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-coins"></i>
+                    <div class="partner-name">GlobalMarkets</div>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-wallet"></i>
+                    <div class="partner-name">WealthBuilders</div>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <div class="partner-name">CapitalLeaders</div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="margin-top: 50px;">
+                <div class="card-title">
+                    <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                    فرص الشراكة
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                    <div>
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">فوائد الشراكة:</h3>
+                        <ul class="skill-list">
+                            <li>الوصول إلى جمهور مستهدف من المتداولين الطموحين</li>
+                            <li>عرض منتجاتكم وخدماتكم في فعاليات الرحلة</li>
+                            <li>فرصة تقديم ورش عمل متخصصة للمشاركين</li>
+                            <li>ظهور شعار شركتكم في جميع المواد الترويجية</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">مستويات الرعاية:</h3>
+                        <ul class="skill-list">
+                            <li>الراعي البلاتيني: 25,000 دولار</li>
+                            <li>الراعي الذهبي: 15,000 دولار</li>
+                            <li>الراعي الفضي: 8,000 دولار</li>
+                            <li>الراعي البرونزي: 4,000 دولار</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Phases -->
+        <div class="section" id="program">
+            <h2 class="section-title">المراحل التنفيذية للبرنامج🌟</h2>
+            <p class="section-subtitle">
+                تم تقسيم البرنامج إلى أربع مراحل رئيسية لضمان التخطيط والتنفيذ الأمثل للرحلة التدريبية، بحيث تكون المراحل متسلسلة ومنطقية، مع وضوح في الأهداف والنتائج المتوقعة.
+            </p>
+
+            <div class="phases-container">
+                <div class="phase-card">
+                    <div class="phase-number">1</div>
+                    <div class="phase-title">المرحلة الأولى: التخطيط والتجهيز</div>
+                    <p>(قبل الرحلة بـ40 يوم)</p>
+                    <ul class="skill-list">
+                        <li>التسجيل واختيار المشاركين</li>
+                        <li>إعداد المواد التدريبية والمحتوى</li>
+                        <li>الشراكات والرعاة</li>
+                        <li>تنظيم فعاليات متخصصة</li>
+                    </ul>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-number">2</div>
+                    <div class="phase-title">المرحلة الثانية: التنفيذ والتدريب</div>
+                    <p>(10 أيام في إسطنبول)</p>
+                    <ul class="skill-list">
+                        <li>الاستقبال والتعارف</li>
+                        <li>الدورات التدريبية المكثفة</li>
+                        <li>التطبيق العملي</li>
+                        <li>الفعاليات السياحية والترفيهية</li>
+                    </ul>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-number">3</div>
+                    <div class="phase-title">المرحلة الثالثة: المتابعة والتطوير</div>
+                    <p>(بعد العودة من الرحلة من شهر لشهرين)</p>
+                    <ul class="skill-list">
+                        <li>المتابعة والتواصل</li>
+                        <li>التقييم والتطوير الشخصي</li>
+                        <li>الاستشارات الشهرية</li>
+                        <li>مكالمات تحليل الأسواق</li>
+                    </ul>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-number">4</div>
+                    <div class="phase-title">المرحلة الرابعة: الاستمرارية</div>
+                    <p>(دعم طويل المدى)</p>
+                    <ul class="skill-list">
+                        <li>شهادات معتمدة</li>
+                        <li>منصة متابعة تفاعلية</li>
+                        <li>مجتمع استثماري قوي</li>
+                        <li>تطوير مستمر</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Follow-up Phase -->
+        <div class="section">
+            <h2 class="section-title">مرحلة المتابعة والتطوير</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>المتابعة والتواصل</h3>
+                        <p>إنشاء مجموعة خاصة على المنصة للمشاركين لمشاركة تجاربهم وفرص الاستثمار</p>
+                        <p>مكالمات خاصة مع المشاركين لمدة شهر للمتابعة في التحاليل الاقتصادية وتكملة المواد العلمية</p>
+                        <p>مكالمات تحليل أسواق لمدة أربعة أشهر مجاناً ثم باشتراك شهري 70 دولار</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>التقييم والتطوير الشخصي</h3>
+                        <p>تقديم تقارير فردية لكل مشارك تشمل نقاط قوته ونصائح للتحسين</p>
+                        <p>توفير جلسات استشارية شهرية مع الخبراء لمراجعة خطط التداول الخاصة بالمشاركين</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section" id="contact">
+            <h2 class="cta-title">كن جزءًا من رحلة التميز</h2>
+            <p class="cta-subtitle">سجّل الآن لتحجز مكانك في رحلة MasterTrade Istanbul واستثمر في مستقبلك المهني</p>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">1,250$</div>
+                    <div class="stat-label">سعر الرحلة</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">مقاعد متبقية</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10%</div>
+                    <div class="stat-label">خصم الشركاء</div>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#" class="cta-button">سجل الآن</a>
+                <a href="#" class="cta-button secondary">طلب شراكة</a>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <h3>تواصل معنا</h3>
+            <div class="social-grid">
+                <div class="social-item">
+                    <h4><i class="fab fa-instagram"></i> الإنستغرام</h4>
+                    <a href="https://www.instagram.com/nexgen.tr?igsh=amk5aXlqdzByMzho" target="_blank">@nexgen.tr</a>
+                </div>
+                <div class="social-item">
+                    <h4><i class="fab fa-facebook"></i> الفيسبوك</h4>
+                    <a href="https://www.facebook.com/share/1Ev5oN6BmW/" target="_blank">Nexgen Academy</a>
+                </div>
+                <div class="social-item">
+                    <h4><i class="fab fa-tiktok"></i> تيك توك</h4>
+                    <a href="https://www.tiktok.com/@nexgen.tr?_t=ZS-8xhVbhbjTU7&_r=1" target="_blank">@nexgen.tr</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2023 Nexgen Academy. جميع الحقوق محفوظة</p>
+            <p>MasterTrade Istanbul - رحلتك نحو الاحتراف في عالم التداول</p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation for stats counting
+        const statCards = document.querySelectorAll('.stat-card');
+        const options = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const targetValue = parseInt(statNumber.textContent.replace(',', ''));
+                    let currentValue = 0;
+                    
+                    const interval = setInterval(() => {
+                        currentValue += Math.ceil(targetValue / 30);
+                        if (currentValue >= targetValue) {
+                            currentValue = targetValue;
+                            clearInterval(interval);
+                        }
+                        
+                        statNumber.textContent = currentValue.toLocaleString();
+                    }, 50);
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        statCards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // Card hover effect enhancement
+        const cards = document.querySelectorAll('.content-card, .phase-card, .benefit-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
