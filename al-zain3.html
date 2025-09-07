@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كيوسك الزين - للمشروبات والفطائر</title>
+
+  <!-- SEO basics -->
+  <meta name="description" content="كيوسك الزين: أجود المشروبات الساخنة والباردة، الفطائر الطازجة والحلويات الشرقية. اطلب الآن عبر واتساب مع توصيل سريع." />
+  <meta name="theme-color" content="#22c55e" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="كيوسك الزين - للمشروبات والفطائر" />
+  <meta property="og:description" content="اطلب مشروباتك وفطائرك المفضلة عبر واتساب بخطوة واحدة." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:locale" content="ar_AR" />
+
+  <!-- JSON-LD LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "كيوسك الزين",
+    "description": "مشروبات ساخنة وباردة، فطائر وحلويات. طلب عبر واتساب وتوصيل سريع.",
+    "telephone": "+972597050548",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Palestine",
+      "streetAddress": "شارع المستشفى"
+    },
+    "url": "https://example.com",
+    "priceRange": "₪",
+    "servesCuisine": "قهوة، مشروبات، فطائر، حلويات"
+  }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Brand (Green / Orange / White) */
+      --primary:#22c55e;     /* أخضر */
+      --secondary:#ff7a00;   /* برتقالي */
+      --accent:#ffffff;      /* أبيض */
+      --dark:#12372a;        /* أخضر داكن مناسب للنصوص */
+      --light:#f6f7f8;
+      --text:#2b2b2b;
+      --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:var(--light);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 15px}
+
+    /* Header */
+    header{background:var(--gradient);padding:12px 0;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+    .header-content{display:flex;justify-content:space-between;align-items:center}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{height:90px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
+    .logo h1{color:white;font-size:1.6rem;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+    .mobile-toggle{display:none;background:none;border:none;color:white;font-size:1.6rem;cursor:pointer}
+    .cart-icon{position:relative;color:white;font-size:1.6rem;cursor:pointer}
+    .cart-count{position:absolute;top:-9px;left:-10px;background:#fff;color:var(--dark);font-weight:700;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+
+    /* Nav */
+    nav{background:var(--dark);padding:10px 0}
+    nav ul{display:flex;list-style:none;justify-content:center;flex-wrap:wrap}
+    nav ul li{margin:0 8px}
+    nav a{color:#fff;text-decoration:none;font-weight:700;transition:.25s;padding:8px 14px;border-radius:999px;display:flex;gap:8px;align-items:center}
+    nav a:hover, nav a.active{background:rgba(255,255,255,.12)}
+
+    /* Hero */
+    /* === Fix hero image override (place at the very end) === */
+    .hero {
+  background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('./images/hero.png') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+
+  /* >>> الإضافات المهمة <<< */
+  min-height: 100vh;   /* يغطي طول الشاشة بالكامل */
+  width: 100%;         /* يغطي العرض بالكامل */
+  display: flex;
+  align-items: center; /* يحط المحتوى بالوسط عمودياً */
+  justify-content: center; /* يحط المحتوى بالوسط أفقياً */
+}
+
+
+    .hero-content{color:#fff;text-align:center;width:100%;padding:0 20px}
+    .hero-content h2{font-size:3rem;margin-bottom:14px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+    .hero-content p{font-size:1.25rem;max-width:780px;margin:0 auto 22px}
+    .btn{display:inline-block;background:#fff;color:var(--dark);padding:12px 30px;border-radius:30px;text-decoration:none;font-weight:800;transition:.25s;border:none;cursor:pointer;font-size:1.05rem;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.22)}
+    .btn-cta{background:var(--secondary);color:#fff}
+    .btn-cta:hover{background:#ff8f2a}
+
+    /* Sections */
+    .section-title{text-align:center;margin:0 0 44px;color:var(--dark);font-size:2.2rem;font-weight:800;position:relative}
+    .section-title::after{content:'';display:block;width:110px;height:4px;background:var(--gradient);margin:14px auto;border-radius:10px}
+
+    /* Categories */
+    .categories{padding:70px 0;background:#fff}
+    .categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+    .category-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.08);transition:.25s;text-align:center;padding:26px 18px}
+    .category-card:hover{transform:translateY(-6px)}
+    .category-icon{width:76px;height:76px;background:var(--gradient);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;color:#fff}
+
+    /* Products */
+    .products{padding:70px 0;background:var(--light)}
+    .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+    .product-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.08);transition:.25s;position:relative}
+    .product-card:hover{transform:translateY(-6px)}
+    .product-img{height:200px;overflow:hidden;position:relative}
+    .product-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .product-card:hover .product-img img{transform:scale(1.06)}
+    .product-badge{position:absolute;top:12px;left:12px;background:var(--secondary);color:#fff;padding:6px 12px;border-radius:999px;font-weight:800;font-size:.85rem}
+    .product-info{padding:18px}
+    .product-info h3{color:var(--dark);margin-bottom:8px;font-size:1.25rem}
+    .product-info p{color:#666;margin-bottom:12px;font-size:.98rem}
+    .product-price{display:flex;justify-content:space-between;align-items:center}
+    .price{font-weight:800;color:var(--primary);font-size:1.2rem}
+    .add-to-cart{background:var(--primary);color:#fff;border:none;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.25s;font-size:1.1rem}
+    .add-to-cart:hover{transform:scale(1.08);background:#16a34a}
+
+    /* Testimonials */
+    .testimonials{padding:70px 0;background:#fff}
+    .testimonial-card{background:var(--light);border-radius:16px;padding:26px;margin:14px 0;box-shadow:0 8px 18px rgba(0,0,0,.06);text-align:center}
+    .testimonial-avatar{width:80px;height:80px;border-radius:50%;overflow:hidden;margin:0 auto 14px;border:4px solid var(--primary)}
+    .testimonial-avatar img{width:100%;height:100%;object-fit:cover}
+    .testimonial-text{font-style:italic;margin-bottom:10px;color:#555}
+    .testimonial-author{font-weight:800;color:var(--dark)}
+
+    /* Map */
+    .map-section{padding:70px 0 0;background:var(--light)}
+    .map-container{height:430px;border-radius:16px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.1)}
+    .map-container iframe{width:100%;height:100%;border:none}
+
+    /* Footer */
+    footer{background:var(--dark);color:#fff;padding:44px 0 18px;margin-top:44px}
+    .footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-bottom:20px}
+    .footer-section h3{margin-bottom:14px;font-size:1.2rem;position:relative;padding-bottom:8px}
+    .footer-section h3::after{content:'';position:absolute;bottom:0;right:0;width:60px;height:3px;background:var(--secondary);border-radius:3px}
+    .footer-contact p{margin-bottom:10px;display:flex;align-items:center}
+    .footer-contact i{margin-left:10px;color:var(--secondary)}
+    .social-links{display:flex;margin-top:10px}
+    .social-links a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:rgba(255,255,255,.12);border-radius:50%;margin-left:10px;color:#fff;font-size:1.15rem;transition:.25s}
+    .social-links a:hover{background:var(--secondary);transform:translateY(-4px)}
+    .copyright{text-align:center;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font-size:.95rem}
+
+    /* Cart Modal */
+    .cart-modal{position:fixed;top:0;right:-420px;width:380px;height:100vh;background:#fff;box-shadow:-5px 0 25px rgba(0,0,0,.15);z-index:1001;transition:right .35s ease;padding:20px;overflow-y:auto}
+    .cart-modal.open{right:0}
+    .cart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #eee}
+    .cart-header h2{color:var(--dark);font-size:1.4rem}
+    .close-cart{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--secondary)}
+    .cart-items{margin-bottom:20px}
+    .cart-item{display:flex;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #eee}
+    .cart-item-img{width:78px;height:78px;border-radius:10px;overflow:hidden;margin-left:14px}
+    .cart-item-img img{width:100%;height:100%;object-fit:cover}
+    .cart-item-info{flex:1}
+    .cart-item-info h4{margin-bottom:4px;color:var(--dark)}
+    .cart-item-price{color:var(--primary);font-weight:800}
+    .cart-item-quantity{display:flex;align-items:center;margin-top:8px;gap:6px}
+    .quantity-btn{width:28px;height:28px;background:var(--light);border:none;border-radius:6px;cursor:pointer;font-weight:800}
+    .quantity-input{width:40px;text-align:center;border:1px solid #ddd;border-radius:6px;padding:3px}
+    .remove-item{color:#ef4444;background:none;border:none;cursor:pointer;font-size:1.1rem;margin-right:auto;margin-left:10px}
+    .cart-total{font-size:1.15rem;font-weight:800;margin-bottom:14px;text-align:center;padding:12px;background:var(--light);border-radius:10px}
+    .cart-total span{color:var(--primary)}
+    .checkout-btn{width:100%;padding:14px;background:var(--secondary);color:#fff;border:none;border-radius:10px;font-weight:800;font-size:1.05rem;cursor:pointer;transition:.25s;box-shadow:0 4px 14px rgba(0,0,0,.1)}
+    .checkout-btn:hover{background:#ff8f2a;transform:translateY(-2px)}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:none}
+    .overlay.active{display:block}
+
+    /* Responsive */
+    @media (max-width:992px){
+      .cart-modal{width:340px}
+      .hero-content h2{font-size:2.4rem}
+    }
+    @media (max-width:768px){
+      .mobile-toggle{display:block}
+      nav{display:none}
+      nav.active{display:block}
+      nav ul{flex-direction:column;align-items:center}
+      nav ul li{margin:8px 0}
+      .hero-content h2{font-size:2rem}
+      .hero-content p{font-size:1.05rem}
+      .cart-modal{width:100%;right:-100%}
+      .map-container{height:350px}
+    }
+
+    /* Simple fade-in */
+    @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .product-card,.category-card{animation:fadeIn .5s ease forwards}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <div class="logo" aria-label="شعار كيوسك الزين">
+        <img src="./images/logo.png" alt="كيوسك الزين">
+        <h1>كيوسك الزين</h1>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="فتح القائمة"><i class="fas fa-bars"></i></button>
+      <div class="cart-icon" id="cartIcon" aria-label="سلة التسوق">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav id="mainNav" aria-label="التنقّل الرئيسي">
+    <div class="container">
+      <ul>
+        <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="#categories" class="nav-link"><i class="fas fa-list"></i> الأقسام</a></li>
+        <li><a href="#products" class="nav-link"><i class="fas fa-coffee"></i> المنتجات</a></li>
+        <li><a href="#testimonials" class="nav-link"><i class="fas fa-star"></i> آراء العملاء</a></li>
+        <li><a href="#map" class="nav-link"><i class="fas fa-map-marker-alt"></i> الموقع</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fas fa-phone"></i> اتصل بنا</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h2>أجود المشروبات والفطائر في فلسطين</h2>
+      <p>استمتع بأجود أنواع القهوة، المشروبات الساخنة والباردة، الفطائر الطازجة والحلويات الشرقية</p>
+      <a href="#products" class="btn btn-cta">اطلب الآن</a>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <h2 class="section-title">أقسامنا</h2>
+      <div class="categories-grid">
+        <div class="category-card">
+          <div class="category-icon"><i class="fas fa-coffee"></i></div>
+          <h3>المشروبات الساخنة</h3>
+          <p>أجود أنواع القهوة والشاي والمشروبات الساخنة</p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon"><i class="fas fa-glass-whiskey"></i></div>
+          <h3>المشروبات الباردة</h3>
+          <p>أطيب العصائر الطبيعية والمشروبات المنعشة</p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon"><i class="fas fa-bread-slice"></i></div>
+          <h3>الفطائر</h3>
+          <p>فطائر طازجة محشية بمختلف الحشوات اللذيذة</p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon"><i class="fas fa-cookie"></i></div>
+          <h3>الحلويات</h3>
+          <p>أشهى الحلويات الشرقية والغربية الطازجة</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="products">
+    <div class="container">
+      <h2 class="section-title">منتجاتنا</h2>
+      <div class="products-grid">
+
+                <!-- product 1 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product1.jpeg" alt="منتج 1">
+            <div class="product-badge">الأكثر مبيعاً</div>
+          </div>
+          <div class="product-info">
+            <h3>كورواسان </h3>
+            <p>جميع انواع الكورواسان</p>
+            <div class="product-price">
+              <span class="price" data-price="3"></span>
+              <button class="add-to-cart" data-id="1" data-name="منتج 1" data-price="5" data-img="./images/product1.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- product 2 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product2.jpeg" alt="منتج 2">
+          </div>
+          <div class="product-info">
+            <h3>كورواسان حلو </h3>
+            <p>جميع انواع الكورواسان الحلو </p>
+            <div class="product-price">
+              <span class="price" data-price="3"></span>
+              <button class="add-to-cart" data-id="2" data-name="منتج 2" data-price="3" data-img="./images/product2.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- product 3 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product3.jpeg" alt="منتج 3">
+            <div class="product-badge">جديد</div>
+          </div>
+          <div class="product-info">
+            <h3>مشروبات باردة </h3>
+            <p>جميع المشروبات الباردة  </p>
+            <div class="product-price">
+              <span class="price" data-price="0"></span>
+              <button class="add-to-cart" data-id="3" data-name="منتج 3" data-price="3" data-img="./images/product3.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- product 4 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product4.jpeg" alt="منتج 4">
+          </div>
+          <div class="product-info">
+            <h3>كوكتيل فراولة </h3>
+            <p>كوكتيل</p>
+            <div class="product-price">
+              <span class="price" data-price="8"></span>
+              <button class="add-to-cart" data-id="4" data-name="منتج 4" data-price="8" data-img="./images/product4.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- product 5 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product5.jpeg" alt="منتج 5">
+          </div>
+          <div class="product-info">
+            <h3>قهوة عربية</h3>
+            <p>مشروبات ساخنة</p>
+            <div class="product-price">
+              <span class="price" data-price="3"></span>
+              <button class="add-to-cart" data-id="5" data-name="منتج 5" data-price="9" data-img="./images/product5.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- product 6 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product6.jpeg" alt="منتج 6">
+          </div>
+          <div class="product-info">
+            <h3>مهيتو بلو </h3>
+            <p>مهيتو</p>
+            <div class="product-price">
+              <span class="price" data-price="10"></span>
+              <button class="add-to-cart" data-id="6" data-name="منتج 6" data-price="10" data-img="./images/product6.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- product 7 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product7.jpeg" alt="منتج 7">
+          </div>
+          <div class="product-info">
+            <h3>ليمون ونعنع</h3>
+            <p>عصير طبيعي</p>
+            <div class="product-price">
+              <span class="price" data-price="7"></span>
+              <button class="add-to-cart" data-id="7" data-name="منتج 7" data-price="11" data-img="./images/product7.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <!-- product 9 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product9.jpeg" alt="منتج 9">
+          </div>
+          <div class="product-info">
+            <h3>برتقال وجزر</h3>
+            <p>عصير طبيعي</p>
+            <div class="product-price">
+              <span class="price" data-price="13"></span>
+              <button class="add-to-cart" data-id="9" data-name="منتج 9" data-price="13" data-img="./images/product9.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- product 10 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product10.jpeg" alt="منتج 10">
+          </div>
+          <div class="product-info">
+            <h3>ليمون ونعنع دبل</h3>
+            <p>عصير طبيعي</p>
+            <div class="product-price">
+              <span class="price" data-price="13"></span>
+              <button class="add-to-cart" data-id="10" data-name="منتج 10" data-price="14" data-img="./images/product10.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- product 11 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product11.jpeg" alt="منتج 11">
+          </div>
+          <div class="product-info">
+            <h3>برتقال</h3>
+            <p>عصير طبيعي</p>
+            <div class="product-price">
+              <span class="price" data-price="8"></span>
+              <button class="add-to-cart" data-id="11" data-name="منتج 11" data-price="15" data-img="./images/product11.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- product 12 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product12.jpeg" alt="منتج 12">
+          </div>
+          <div class="product-info">
+            <h3>بسفلورا</h3>
+            <p>عصير طبيعي</p>
+            <div class="product-price">
+              <span class="price" data-price="8"></span>
+              <button class="add-to-cart" data-id="12" data-name="منتج 12" data-price="16" data-img="./images/product12.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- product 13 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product13.jpeg" alt="منتج 13">
+          </div>
+          <div class="product-info">
+            <h3>اناناس</h3>
+            <p>عصير طبيعي</p>
+            <div class="product-price">
+              <span class="price" data-price="8"></span>
+              <button class="add-to-cart" data-id="13" data-name="منتج 13" data-price="17" data-img="./images/product13.png">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+       
+
+        <!-- نفس منتجاتك الأصلية مع تحسينات طفيفة (lazy + العملة) -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product5.jpeg" alt="منتج 5">
+            <div class="product-badge">الأكثر مبيعاً</div>
+          </div>
+          <div class="product-info">
+            <h3>قهوة عربية</h3>
+            <p>قهوة عربية أصيلة بطعم ورائحة لا تقاوم</p>
+            <div class="product-price">
+              <span class="price" data-price="5"></span>
+              <button class="add-to-cart" data-id="1" data-name="قهوة عربية" data-price="5" data-img="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1470&q=80"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product14.jpeg" alt="منتج 5">
+          </div>
+          <div class="product-info">
+            <h3>شاي بالنعناع</h3>
+            <p>شاي منعش مع أوراق النعناع الطازجة</p>
+            <div class="product-price">
+              <span class="price" data-price="3"></span>
+              <button class="add-to-cart" data-id="2" data-name="شاي بالنعناع" data-price="4" data-img="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1374&q=80"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=1374&q=80" alt="عصير طبيعي">
+            <div class="product-badge">جديد</div>
+          </div>
+          <div class="product-info">
+            <h3>كوكتيل شوكلاطة </h3>
+            <p>كوكتيلات</p>
+            <div class="product-price">
+              <span class="price" data-price="7"></span>
+              <button class="add-to-cart" data-id="3" data-name="عصير طبيعي" data-price="7" data-img="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=1374&q=80"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product1.jpeg" alt="منتج 1">
+          </div>
+          <div class="product-info">
+            <h3>فطائر محشية</h3>
+            <p>فطائر طازجة محشية بالجبن أو الزعتر</p>
+            <div class="product-price">
+              <span class="price" data-price="3"></span>
+              <button class="add-to-cart" data-id="4" data-name="فطائر محشية" data-price="8" data-img="https://images.unsplash.com/photo-1608190003443-86b2630e86a5?auto=format&fit=crop&w=1374&q=80"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product15.png" alt="منتج 1">
+          </div>
+          <div class="product-info">
+            <h3>شاي اسود </h3>
+            <p>مشروبات ساخنة </p>
+            <div class="product-price">
+              <span class="price" data-price="3"></span>
+              <button class="add-to-cart" data-id="4" data-name="فطائر محشية" data-price="8" data-img="https://images.unsplash.com/photo-1608190003443-86b2630e86a5?auto=format&fit=crop&w=1374&q=80"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="product-card">
+          <div class="product-img">
+            <img src="./images/product2.jpeg" alt="منتج 1">
+          </div>
+          <div class="product-info">
+            <h3>حلويات شرقية</h3>
+            <p>أشهى الحلويات الشرقية الطازجة يومياً</p>
+            <div class="product-price">
+              <span class="price" data-price="3"></span>
+              <button class="add-to-cart" data-id="5" data-name="حلويات شرقية" data-price="10" data-img="https://images.unsplash.com/photo-1514516345957-5e6f21e0716d?auto=format&fit=crop&w=1374&q=80"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+       
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">آراء عملائنا</h2>
+      <div class="testimonial-card">
+        <div class="testimonial-avatar"><img src="./images/logo.png" alt="كيوسك الزين"></div>
+        <p class="testimonial-text">أفضل كشك للمشروبات في المنطقة، القهوة رائعة والفطائر طازجة دائماً!</p>
+        <p class="testimonial-author">- أحمد سليمان</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-avatar"><img src="./images/logo.png" alt="كيوسك الزين"></div>
+        <p class="testimonial-text">عصائر طبيعية لذيذة جداً، وخدمة سريعة وذوق.</p>
+        <p class="testimonial-author">- سارة محمد</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-avatar"><img src="./images/logo.png" alt="كيوسك الزين"></div>
+        <p class="testimonial-text">قهوة عربية من الآخر، النكهة لا تُنسى.</p>
+        <p class="testimonial-author">- خالد أبو غربية</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map-section" id="map">
+    <div class="container">
+      <h2 class="section-title">موقعنا</h2>
+      <div class="map-container">
+        <iframe 
+        src="https://www.google.com/maps?q=مجمع التاج طولكرم&hl=ar&z=18&output=embed" 
+        allowfullscreen 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+            </div>
+    </div>
+  </section>
+
+  <!-- Overlay + Cart -->
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+  <div class="cart-modal" id="cartModal" aria-label="نافذة سلة التسوق" aria-hidden="true">
+    <div class="cart-header">
+      <h2>سلة التسوق</h2>
+      <button class="close-cart" id="closeCart" aria-label="إغلاق السلة"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p id="emptyCart" style="text-align:center;padding:16px;">سلة التسوق فارغة</p>
+    </div>
+    <div class="cart-total">المجموع: <span id="cartTotal">₪ 0</span></div>
+    <button class="checkout-btn" id="checkoutBtn" aria-label="إتمام الطلب عبر واتساب">إتمام الطلب عبر واتساب</button>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>عن كيوسك الزين</h3>
+          <p>أجود المشروبات الساخنة والباردة، الفطائر الطازجة والحلويات الشرقية بأفضل الأسعار ونقدم خدمة التوصيل للمنازل.</p>
+        </div>
+        <div class="footer-section">
+          <h3>طرق التواصل</h3>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> شارع المستشفى قرب مجمع التاج التجاري</p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+972597050548" style="color:#fff">00972597050548</a></p>
+            <div class="social-links">
+              <a aria-label="Facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+              <a aria-label="Instagram" href="#"><i class="fab fa-instagram"></i></a>
+              <a aria-label="WhatsApp" href="https://wa.me/972597050548" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>ساعات العمل</h3>
+          <p>السبت - الخميس: 8 صباحاً - 11 مساءً</p>
+          <p>الجمعة: عطلة</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>جميع الحقوق محفوظة © كيوسك الزين 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== Helpers =====
+    const formatILS = n => new Intl.NumberFormat('ar-IL', { style:'currency', currency:'ILS', maximumFractionDigits:0 }).format(n);
+
+    // ===== State =====
+    let cart = JSON.parse(localStorage.getItem('kiosk_cart') || '[]');
+
+    // ===== Elements =====
+    const cartIcon = document.getElementById('cartIcon');
+    const cartModal = document.getElementById('cartModal');
+    const overlay = document.getElementById('overlay');
+    const closeCart = document.getElementById('closeCart');
+    const cartItems = document.getElementById('cartItems');
+    const emptyCart = document.getElementById('emptyCart');
+    const cartTotal = document.getElementById('cartTotal');
+    const cartCount = document.querySelector('.cart-count');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mainNav = document.getElementById('mainNav');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Mobile menu toggle
+    mobileToggle.addEventListener('click', () => mainNav.classList.toggle('active'));
+    navLinks.forEach(a => a.addEventListener('click', () => mainNav.classList.remove('active')));
+
+    // Smooth active state on scroll
+    const sections = [...document.querySelectorAll('section[id]')];
+    const onScroll = () => {
+      const y = window.scrollY + 120;
+      sections.forEach(sec => {
+        const link = document.querySelector('a[href="#' + sec.id + '"]');
+        if(!link) return;
+        if(y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight) link.classList.add('active');
+        else link.classList.remove('active');
+      });
+    };
+    window.addEventListener('scroll', onScroll); onScroll();
+
+    // Show prices with ILS
+    document.querySelectorAll('.price').forEach(span => {
+      const p = Number(span.dataset.price || 0);
+      span.textContent = formatILS(p);
+    });
+
+    // Add to cart
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-id');
+        const name = btn.getAttribute('data-name');
+        const price = Number(btn.getAttribute('data-price'));
+        const img = btn.getAttribute('data-img');
+
+        const existing = cart.find(i => i.id === id);
+        if (existing) existing.quantity += 1;
+        else cart.push({ id, name, price, img, quantity: 1 });
+
+        persistCart();
+        updateCart();
+
+        // Visual feedback
+        const prev = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(() => btn.innerHTML = prev, 900);
+      });
+    });
+
+    // Open/Close cart
+    const openCart = () => {
+      cartModal.classList.add('open');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      cartModal.setAttribute('aria-hidden','false');
+      overlay.setAttribute('aria-hidden','false');
+    };
+    const closeCartModal = () => {
+      cartModal.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      cartModal.setAttribute('aria-hidden','true');
+      overlay.setAttribute('aria-hidden','true');
+    };
+    cartIcon.addEventListener('click', openCart);
+    closeCart.addEventListener('click', closeCartModal);
+    overlay.addEventListener('click', closeCartModal);
+
+    function persistCart(){
+      localStorage.setItem('kiosk_cart', JSON.stringify(cart));
+    }
+
+    // Update cart UI
+    function updateCart(){
+      const totalItems = cart.reduce((t,i)=>t+i.quantity,0);
+      cartCount.textContent = totalItems;
+
+      if(cart.length===0){
+        cartItems.innerHTML = '';
+        emptyCart.style.display = 'block';
+        cartItems.appendChild(emptyCart);
+        cartTotal.textContent = formatILS(0);
+        return;
+      }
+
+      emptyCart.style.display = 'none';
+      let html = '';
+      let total = 0;
+
+      cart.forEach(item=>{
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        html += `
+        <div class="cart-item" data-id="${item.id}">
+          <div class="cart-item-img"><img src="${item.img}" alt="${item.name}"></div>
+          <div class="cart-item-info">
+            <h4>${item.name}</h4>
+            <div class="cart-item-price">${formatILS(item.price)}</div>
+            <div class="cart-item-quantity">
+              <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+              <input type="number" class="quantity-input" value="${item.quantity}" min="1" readonly>
+              <button class="quantity-btn increase" data-id="${item.id}">+</button>
+              <button class="remove-item" data-id="${item.id}" title="حذف"><i class="fas fa-trash"></i></button>
+            </div>
+          </div>
+        </div>`;
+      });
+
+      cartItems.innerHTML = html;
+      cartTotal.textContent = formatILS(total);
+
+      // Bind quantity buttons
+      cartItems.querySelectorAll('.increase').forEach(b=>{
+        b.addEventListener('click', ()=>{
+          const id = b.getAttribute('data-id');
+          const it = cart.find(i=>i.id===id);
+          it.quantity += 1;
+          persistCart(); updateCart();
+        });
+      });
+      cartItems.querySelectorAll('.decrease').forEach(b=>{
+        b.addEventListener('click', ()=>{
+          const id = b.getAttribute('data-id');
+          const it = cart.find(i=>i.id===id);
+          if(it.quantity>1) it.quantity -= 1;
+          else cart = cart.filter(i=>i.id!==id);
+          persistCart(); updateCart();
+        });
+      });
+      cartItems.querySelectorAll('.remove-item').forEach(b=>{
+        b.addEventListener('click', ()=>{
+          const id = b.getAttribute('data-id');
+          cart = cart.filter(i=>i.id!==id);
+          persistCart(); updateCart();
+        });
+      });
+    }
+
+    // Checkout via WhatsApp
+    checkoutBtn.addEventListener('click', ()=>{
+      if(cart.length===0){ alert('سلة التسوق فارغة!'); return; }
+
+      let message = 'مرحباً، أريد طلب التالي:%0A';
+      cart.forEach(item => { message += `- ${item.name} (${item.quantity}) × ${item.price} شيكل%0A`; });
+      const total = cart.reduce((s,i)=>s+(i.price*i.quantity),0);
+      message += `%0Aالمجموع: ${total} شيكل%0A%0A`;
+      message += 'الاسم: [اكتب الاسم هنا]%0A';
+      message += 'العنوان: [اكتب العنوان هنا]%0A';
+      message += 'رقم الهاتف: [اكتب رقم الهاتف هنا]';
+
+      const phone = '972597050548';
+      const url = `https://wa.me/${phone}?text=${message}`;
+      window.open(url,'_blank');
+
+      cart = [];
+      persistCart();
+      updateCart();
+      closeCartModal();
+    });
+
+    // Init
+    updateCart();
+  </script>
+</body>
+</html>
