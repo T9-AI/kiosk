@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية - أحمد محمد</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile-img i {
+            font-size: 100px;
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .nav-list li a {
+            display: block;
+            padding: 1.2rem 1.5rem;
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .nav-list li a:hover {
+            color: var(--secondary-color);
+            background-color: #f9f9f9;
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            width: 40px;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .timeline-content::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            transform: rotate(45deg);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            left: -10px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .portfolio-item {
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .portfolio-img i {
+            font-size: 60px;
+            color: #999;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-title {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-category {
+            color: var(--secondary-color);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 1.2rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+        }
+        
+        .form-control {
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn {
+            padding: 0.8rem 2rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            color: #999;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item, .timeline-item:nth-child(odd) {
+                flex-direction: row;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 40px;
+            }
+            
+            .timeline-content::after {
+                left: -10px !important;
+                right: auto !important;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1>أحمد محمد</h1>
+            <p class="title">مطور ويب ومصمم واجهات مستخدم</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-list">
+            <li><a href="#about">عنّي</a></li>
+            <li><a href="#skills">المهارات</a></li>
+            <li><a href="#experience">الخبرة</a></li>
+            <li><a href="#education">التعليم</a></li>
+            <li><a href="#portfolio">معرض الأعمال</a></li>
+            <li><a href="#contact">اتصل بي</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>معلومات عنّي</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>أنا مطور ويب بخبرة تزيد عن 5 سنوات في تصميم وتطوير مواقع الويب والتطبيقات. أحب العمل على مشاريع مبتكرة وتحديات تقنية جديدة.</p>
+                    <p>أتمتع بخبرة واسعة في تطوير واجهات المستخدم باستخدام أحدث التقنيات مثل React وVue.js، بالإضافة إلى خبرة في تطوير الواجهات الخلفية باستخدام Node.js وPHP.</p>
+                    <p>أهدف دائمًا إلى تقديم حلول تقنية مبتكرة تلبي احتياجات العملاء وتوفر تجربة مستخدم استثنائية.</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>1 يناير 1990</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+966 123 456 789</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ahmed@example.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>الرياض، السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>المهارات</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>التقنيات الأمامية</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>HTML / CSS</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>React</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>التقنيات الخلفية</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Node.js</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>PHP</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Python</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>مهارات أخرى</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>UI/UX Design</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>إدارة المشاريع</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>التسويق الرقمي</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>الخبرة العملية</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - حاضر</div>
+                        <h3>مطور ويب أول</h3>
+                        <h4>شركة التقنية المتقدمة</h4>
+                        <p>قيادة فريق تطوير الويب لإنشاء تطبيقات ويب مبتكرة. تطوير واجهات مستخدم تفاعلية باستخدام React وتنفيذ واجهات برمجة التطبيقات باستخدام Node.js.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <h3>مطور واجهات أمامية</h3>
+                        <h4>شركة الإبداع الرقمي</h4>
+                        <p>تطوير وتنفيذ واجهات مستخدم responsive لمواقع الويب والتطبيقات. العمل مع مصممي UI/UX لتحويل التصاميم إلى كود قابل للتنفيذ.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018 - 2020</div>
+                        <h3>مطور ويب مبتدئ</h3>
+                        <h4>شركة التكنولوجيا الحديثة</h4>
+                        <p>المساعدة في تطوير مواقع الويب باستخدام HTML، CSS، JavaScript. المشاركة في صيانة وتحديث مواقع موجودة.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>التعليم</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2014 - 2018</div>
+                        <h3>بكالوريوس في علوم الحاسوب</h3>
+                        <h4>جامعة الملك سعود</h4>
+                        <p>تخرجت بامتياز مع مرتبة الشرف. تخصصت في تطوير الويب وتصميم واجهات المستخدم.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018</div>
+                        <h3>شهادة في تطوير React</h3>
+                        <h4>معهد التطوير التقني</h4>
+                        <p>حصلت على شهادة متقدمة في تطوير تطبيقات React وتطبيقات الصفحة الواحدة (SPA).</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h3>شهادة في UX/UI Design</h3>
+                        <h4>أكاديمية التصميم</h4>
+                        <p>درست مبادئ تصميم تجربة المستخدم وواجهة المستخدم وتطبيقاتها في المشاريع الواقعية.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>معرض الأعمال</h2>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active">الكل</button>
+                <button class="filter-btn">تصميم ويب</button>
+                <button class="filter-btn">تطبيقات</button>
+                <button class="filter-btn">UI/UX</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">موقع تجارة إلكترونية</h3>
+                        <p class="portfolio-category">تصميم ويب</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">تطبيق جوال</h3>
+                        <p class="portfolio-category">تطبيقات</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">تصميم واجهة مستخدم</h3>
+                        <p class="portfolio-category">UI/UX</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">منصة تسويق</h3>
+                        <p class="portfolio-category">تصميم ويب</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">لوحة تحكم analytics</h3>
+                        <p class="portfolio-category">تطبيقات</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">منصة بث فيديو</h3>
+                        <p class="portfolio-category">تصميم ويب</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>اتصل بي</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>الهاتف</h3>
+                            <p>+966 123 456 789</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>البريد الإلكتروني</h3>
+                            <p>ahmed@example.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>العنوان</h3>
+                            <p>الرياض، السعودية</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>أوقات العمل</h3>
+                            <p>الأحد - الخميس: 8 ص - 6 م</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">الموضوع</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">الرسالة</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#about">عنّي</a>
+                <a href="#skills">المهارات</a>
+                <a href="#experience">الخبرة</a>
+                <a href="#education">التعليم</a>
+                <a href="#portfolio">معرض الأعمال</a>
+                <a href="#contact">اتصل بي</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="#"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fab fa-behance fa-2x"></i></a>
+            </div>
+            
+            <p class="copyright">© 2023 أحمد محمد. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // مهارات الحركة
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            // تفعيل حركة أشرطة المهارات عند التمرير إليها
+            const skillsSection = document.getElementById('skills');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        skillBars.forEach(bar => {
+                            const width = bar.style.width;
+                            bar.style.width = '0';
+                            setTimeout(() => {
+                                bar.style.width = width;
+                            }, 200);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(skillsSection);
+            
+            // تصفية معرض الأعمال
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // إزالة النشاط من جميع الأزرار
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // إضافة النشاط للزر المحدد
+                    button.classList.add('active');
+                    
+                    // هنا يمكن إضافة منطق التصفية الحقيقي
+                    // في هذا المثال، سيتم عرض جميع العناصر بغض النظر عن التصفية
+                });
+            });
+            
+            // تأثير التمرير السلس للروابط
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
