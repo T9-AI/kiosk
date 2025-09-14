@@ -3,10 +3,7 @@
 <head>
   <!-- ============================================= -->
   <!-- 🇸🇦 [تعليق عربي - Head & SEO (ثابت ومُحسّن للموبايل)]
-       - meta viewport لضبط القياس على الهواتف.
-       - theme-color لواجهة المتصفح الداكنة.
-       - OG/Twitter للصورة (t1.png) حتى تظهر الهوية عند المشاركة.
-       - JSON-LD لنوع Barbershop (محركات البحث).
+       - واجهة ألمانية بالكامل، مع OG/Twitter و JSON-LD.
   -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
@@ -32,52 +29,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- JSON-LD -->
-  <!-- 🇸🇦 [JSON-LD] بيانات مهيكلة للموقع بعنوان Krefeld الجديد -->
-<script type="application/ld+json" id="jsonld-local">
-{
-  "@context": "https://schema.org",
-  "@type": "Barbershop",
-  "name": "OMAR BARBERSHOP",
-  "image": "t1.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rheinstr 41-43",
-    "addressLocality": "Krefeld",
-    "postalCode": "47799",
-    "addressCountry": "DE"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": 51.333332, "longitude": 6.566667 },
-  "telephone": "+49 176 70033950",
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday"], "opens": "09:00", "closes": "19:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday"], "opens": "09:00", "closes": "19:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday"], "opens": "09:00", "closes": "19:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday"], "opens": "09:00", "closes": "19:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "09:00", "closes": "20:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "10:00", "closes": "18:00" }
-  ],
-  "url": "https://example.com/",
-  "priceRange": "€€"
-}
-</script>
-
- 
+  <!-- 🇸🇦 [JSON-LD] بيانات مهيكلة مع العنوان الجديد وساعات العمل المحدّثة (Mo–Do 09–18) -->
+  <script type="application/ld+json" id="jsonld-local">
+  {
+    "@context": "https://schema.org",
+    "@type": "Barbershop",
+    "name": "OMAR BARBERSHOP",
+    "image": "t1.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rheinstr 41-43",
+      "addressLocality": "Krefeld",
+      "postalCode": "47799",
+      "addressCountry": "DE"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 51.333332, "longitude": 6.566667 },
+    "telephone": "+49 176 70033950",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday"], "opens": "09:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday"], "opens": "09:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday"], "opens": "09:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday"], "opens": "09:00", "closes": "18:00" }
+    ],
+    "url": "https://example.com/",
+    "priceRange": "€€"
+  }
+  </script>
 
   <style>
     /* ===========================================================
        🇸🇦 [تعليق عربي - متغيرات الثيم]
-       - ثيم داكن فاخر + ذهب.
-       - يمكن تعديل الألوان سريعًا من هنا.
+       - ثيم داكن بلمسة ذهبية + لون خاص لعطلة الجمعة/السبت.
     ============================================================ */
     :root{
       --bg:#0b0b0d; --bg-alt:#121217; --fg:#ededf3;
       --gold:#d4af37; --muted:#8a8ea0; --accent:#7aa2ff;
+      --holiday:#ff6b6b;
       --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35); --maxw:1200px;
-      --header-h:64px; /* 🇸🇦 ارتفاع الهيدر لضبط مسافة التمرير للأقسام */
+      --header-h:64px;
+      /* 🇸🇦 ارتفاع صور المنتجات (يمكن تعديلها) */
+      --prod-img-h-mobile: 260px;
+      --prod-img-h-sm: 300px;
+      --prod-img-h-lg: 340px;
     }
 
-    /* 🇸🇦 قاعدة موبايل أولاً + صندوق القياس */
     *{box-sizing:border-box}
     html,body{height:100%}
     html{scroll-behavior:smooth}
@@ -88,26 +83,21 @@
                  linear-gradient(180deg, var(--bg), var(--bg-alt));
       overflow-x:hidden;
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      -webkit-tap-highlight-color: transparent; /* 🇸🇦 منع الوميض الأزرق على Android */
+      -webkit-tap-highlight-color: transparent;
     }
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
-    }
+    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
 
-    /* 🇸🇦 عناوين وأحجام خط مرنة للموبايل */
     h1,h2,h3{font-family:"Playfair Display", Georgia, serif; letter-spacing:.2px; margin:0 0 .4em}
     h1{font-size:clamp(1.8rem, 4.5vw, 3rem); line-height:1.15}
     h2{font-size:clamp(1.4rem, 3.8vw, 2.1rem)}
     h3{font-size:clamp(1.05rem, 3.2vw, 1.3rem)}
     p{color:#d6d7de; margin:.6em 0}
 
-    /* 🇸🇦 حاويات ومسافات مريحة على الهاتف */
     .container{width:min(100%, var(--maxw)); margin-inline:auto; padding:0 16px}
     section{padding:44px 0}
     @media (min-width:940px){section{padding:64px 0}}
-    section, section *{scroll-margin-top:calc(var(--header-h) + 12px)} /* 🇸🇦 العناوين لا تختبئ خلف الهيدر */
+    section, section *{scroll-margin-top:calc(var(--header-h) + 12px)}
 
-    /* 🇸🇦 شبكات مرنة للموبايل أولاً */
     .grid{display:grid; gap:16px}
     .grid-2{grid-template-columns:1fr}
     .grid-3{grid-template-columns:1fr}
@@ -115,31 +105,21 @@
     @media (min-width:740px){ .grid-3{grid-template-columns:repeat(2, minmax(0,1fr))} }
     @media (min-width:980px){ .grid-3{grid-template-columns:repeat(3, minmax(0,1fr))} }
 
-    /* 🇸🇦 بطاقات وأساسيات */
     .card{background:linear-gradient(180deg,#14151a,#0f1014); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); box-shadow:var(--shadow)}
     .pad{padding:16px}
     .muted{color:var(--muted)}
     .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(212,175,55,.35);border-radius:999px;background:rgba(212,175,55,.08)}
     .icon{width:20px;height:20px;border-radius:8px;background:linear-gradient(135deg, rgba(212,175,55,.35), rgba(255,255,255,.08))}
     .price{font-weight:700}
-:root{
-  --prod-img-h-mobile: 260px;
-  --prod-img-h-sm: 300px;
-  --prod-img-h-lg: 340px;
-}
 
-.product img{
-  width:100%;
-  height:var(--prod-img-h-mobile);
-  object-fit:contain; /* ✅ يعرض الصورة كاملة */
-  background:#0f1016; /* خلفية داكنة حول الصورة عند وجود فراغ */
-  border-radius:12px;
-}
+    /* 🇸🇦 صور المنتجات — احتفظنا بـ contain حتى تظهر كاملة */
+    .product img{
+      width:100%; height:var(--prod-img-h-mobile); object-fit:contain;
+      background:#0f1016; border-radius:12px;
+    }
+    @media (min-width:600px){ .product img{ height:var(--prod-img-h-sm); } }
+    @media (min-width:980px){ .product img{ height:var(--prod-img-h-lg); } }
 
-@media (min-width:600px){ .product img{ height:var(--prod-img-h-sm); } }
-@media (min-width:980px){ .product img{ height:var(--prod-img-h-lg); } }    @media (min-width:600px){ .product img{height:170px} }
-
-    /* 🇸🇦 أزرار كبيرة للمس + حالات تركيز واضحة */
     .btn{
       --btn-bg:linear-gradient(180deg,#1a1b21,#111218); --btn-border:rgba(212,175,55,.45);
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
@@ -147,16 +127,15 @@
       background:var(--btn-bg);color:#fff;text-decoration:none;font-weight:600;
       transition:transform .15s ease,box-shadow .15s ease,border-color .2s ease; box-shadow:0 8px 18px rgba(0,0,0,.35)
     }
-    .btn:active{transform:translateY(0)}
     .btn:hover{transform:translateY(-1px);border-color:rgba(212,175,55,.8)}
     .btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
     .btn.gold{--btn-bg:linear-gradient(180deg,#e6c762,#c7a02c);--btn-border:rgba(0,0,0,.25);color:#111}
     .btn.small{padding:10px 14px;font-size:.95rem;border-radius:10px}
     .btn.loading{pointer-events:none;opacity:.7}
 
-    /* 🇸🇦 رأس الموقع (هيدر) — ثابت وهادئ على الموبايل */
+    /* 🇸🇦 رأس الموقع */
     header{
-      position:sticky; top:0; z-index:20; 
+      position:sticky; top:0; z-index:20;
       background:linear-gradient(180deg, rgba(11,11,13,.95), rgba(11,11,13,.85));
       border-bottom:1px solid rgba(255,255,255,.06);
       height:var(--header-h);
@@ -169,7 +148,6 @@
     .nav-links a{color:#e9e9ee;text-decoration:none;padding:8px 10px;border-radius:10px}
     .nav-links a:hover{background:rgba(255,255,255,.06)}
 
-    /* 🇸🇦 زر همبرغر للموبايل */
     .nav-toggle{
       display:inline-flex; align-items:center; justify-content:center;
       width:44px; height:44px; border-radius:10px; border:1px solid rgba(255,255,255,.08);
@@ -177,7 +155,6 @@
     }
     .nav-toggle:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
 
-    /* 🇸🇦 Drawer قائم للموبايل */
     .drawer{
       position:fixed; inset:auto 0 0 0; top:var(--header-h);
       background:linear-gradient(180deg, #121217, #0f1014);
@@ -190,7 +167,6 @@
     .drawer a + a{margin-top:6px}
     .drawer a:hover{background:rgba(255,255,255,.06)}
 
-    /* 🇸🇦 إظهار روابط الديسكتوب عندما تتسع الشاشة */
     @media (min-width:980px){
       .nav-toggle{display:none}
       .nav-links{display:flex}
@@ -198,13 +174,12 @@
       .brand span{font-size:1.05rem}
     }
 
-    /* 🇸🇦 الهيرو: ارتفاع ثابت للموبايل باستخدام svh لتجنّب “قفز” شريط العنوان */
+    /* 🇸🇦 الهيرو */
     .hero{position:relative; min-height:70svh; display:grid; place-items:center; background:#0b0b0d; overflow:hidden}
     .hero::before{
       content:""; position:absolute; inset:0;
       background:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
       filter:grayscale(.1) contrast(1.05) brightness(.85);
-      will-change:opacity; /* 🇸🇦 بدون parallax على الموبايل لتثبيت الحركة */
     }
     .hero::after{
       content:""; position:absolute; inset:0;
@@ -221,7 +196,7 @@
     .cart{display:flex;flex-direction:column;gap:8px}
     .cart-item{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#101217;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px}
 
-    /* 🇸🇦 جدول الزمن للحجز (مرن على الموبايل) */
+    /* 🇸🇦 شبكة الأوقات */
     .slot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
     @media (min-width:540px){.slot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media (min-width:860px){.slot-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
@@ -230,7 +205,7 @@
     .slot.selected{background:linear-gradient(180deg,#e6c762,#c7a02c);color:#111;border-color:rgba(0,0,0,.2)}
     .slot.disabled{opacity:.45;pointer-events:none;text-decoration:line-through}
 
-    /* 🇸🇦 عناصر الإدخال — ارتفاع لمس مريح */
+    /* 🇸🇦 عناصر الإدخال */
     label{font-weight:600}
     input,select,textarea{
       width:100%;padding:14px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);
@@ -246,19 +221,54 @@
 
     footer{border-top:1px solid rgba(255,255,255,.06);padding:20px 0;color:#bfc3d1;font-size:.95rem}
 
-    /* 🇸🇦 Modal تأكيد السلة (بدون اهتزاز) */
+    /* 🇸🇦 Modal */
     .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:50}
     .modal.show{display:flex}
     .modal-box{width:min(92vw,480px);background:#14151a;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+
+    /* ===========================================================
+       🇸🇦 [تقويم مخصص] بأسلوب الصورة + جمعة/سبت باللون الأحمر
+    ============================================================ */
+    .cal{display:grid;gap:10px}
+    .cal-header{display:flex;align-items:center;justify-content:space-between}
+    .cal-nav{display:inline-flex;gap:8px}
+    .cal-btn{
+      width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.08);
+      background:#15161b;color:#fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer
+    }
+    .cal-title{font-weight:700}
+    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+    .cal-dow{font-weight:700;color:#cdd1de;text-align:center;font-size:.95rem}
+    .cal-dow.fr,.cal-dow.sa{color:var(--holiday)} /* 🇩🇪 Fr/Sa باللون الأحمر */
+
+    .cal-day{
+      text-align:center;padding:10px 0;border-radius:12px;border:1px solid rgba(255,255,255,.08);
+      background:#0f1016;cursor:pointer;user-select:none
+    }
+    .cal-day:hover{border-color:rgba(212,175,55,.8)}
+    .cal-day.today{box-shadow:inset 0 0 0 2px rgba(212,175,55,.6)}
+    .cal-day.selected{background:linear-gradient(180deg,#e6c762,#c7a02c); color:#111; border-color:rgba(0,0,0,.15); font-weight:700}
+    .cal-day.muted{opacity:.5}
+    .cal-day.disabled{opacity:.35; pointer-events:none; background:#0c0d11; text-decoration:line-through}
+    .cal-legend{color:#a7abb8; font-size:.9rem}
+
+    /* 🇸🇦 تحسين تباين أرقام التقويم على الثيم الداكن */
+.cal-day{ color: var(--fg); }               /* أرقام الأيام الافتراضية */
+.cal-day:hover{ color:#ffffff; }            /* عند الـhover */
+.cal-day.selected{ color:#111111; }         /* اليوم المختار (خلفية ذهبية) */
+.cal-day.muted{ color: rgba(255,255,255,.55); }     /* خلايا الفراغ قبل/بعد الشهر */
+.cal-day.disabled{ color: rgba(255,255,255,.35); }  /* الأيام المعطّلة */
+.cal-dow{ color:#cfd3e1; }                           /* أسماء الأيام أعلى الشبكة */
+.cal-dow.fr, .cal-dow.sa{ color: var(--holiday); }   /* Fr/Sa باللون الأحمر */
+
+/* للتأكد من وضوح أوقات الحجز أيضًا */
+.slot{ color:#ffffff; }
+
   </style>
 </head>
 <body>
   <!-- ============================================= -->
-  <!-- 🇸🇦 [تعليق عربي - ترويسة محسّنة للموبايل]
-       - زر همبرغر يفتح Drawer.
-       - الروابط كبيرة 48px للمس.
-       - الشعار t1.png ثابت 40×40.
-  -->
+  <!-- 🇸🇦 الترويسة -->
   <header aria-label="Hauptnavigation">
     <div class="container">
       <nav>
@@ -266,14 +276,9 @@
           <img alt="OMAR Barbershop Logo" src="./t1.png?v=2" />
           <span>OMAR <span class="gold">BARBERSHOP</span></span>
         </div>
-
-        <!-- زر همبرغر للموبايل -->
         <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-drawer">
-          <!-- 🇸🇦 أيقونة بسيطة -->
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
-
-        <!-- روابط ديسكتوب -->
         <div class="nav-links" role="navigation" aria-label="Abschnitte">
           <a href="#about">Über uns</a>
           <a href="#services">Services</a>
@@ -283,7 +288,6 @@
         </div>
       </nav>
     </div>
-    <!-- Drawer موبايل -->
     <div id="mobile-drawer" class="drawer" role="dialog" aria-modal="false" aria-label="Mobiles Menü">
       <a href="#about">Über uns</a>
       <a href="#services">Services</a>
@@ -332,13 +336,12 @@
     </div>
   </section>
 
-  <!-- Shop + سلة كاملة -->
+  <!-- Shop + سلة -->
   <section id="shop" aria-labelledby="shop-title">
     <div class="container">
       <h2 id="shop-title">Shop</h2>
       <div id="products-grid" class="grid grid-3" style="margin-bottom:16px"></div>
 
-      <!-- سلة -->
       <div class="card pad">
         <h3 style="margin-top:0">Warenkorb</h3>
         <div id="cart-list" class="cart"></div>
@@ -350,7 +353,7 @@
     </div>
   </section>
 
-  <!-- Booking (تقويم + جدول زمني) -->
+  <!-- Booking -->
   <section id="booking" aria-labelledby="booking-title">
     <div class="container">
       <h2 id="booking-title">Termin buchen</h2>
@@ -362,7 +365,7 @@
             <div class="error" data-err="bk-name"></div>
           </div>
           <div>
-            <!-- 🇸🇦 [تعليق] الهاتف بدون Pattern — يقبل أي إدخال حسب طلبك -->
+            <!-- 🇸🇦 الهاتف بدون Pattern -->
             <label for="bk-phone">Telefonnummer</label>
             <input id="bk-phone" name="phone" required placeholder="Ihre Nummer"/>
             <div class="error" data-err="bk-phone"></div>
@@ -376,24 +379,33 @@
             <select id="bk-service" name="service" required aria-required="true"></select>
             <div class="error" data-err="bk-service"></div>
           </div>
+
+          <!-- 🇸🇦 اختيار الحلّاق من قائمة ثابتة -->
           <div>
             <label for="bk-barber">Barbier wählen (optional)</label>
-            <input id="bk-barber" name="barber" placeholder="z. B. Omar"/>
+            <select id="bk-barber" name="barber">
+              <option value="">Keine Präferenz</option>
+              <option>Omar</option>
+              <option>Farouk</option>
+              <option>Quasi</option>
+            </select>
           </div>
+
+          <!-- 🇸🇦 التاريخ: تقويم مخصص بدل input[type=date] -->
           <div>
-            <!-- اختيار التاريخ (وليس كتابة) -->
             <label for="bk-date">Datum</label>
-            <input id="bk-date" name="date" type="date" required/>
+            <input id="bk-date" name="date" type="hidden" required/>
+            <div id="bk-calendar" class="cal" aria-label="Kalender zur Datumsauswahl"></div>
             <div class="error" data-err="bk-date"></div>
           </div>
         </div>
 
-        <!-- جدول زمني للأوقات المتاحة -->
+        <!-- 🇸🇦 جدول الأوقات -->
         <div style="margin-top:12px">
           <label class="muted">Uhrzeit</label>
           <div id="slot-grid" class="slot-grid" role="listbox" aria-label="Verfügbare Zeiten"></div>
           <input id="bk-time" name="time" type="hidden" required/>
-          <div class="hint" id="booking-hint">Nur verfügbare Zeiten innerhalb der Öffnungszeiten.</div>
+          <div class="cal-legend" id="booking-hint">Geöffnet: Mo–Do, 09:00–18:00. Fr & Sa geschlossen (rot).</div>
           <div class="error" data-err="bk-time"></div>
         </div>
 
@@ -410,7 +422,7 @@
     </div>
   </section>
 
-  <!-- Kontakt + خريطة -->
+  <!-- Kontakt -->
   <section id="kontakt" aria-labelledby="contact-title">
     <div class="container">
       <h2 id="contact-title">Kontakt</h2>
@@ -418,7 +430,7 @@
         <div class="card pad">
           <p><strong>Adresse:</strong> Rheinstr 41-43, 47799 Krefeld</p>
           <p><strong>Telefon:</strong> +49 176 70033950</p>
-          <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap">داكن
+          <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap">
             <a class="btn" href="tel:+4917670033950">Anrufen</a>
             <a class="btn gold" id="contact-whatsapp" href="#">WhatsApp</a>
             <a class="btn" href="#booking">Termin</a>
@@ -426,15 +438,14 @@
         </div>
         <div>
           <iframe class="map" loading="lazy" allowfullscreen
-        src="https://www.google.com/maps?q=Rheinstr%2041-43%2C%2047799%20Krefeld&hl=de&z=16&output=embed"
-        title="Karte – OMAR BARBERSHOP"></iframe>
-
+            src="https://www.google.com/maps?q=Rheinstr%2041-43%2C%2047799%20Krefeld&hl=de&z=16&output=embed"
+            title="Karte – OMAR BARBERSHOP"></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Modal: تأكيد السلة (اسم + هاتف) -->
+  <!-- Modal: Checkout -->
   <div class="modal" id="checkout-modal" aria-hidden="true">
     <div class="modal-box">
       <h3 style="margin:0 0 10px 0">Bestellung bestätigen</h3>
@@ -472,15 +483,13 @@
   <script>
     /* ===========================================================
        🇸🇦 [تعليق عربي - ثوابت أساسية]
-       - رقم الواتساب (E.164).
-       - ساعات العمل/العطل.
-       - الخدمات/المنتجات.
-       - كله كما طلبت مع واجهة موبايل محسّنة.
+       - الدوام الجديد: Mo–Do 09–18 (Fr/Sa/So عطلة).
     ============================================================ */
     const WHATSAPP_PHONE_INTL = "+4917670033950";
     const BUSINESS_NAME_DE = "OMAR BARBERSHOP";
 
-    const OPENING_HOURS = { mo:[9,19], di:[9,19], mi:[9,19], do:[9,19], fr:[9,20], sa:[10,18], so:null };
+    /* 🇸🇦 ساعات العمل: الإثنين–الخميس فقط 9–18، الجمعة/السبت/الأحد عطلة */
+    const OPENING_HOURS = { mo:[9,18], di:[9,18], mi:[9,18], do:[9,18], fr:null, sa:null, so:null };
     const EXCLUDED_DATES = ["2025-12-25", "2025-12-31"];
 
     const SERVICES = [
@@ -492,15 +501,15 @@
       { id:"express",name:"Express Schnitt", price:24,  desc:"Wenn es schnell gehen muss" }
     ];
 
+    /* 🇸🇦 منتجات مع صور محلية */
     const PRODUCTS = [
-    { id:"pomade",  name:"Haarpomade Strong Hold", price:14.9, img:"./t2.jpeg?v=1", f1:"Starker Halt",    f2:"Natürlicher Glanz" },
-    { id:"beardoil",name:"Bartöl Zedernholz",      price:12.5, img:"./t3.jpeg?v=1", f1:"Pflegt & duftet", f2:"Weiches Finish" },
-    { id:"shampoo", name:"Haarshampoo Mild",       price:9.9,  img:"./t4.jpeg?v=1", f1:"Sanfte Reinigung", f2:"Für tägliche Pflege" },
-
-  ];
+      { id:"pomade",  name:"Haarpomade Strong Hold", price:14.9, img:"./t2.jpeg?v=1", f1:"Starker Halt",    f2:"Natürlicher Glanz" },
+      { id:"beardoil",name:"Bartöl Zedernholz",      price:12.5, img:"./t3.jpeg?v=1", f1:"Pflegt & duftet", f2:"Weiches Finish" },
+      { id:"shampoo", name:"Haarshampoo Mild",       price:9.9,  img:"./t4.jpeg?v=1", f1:"Sanfte Reinigung", f2:"Für tägliche Pflege" }
+    ];
 
     /* ===========================================================
-       🇸🇦 [تعليق عربي - أدوات مساعدة] تنسيقات واتساب/يورو/أيام
+       🇸🇦 أدوات مساعدة
     ============================================================ */
     const formatEuro = (n)=> new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(n);
     const dayKey = (idx)=>['so','mo','di','mi','do','fr','sa'][idx];
@@ -540,7 +549,7 @@
     }
 
     /* ===========================================================
-       🇸🇦 متجر + سلة — يعمل على الموبايل بسلاسة
+       🇸🇦 متجر + سلة
     ============================================================ */
     const CART = new Map(); // id -> {p, qty}
     function renderProducts(){
@@ -598,7 +607,7 @@
       };
     }
 
-    /* 🇸🇦 نافذة تأكيد + إرسال واتساب للطلبات المجمعة */
+    /* 🇸🇦 نافذة تأكيد + واتساب */
     const modal=document.getElementById('checkout-modal');
     const coName=document.getElementById('co-name');
     const coPhone=document.getElementById('co-phone');
@@ -606,7 +615,6 @@
     document.getElementById('cart-checkout').addEventListener('click', ()=>{
       if(CART.size===0){ alert("Warenkorb ist leer."); return; }
       modal.classList.add('show'); modal.setAttribute('aria-hidden','false'); coName.focus();
-      // 🇸🇦 إيقاف تمرير الخلفية أثناء فتح المودال لمنع “اهتزاز” الموبايل
       document.body.style.overflow='hidden';
     });
     document.getElementById('co-cancel').addEventListener('click', ()=>{
@@ -636,9 +644,14 @@ Notiz: ${coNotes.value.trim()||"—"}`;
     });
 
     /* ===========================================================
-       🇸🇦 Booking: جدول زمني + قفل المواعيد محليًا (موبايل ثابت)
+       🇸🇦 التقويم المخصص + شبكة الأوقات + قفل المواعيد محليًا
     ============================================================ */
     const SLOT_INTERVAL_MIN=30;
+
+    /* 🇸🇦 توليد نص الشهر بالألمانية */
+    const MONTHS_DE = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+    const DOW_DE    = ['So','Mo','Di','Mi','Do','Fr','Sa']; // يبدأ الأحد مثل الصورة
+
     const getDateStr = (d)=> `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
     const getHoursRangeForDate = (date)=> OPENING_HOURS[['so','mo','di','mi','do','fr','sa'][date.getDay()]] || null;
     const isExcluded = (ds)=> EXCLUDED_DATES.includes(ds);
@@ -654,6 +667,7 @@ Notiz: ${coNotes.value.trim()||"—"}`;
       localStorage.setItem('bookedSlots', JSON.stringify(store));
     }
 
+    /* 🇸🇦 إنشاء شبكة أوقات بناءً على الدوام */
     function generateSlots(date){
       const ds=getDateStr(date);
       if(isExcluded(ds)) return [];
@@ -668,6 +682,7 @@ Notiz: ${coNotes.value.trim()||"—"}`;
       }
       return slots;
     }
+
     function renderSlotGridForDate(date){
       const ds=getDateStr(date);
       const grid=document.getElementById('slot-grid'); grid.innerHTML='';
@@ -689,12 +704,96 @@ Notiz: ${coNotes.value.trim()||"—"}`;
       });
     }
 
+    /* 🇸🇦 تقويم مخصص */
+    const calEl = document.getElementById('bk-calendar');
+    const dateInput = document.getElementById('bk-date');
+
+    let viewYear, viewMonth; // الشهر المعروض
+    let selectedDate = null;
+
+    function buildCalendarHeader(){
+      const header = document.createElement('div');
+      header.className='cal-header';
+      const title = document.createElement('div'); title.className='cal-title'; title.id='cal-title';
+      const nav = document.createElement('div'); nav.className='cal-nav';
+      const prev = document.createElement('button'); prev.type='button'; prev.className='cal-btn'; prev.setAttribute('aria-label','Voriger Monat'); prev.innerHTML='&larr;';
+      const next = document.createElement('button'); next.type='button'; next.className='cal-btn'; next.setAttribute('aria-label','Nächster Monat'); next.innerHTML='&rarr;';
+      prev.addEventListener('click', ()=>{ viewMonth--; if(viewMonth<0){viewMonth=11; viewYear--;} renderCalendarGrid(); });
+      next.addEventListener('click', ()=>{ viewMonth++; if(viewMonth>11){viewMonth=0; viewYear++;} renderCalendarGrid(); });
+      nav.append(prev,next);
+      header.append(title, nav);
+      return header;
+    }
+
+    function buildDowRow(){
+      const row = document.createElement('div'); row.className='cal-grid';
+      DOW_DE.forEach((d,idx)=>{
+        const cell=document.createElement('div'); cell.className='cal-dow'; cell.textContent=d;
+        if(idx===5) cell.classList.add('fr'); // Fr
+        if(idx===6) cell.classList.add('sa'); // Sa
+        row.appendChild(cell);
+      });
+      return row;
+    }
+
+    function renderCalendarGrid(){
+      calEl.innerHTML='';
+      const header = buildCalendarHeader();
+      const dow = buildDowRow();
+      const grid = document.createElement('div'); grid.className='cal-grid'; grid.setAttribute('role','grid');
+      const title = header.querySelector('#cal-title');
+      title.textContent = `${MONTHS_DE[viewMonth]} ${viewYear}`;
+
+      // اليوم الأول في الشهر (الأحد=0)
+      const first = new Date(viewYear, viewMonth, 1);
+      const startDow = first.getDay(); // 0..6
+      const daysInMonth = new Date(viewYear, viewMonth+1, 0).getDate();
+
+      // 🇸🇦 فراغات قبل بداية الشهر
+      for(let i=0; i<startDow; i++){
+        const empty = document.createElement('div'); empty.className='cal-day muted'; empty.setAttribute('aria-hidden','true'); empty.textContent='';
+        grid.appendChild(empty);
+      }
+
+      for(let d=1; d<=daysInMonth; d++){
+        const cur = new Date(viewYear, viewMonth, d);
+        const ds = getDateStr(cur);
+        const cell = document.createElement('button');
+        cell.type='button'; cell.className='cal-day'; cell.textContent=d;
+
+        const dow = cur.getDay(); // 0 So .. 6 Sa
+        if(dow===5 || dow===6) cell.style.color = 'var(--holiday)'; // 🇸🇦 تلوين Fr/Sa
+        const closed = !getHoursRangeForDate(cur) || isExcluded(ds);
+        if(closed) cell.classList.add('disabled');
+
+        // اليوم
+        const today = new Date(); const isToday = (cur.toDateString()===today.toDateString());
+        if(isToday) cell.classList.add('today');
+
+        // محدد؟
+        if(selectedDate && getDateStr(selectedDate)===ds) cell.classList.add('selected');
+
+        cell.addEventListener('click', ()=>{
+          if(cell.classList.contains('disabled')) return;
+          selectedDate = cur;
+          dateInput.value = ds;
+          document.querySelector('[data-err="bk-date"]').textContent="";
+          renderCalendarGrid();           // لإعادة رسم التحديد
+          renderSlotGridForDate(cur);     // تحديث الأوقات المتاحة
+        });
+
+        grid.appendChild(cell);
+      }
+
+      calEl.append(header, dow, grid);
+    }
+
+    /* 🇸🇦 إرسال الحجز إلى واتساب + قفل الوقت */
     function handleBookingSubmit(e){
       e.preventDefault();
       const name=document.getElementById('bk-name').value.trim();
-      const phone=document.getElementById('bk-phone').value.trim(); // بدون Pattern
+      const phone=document.getElementById('bk-phone').value.trim();
       const serviceSel=document.getElementById('bk-service');
-      const dateEl=document.getElementById('bk-date');
       const timeHidden=document.getElementById('bk-time');
       const barber=document.getElementById('bk-barber').value.trim();
       const notes=document.getElementById('bk-notes').value.trim();
@@ -704,11 +803,11 @@ Notiz: ${coNotes.value.trim()||"—"}`;
       setE('bk-name', name? "": "Bitte füllen Sie dieses Pflichtfeld aus.");
       setE('bk-phone', phone? "": "Bitte füllen Sie dieses Pflichtfeld aus.");
       setE('bk-service', serviceSel.value? "": "Bitte füllen Sie dieses Pflichtfeld aus.");
-      setE('bk-date', dateEl.value? "": "Bitte füllen Sie dieses Pflichtfeld aus.");
+      setE('bk-date', dateInput.value? "": "Bitte füllen Sie dieses Pflichtfeld aus.");
       setE('bk-time', timeHidden.value? "": "Bitte füllen Sie dieses Pflichtfeld aus.");
       if(!ok) return;
 
-      const dateStr=dateEl.value, timeStr=timeHidden.value;
+      const dateStr=dateInput.value, timeStr=timeHidden.value;
       const dt=new Date(`${dateStr}T${timeStr}:00`);
       const range=getHoursRangeForDate(dt);
       let within=false; if(range){ const [s,e]=range; const h=dt.getHours()+dt.getMinutes()/60; within=h>=s && h<=e; }
@@ -734,30 +833,25 @@ Notizen: ${notes||'—'}`;
       setTimeout(()=>{
         btn.classList.remove('loading'); status.textContent='';
         window.open(toWhatsAppLink(message),'_blank','noopener');
-        saveBooking(dateStr, timeStr); // 🇸🇦 اقفال الوقت محليًا
-        renderSlotGridForDate(new Date(dateStr));
+        saveBooking(dateStr, timeStr);      // 🇸🇦 قفل الموعد محليًا
+        renderSlotGridForDate(new Date(dateStr)); // تحديث الأوقات بعد القفل
       }, 350);
     }
 
-    /* 🇸🇦 واتساب عام */
+    /* 🇸🇦 واتساب عام + منيو الجوال */
     function wireContactWhatsApp(){
       const a=document.getElementById('contact-whatsapp');
       const hello=`Hallo ${BUSINESS_NAME_DE}! Ich habe eine Frage.`;
       a.href=toWhatsAppLink(hello);
     }
-
-    /* 🇸🇦 قائمة الهاتف (Drawer) — فتح/إغلاق + إغلاق تلقائي عند النقر */
     function wireMobileMenu(){
       const toggle=document.getElementById('nav-toggle');
       const drawer=document.getElementById('mobile-drawer');
       const links=[...drawer.querySelectorAll('a')];
-
       const close=()=>{ drawer.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
       const open =()=>{ drawer.classList.add('open'); toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
-
       toggle.addEventListener('click', ()=> drawer.classList.contains('open') ? close() : open());
       links.forEach(a=> a.addEventListener('click', close));
-      // اغلاق عند الضغط خارج
       document.addEventListener('click', (e)=>{
         if(!drawer.classList.contains('open')) return;
         if(e.target.closest('#mobile-drawer') || e.target.closest('#nav-toggle')) return;
@@ -765,7 +859,7 @@ Notizen: ${notes||'—'}`;
       });
     }
 
-    /* 🇸🇦 تهيئة عامة */
+    /* 🇸🇦 تهيئة */
     function init(){
       document.getElementById('year').textContent=new Date().getFullYear();
       renderTodayBadge();
@@ -775,19 +869,24 @@ Notizen: ${notes||'—'}`;
       wireContactWhatsApp();
       wireMobileMenu();
 
-      // تاريخ افتراضي: أول يوم مفتوح
-      const dateEl=document.getElementById('bk-date');
-      const today=new Date(); let d=new Date(today);
+      // 🇸🇦 ضبط التقويم: اعرض أقرب يوم عمل (Mo–Do)
+      const today=new Date();
+      let d=new Date(today);
+      // انتقل للأمام حتى تجد يوم مفتوح
       for(let i=0;i<31;i++){
-        const ds = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
         const k = dayKey(d.getDay());
-        if(OPENING_HOURS[k] && !EXCLUDED_DATES.includes(ds)){ dateEl.value=ds; break; }
+        const ds = getDateStr(d);
+        if(OPENING_HOURS[k] && !EXCLUDED_DATES.includes(ds)){ selectedDate=new Date(d); break; }
         d.setDate(d.getDate()+1);
       }
-      renderSlotGridForDate(new Date(dateEl.value));
+      viewYear = (selectedDate||today).getFullYear();
+      viewMonth = (selectedDate||today).getMonth();
+
+      dateInput.value = selectedDate ? getDateStr(selectedDate) : '';
+      renderCalendarGrid();
+      if(selectedDate) renderSlotGridForDate(selectedDate);
 
       document.getElementById('booking-form').addEventListener('submit', handleBookingSubmit);
-      dateEl.addEventListener('change', (e)=> renderSlotGridForDate(new Date(e.target.value)));
     }
 
     init();
