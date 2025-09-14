@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- ============================================= -->
+  <!-- 🇸🇦 [تعليق عربي - Head & SEO]
+       - تهيئة أساسية + OG/Twitter + JSON-LD.
+       - عدّل العنوان/الوصف/الصورة عند الحاجة.
+  -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#0b0b0d"/>
+  <title>OMAR BARBERSHOP – Präzision & Stil</title>
+  <meta name="description" content="OMAR BARBERSHOP: Schnitt, Bart-Rituale & Pflege. Termin buchen oder Produkte shoppen – Bestellung per WhatsApp."/>
+
+  <!-- OG -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="OMAR BARBERSHOP – Präzision & Stil"/>
+  <meta property="og:description" content="Termin online sichern oder Produkte shoppen. WhatsApp-Bestellung in Sekunden."/>
+  <meta property="og:image" content="t1.png" />
+  <meta property="og:url" content="https://example.com/"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="OMAR BARBERSHOP – Präzision & Stil"/>
+  <meta name="twitter:description" content="Termin online sichern oder Produkte shoppen. WhatsApp-Bestellung in Sekunden."/>
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json" id="jsonld-local">
+  {
+    "@context": "https://schema.org",
+    "@type": "Barbershop",
+    "name": "OMAR BARBERSHOP",
+    "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Musterstraße 12",
+      "addressLocality": "Berlin",
+      "postalCode": "10115",
+      "addressCountry": "DE"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 52.520008, "longitude": 13.404954 },
+    "telephone": "+49 176 70033950",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday"], "opens": "09:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday"], "opens": "09:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday"], "opens": "09:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday"], "opens": "09:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "09:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "10:00", "closes": "18:00" }
+    ],
+    "url": "https://example.com/",
+    "priceRange": "€€"
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       🇸🇦 [تعليق عربي - متغيرات التصميم]
+       عدّل ألوان الثيم من هنا.
+    ============================================================ */
+    :root{
+      --bg:#0b0b0d; --bg-alt:#121217; --fg:#ededf3;
+      --gold:#d4af37; --muted:#8a8ea0; --accent:#7aa2ff;
+      --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35); --maxw:1200px;
+    }
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--fg);
+      font-family:Inter, system-ui,-apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:radial-gradient(1200px 800px at 70% -10%, rgba(212,175,55,.12), transparent 60%),
+                 linear-gradient(180deg, var(--bg), var(--bg-alt));
+      overflow-x:hidden;
+    }
+    h1,h2,h3{font-family:"Playfair Display", Georgia, serif; letter-spacing:.2px}
+    h1{font-size:clamp(2rem,4vw,3.25rem); line-height:1.1}
+    h2{font-size:clamp(1.5rem,3vw,2.2rem)}
+    h3{font-size:clamp(1.1rem,2vw,1.35rem)}
+    p{color:#d6d7de}
+
+    .container{width:min(100%, var(--maxw)); margin-inline:auto; padding:0 20px}
+    section{padding:64px 0}
+    .grid{display:grid; gap:20px}
+    .grid-2{grid-template-columns:repeat(2, minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3, minmax(0,1fr))}
+    @media (max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+    .card{background:linear-gradient(180deg,#14151a,#0f1014); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .pad{padding:18px}
+    .muted{color:var(--muted)}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(212,175,55,.35);border-radius:999px;background:rgba(212,175,55,.08);backdrop-filter:blur(6px)}
+    .icon{width:22px;height:22px;flex:0 0 22px;border-radius:8px;background:linear-gradient(135deg, rgba(212,175,55,.35), rgba(255,255,255,.08))}
+    .price{font-weight:700}
+    .product img{width:100%;height:170px;object-fit:cover;border-radius:12px}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none}}
+
+    .btn{
+      --btn-bg:linear-gradient(180deg,#1a1b21,#111218); --btn-border:rgba(212,175,55,.45);
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 18px;border-radius:12px;border:1px solid var(--btn-border);
+      background:var(--btn-bg);color:#fff;text-decoration:none;font-weight:600;
+      transition:transform .15s ease,box-shadow .15s ease,border-color .2s ease; box-shadow:0 8px 18px rgba(0,0,0,.35)
+    }
+    .btn:hover{transform:translateY(-1px);border-color:rgba(212,175,55,.8)}
+    .btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+    .btn.gold{--btn-bg:linear-gradient(180deg,#e6c762,#c7a02c);--btn-border:rgba(0,0,0,.25);color:#111}
+    .btn.small{padding:10px 14px;font-size:.95rem;border-radius:10px}
+    .btn.loading{pointer-events:none;opacity:.7}
+
+    header{
+      position:sticky; top:0; z-index:10; backdrop-filter:blur(10px);
+      background:linear-gradient(180deg, rgba(11,11,13,.9), rgba(11,11,13,.55));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand img{width:40px;height:40px;border-radius:10px;box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 8px 20px rgba(212,175,55,.25)}
+    .nav-links{display:flex;gap:14px;flex-wrap:wrap}
+    .nav-links a{color:#e9e9ee;text-decoration:none;padding:8px 12px;border-radius:10px}
+    .nav-links a:hover{background:rgba(255,255,255,.06)}
+
+    .hero{position:relative;min-height:68vh;display:grid;place-items:center;background:#0b0b0d;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;filter:grayscale(.1) contrast(1.05) brightness(.8)}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 70% 10%, rgba(11,11,13,.1), rgba(11,11,13,.75)),linear-gradient(180deg, rgba(11,11,13,.7), rgba(11,11,13,.95))}
+    .hero-inner{position:relative;z-index:1;text-align:center;padding:60px 0;animation:fadeUp .6s ease both}
+    .hero h1 span{color:var(--gold)}
+    .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+    .hero .today{margin-top:16px}
+
+    /* سلة */
+    .cart{display:flex;flex-direction:column;gap:8px}
+    .cart-item{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#101217;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px}
+
+    /* جدول زمن */
+    .slot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    @media (max-width:700px){.slot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media (max-width:420px){.slot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    .slot{padding:10px 12px;border-radius:12px;text-align:center;cursor:pointer;border:1px solid rgba(255,255,255,.08);background:#0f1016;color:#fff;transition:transform .12s ease,border-color .2s ease,background .2s ease}
+    .slot:hover{transform:translateY(-1px);border-color:rgba(212,175,55,.8)}
+    .slot.selected{background:linear-gradient(180deg,#e6c762,#c7a02c);color:#111;border-color:rgba(0,0,0,.2)}
+    .slot.disabled{opacity:.45;pointer-events:none;text-decoration:line-through}
+
+    label{font-weight:600}
+    input,select,textarea{
+      width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);
+      background:#0f1016;color:var(--fg);box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)
+    }
+    input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:2px}
+    .error{color:#ff8a8a;font-size:.92rem}
+    .hint{color:#a7abb8;font-size:.92rem}
+
+    .map{border:0;width:100%;height:320px;border-radius:16px;filter:grayscale(.1) contrast(1.05) brightness(.95)}
+    footer{border-top:1px solid rgba(255,255,255,.06);padding:24px 0;color:#bfc3d1;font-size:.95rem}
+
+    /* نافذة تأكيد للسلة (Modal بسيط بدون تبعيات) */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:50}
+    .modal.show{display:flex}
+    .modal-box{width:min(92vw,480px);background:#14151a;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+  </style>
+</head>
+<body>
+  <!-- ============================================= -->
+  <!-- 🇸🇦 [تعليق عربي - الترويسة/اللوجو]
+       - أضفنا SVG ذهبي كـ Data-URI. لتبديله بـ PNG Data-URI:
+         1) استخرج Base64 لملفك PNG.
+         2) ضع الناتج مكان قيمة LOGO_DATA_URI في السكربت (إن وفّرته).
+  -->
+  <header aria-label="Hauptnavigation">
+    <div class="container">
+      <nav>
+        <div class="brand" aria-label="Marke">
+          <!-- 🇸🇦 شعار من ملف محلي t1.png بجانب index.html -->
+        <img alt="OMAR Barbershop Logo" src="./t1.png?v=1" width="100" height="80" />
+
+          <span>OMAR <span class="gold">BARBERSHOP</span></span>
+        </div>
+        <div class="nav-links" role="navigation" aria-label="Abschnitte">
+          <a href="#about">Über uns</a>
+          <a href="#services">Services</a>
+          <a href="#shop">Shop</a>
+          <a href="#booking" class="btn small gold" aria-label="Zum Terminbereich springen">Termin buchen</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================= -->
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-inner">
+      <p class="badge today" id="today-hours" aria-live="polite">Heute geöffnet: —</p>
+      <h1 id="hero-title">Präzision, <span>Stil</span> & Pflege – Ihr Barbershop in der Stadt</h1>
+      <p class="muted">Haarschnitt, Bart-Rituale und Premium-Pflege in ruhiger Atmosphäre.</p>
+      <div class="hero-cta" role="group" aria-label="Hauptaktionen">
+        <a href="#booking" class="btn gold">Termin buchen</a>
+        <a href="#shop" class="btn">Produkte shoppen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über uns -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="container grid grid-2">
+      <div>
+        <h2 id="about-title">Über uns</h2>
+        <p>Bei <strong>OMAR BARBERSHOP</strong> trifft Handwerk auf Wohlgefühl: erfahrene Barber, hygienische Standards und ein ruhiges Ambiente für Ihren perfekten Look.</p>
+        <p class="muted">Ob präziser Fade, klassischer Schnitt oder luxuriöses Bart-Ritual – wir liefern Qualität.</p>
+      </div>
+      <div class="grid">
+        <div class="card pad"><div class="badge"><span class="icon"></span><strong>Präzision</strong></div><p class="muted">Saubere Linien & detailverliebte Übergänge.</p></div>
+        <div class="card pad"><div class="badge"><span class="icon"></span><strong>Rituale</strong></div><p class="muted">Heißes Tuch, Öle & Pflege für den Bart.</p></div>
+        <div class="card pad"><div class="badge"><span class="icon"></span><strong>VIP</strong></div><p class="muted">Entspannter Service – auf Wunsch diskret.</p></div>
+        <div class="card pad"><div class="badge"><span class="icon"></span><strong>Express</strong></div><p class="muted">Schnell & zuverlässig, wenn’s eilig ist.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" aria-labelledby="services-title">
+    <div class="container">
+      <h2 id="services-title">Services</h2>
+      <div id="services-list" class="grid grid-3"></div>
+    </div>
+  </section>
+
+  <!-- Shop + سلة كاملة -->
+  <section id="shop" aria-labelledby="shop-title">
+    <div class="container">
+      <h2 id="shop-title">Shop</h2>
+      <div id="products-grid" class="grid grid-3" style="margin-bottom:16px"></div>
+
+      <!-- سلة -->
+      <div class="card pad">
+        <h3 style="margin-top:0">Warenkorb</h3>
+        <div id="cart-list" class="cart"></div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; gap:12px; flex-wrap:wrap">
+          <div><strong>Zwischensumme: <span id="cart-total">0,00 €</span></strong></div>
+          <button class="btn gold" id="cart-checkout">Zur WhatsApp-Kasse</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking (تقويم + جدول زمني) -->
+  <section id="booking" aria-labelledby="booking-title">
+    <div class="container">
+      <h2 id="booking-title">Termin buchen</h2>
+      <form id="booking-form" class="card pad" aria-describedby="booking-hint">
+        <div class="grid grid-2">
+          <div>
+            <label for="bk-name">Vollständiger Name</label>
+            <input id="bk-name" name="name" required placeholder="Vor- und Nachname"/>
+            <div class="error" data-err="bk-name"></div>
+          </div>
+          <div>
+            <!-- 🇸🇦 [تعليق] الهاتف الآن بدون Pattern — يقبل أي إدخال -->
+            <label for="bk-phone">Telefonnummer</label>
+            <input id="bk-phone" name="phone" required placeholder="Ihre Nummer"/>
+            <div class="error" data-err="bk-phone"></div>
+          </div>
+          <div>
+            <label for="bk-email">E-Mail (optional)</label>
+            <input id="bk-email" name="email" type="email" placeholder="name@domain.de"/>
+          </div>
+          <div>
+            <label for="bk-service">Dienstleistung wählen</label>
+            <select id="bk-service" name="service" required aria-required="true"></select>
+            <div class="error" data-err="bk-service"></div>
+          </div>
+          <div>
+            <label for="bk-barber">Barbier wählen (optional)</label>
+            <input id="bk-barber" name="barber" placeholder="z. B. Omar"/>
+          </div>
+          <div>
+            <!-- اختيار التاريخ (وليس كتابة) -->
+            <label for="bk-date">Datum</label>
+            <input id="bk-date" name="date" type="date" required/>
+            <div class="error" data-err="bk-date"></div>
+          </div>
+        </div>
+
+        <!-- جدول زمني للأوقات المتاحة -->
+        <div style="margin-top:12px">
+          <label class="muted">Uhrzeit</label>
+          <div id="slot-grid" class="slot-grid" role="listbox" aria-label="Verfügbare Zeiten"></div>
+          <input id="bk-time" name="time" type="hidden" required/>
+          <div class="hint" id="booking-hint">Nur verfügbare Zeiten innerhalb der Öffnungszeiten.</div>
+          <div class="error" data-err="bk-time"></div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label for="bk-notes">Notizen (optional)</label>
+          <textarea id="bk-notes" name="notes" rows="3" placeholder="Kurze Notiz…"></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:14px">
+          <button type="submit" class="btn gold" id="bk-submit">Jetzt absenden</button>
+          <span class="muted" aria-live="polite" id="bk-status"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Kontakt + خريطة -->
+  <section id="kontakt" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 id="contact-title">Kontakt</h2>
+      <div class="grid grid-2">
+        <div class="card pad">
+          <p><strong>Adresse:</strong> Musterstraße 12, 10115 Berlin</p>
+          <p><strong>Telefon:</strong> +49 176 70033950</p>
+          <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap">
+            <a class="btn" href="tel:+4917670033950">Anrufen</a>
+            <a class="btn gold" id="contact-whatsapp" href="#">WhatsApp</a>
+            <a class="btn" href="#booking">Termin</a>
+          </div>
+        </div>
+        <div>
+          <iframe class="map" loading="lazy" allowfullscreen
+                  src="https://www.google.com/maps?q=52.520008,13.404954&z=14&output=embed"
+                  title="Karte – OMAR BARBERSHOP"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal: تأكيد السلة (اسم + هاتف) -->
+  <div class="modal" id="checkout-modal" aria-hidden="true">
+    <div class="modal-box">
+      <h3 style="margin:0 0 10px 0">Bestellung bestätigen</h3>
+      <p class="muted" style="margin:0 0 12px 0">Bitte geben Sie Ihre Daten ein. (Telefon ohne Einschränkungen)</p>
+      <div class="grid">
+        <div>
+          <label for="co-name">Vollständiger Name</label>
+          <input id="co-name" placeholder="Vor- und Nachname" required>
+          <div class="error" data-err="co-name"></div>
+        </div>
+        <div>
+          <label for="co-phone">Telefonnummer</label>
+          <input id="co-phone" placeholder="Ihre Nummer" required>
+          <div class="error" data-err="co-phone"></div>
+        </div>
+        <div>
+          <label for="co-notes">Notiz (optional)</label>
+          <input id="co-notes" placeholder="z. B. kurze Frage">
+        </div>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:14px">
+        <button class="btn" id="co-cancel">Abbrechen</button>
+        <button class="btn gold" id="co-confirm">Per WhatsApp senden</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container" style="display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center">
+      <div>© <span id="year"></span> OMAR BARBERSHOP. Alle Rechte vorbehalten.</div>
+      <div class="muted">Notfallzeiten nach Vereinbarung.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===========================================================
+       🇸🇦 [تعليق عربي - ثوابت]
+       - رقم الواتساب بصيغة E.164.
+       - الخدمات/المنتجات.
+    ============================================================ */
+    const WHATSAPP_PHONE_INTL = "+4917670033950";
+    const BUSINESS_NAME_DE = "OMAR BARBERSHOP";
+
+    const OPENING_HOURS = { mo:[9,19], di:[9,19], mi:[9,19], do:[9,19], fr:[9,20], sa:[10,18], so:null };
+    const EXCLUDED_DATES = ["2025-12-25", "2025-12-31"];
+
+    const SERVICES = [
+      { id:"cut",    name:"Herrenschnitt",   price:28,  desc:"Präziser Schnitt inkl. Styling" },
+      { id:"fade",   name:"Skin Fade",       price:35,  desc:"Saubere Übergänge, moderne Form" },
+      { id:"beard",  name:"Bart & Ritual",   price:22,  desc:"Heißes Tuch, Öl & Konturen" },
+      { id:"combo",  name:"Schnitt + Bart",  price:45,  desc:"Komplettpaket für den perfekten Look" },
+      { id:"vip",    name:"VIP Service",     price:65,  desc:"Exklusive Betreuung, flexible Zeiten" },
+      { id:"express",name:"Express Schnitt", price:24,  desc:"Wenn es schnell gehen muss" }
+    ];
+
+    const PRODUCTS = [
+      { id:"pomade",  name:"Haarpomade Strong Hold", price:14.9, img:"https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800&auto=format&fit=crop", f1:"Starker Halt", f2:"Natürlicher Glanz" },
+      { id:"beardoil",name:"Bartöl Zedernholz",      price:12.5, img:"https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800&auto=format&fit=crop", f1:"Pflegt & duftet", f2:"Weiches Finish" },
+      { id:"shampoo", name:"Haarshampoo Mild",       price:9.9,  img:"https://images.unsplash.com/photo-1603650239483-d0a3b08b437e?q=80&w=800&auto=format&fit=crop", f1:"Sanfte Reinigung", f2:"Für tägliche Pflege" },
+      { id:"tonic",   name:"Aftershave Tonic",       price:11.9, img:"https://images.unsplash.com/photo-1576014131795-d8d90b0b8b49?q=80&w=800&auto=format&fit=crop", f1:"Beruhigt die Haut", f2:"Frischer Duft" },
+      { id:"comb",    name:"Bartkamm Holz",          price:7.5,  img:"https://images.unsplash.com/photo-1617575521317-d2974f8a7d1f?q=80&w=800&auto=format&fit=crop", f1:"Antistatisch", f2:"Handlich & robust" },
+      { id:"mask",    name:"Gesichtsmaske Pflege",   price:10.9, img:"https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop", f1:"Feuchtigkeit", f2:"Reinigt porentief" }
+    ];
+
+    /* 🇸🇦 أدوات مساعدة */
+    const formatEuro = (n)=> new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(n);
+    const dayKey = (idx)=>['so','mo','di','mi','do','fr','sa'][idx];
+    const toWhatsAppLink = (text)=> `https://wa.me/${WHATSAPP_PHONE_INTL.replace(/\D/g,'')}?text=${encodeURIComponent(text)}`;
+
+    /* 🇸🇦 شارة دوام اليوم */
+    function renderTodayBadge(){
+      const el=document.getElementById('today-hours');
+      const now=new Date();
+      const key=dayKey(now.getDay());
+      const range=OPENING_HOURS[key];
+      if(!range){ el.textContent="Heute geschlossen"; return; }
+      const [s,e]=range;
+      el.textContent=`Heute geöffnet: ${String(s).padStart(2,'0')}:00–${String(e).padStart(2,'0')}:00`;
+    }
+
+    /* 🇸🇦 خدمات */
+    function renderServices(){
+      const wrap=document.getElementById('services-list'); wrap.innerHTML='';
+      SERVICES.forEach(s=>{
+        const card=document.createElement('div'); card.className='card pad';
+        card.innerHTML=`
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <h3 style="margin:0">${s.name}</h3>
+            <div class="price">${formatEuro(s.price)}</div>
+          </div>
+          <p class="muted" style="margin:.35rem 0 .75rem">${s.desc||''}</p>
+          <a href="#booking" class="btn small" aria-label="Jetzt Termin sichern für ${s.name}">Jetzt Termin sichern</a>
+        `;
+        wrap.appendChild(card);
+      });
+      const sel=document.getElementById('bk-service');
+      sel.innerHTML='<option value="" disabled selected>Bitte auswählen…</option>';
+      SERVICES.forEach(s=>{
+        const opt=document.createElement('option'); opt.value=s.id; opt.textContent=`${s.name} – ${formatEuro(s.price)}`; sel.appendChild(opt);
+      });
+    }
+
+    /* 🇸🇦 متجر + سلة */
+    const CART = new Map(); // id -> {p, qty}
+    function renderProducts(){
+      const grid=document.getElementById('products-grid'); grid.innerHTML='';
+      PRODUCTS.forEach(p=>{
+        const card=document.createElement('div'); card.className='card pad product';
+        card.innerHTML=`
+          <img src="${p.img}" alt="${p.name}" loading="lazy"/>
+          <h3 style="margin:.6rem 0 0">${p.name}</h3>
+          <p class="muted" style="margin:.25rem 0">${p.f1} • ${p.f2}</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; margin:.5rem 0">
+            <div class="price">${formatEuro(p.price)}</div>
+            <div style="display:flex; align-items:center; gap:10px">
+              <label class="muted" for="qty-${p.id}">Menge</label>
+              <input id="qty-${p.id}" type="number" min="1" value="1" style="width:80px"/>
+            </div>
+          </div>
+          <button class="btn small gold" data-add="${p.id}" aria-label="In den Warenkorb: ${p.name}">In den Warenkorb</button>
+        `;
+        grid.appendChild(card);
+      });
+      grid.addEventListener('click', (e)=>{
+        const btn=e.target.closest('button[data-add]'); if(!btn) return;
+        const id=btn.getAttribute('data-add'); const p=PRODUCTS.find(x=>x.id===id);
+        const qty=parseInt(document.getElementById(`qty-${id}`).value||'1',10);
+        const cur=CART.get(id)||{p, qty:0}; cur.qty += Math.max(1, qty); CART.set(id, cur);
+        btn.classList.add('loading'); setTimeout(()=>btn.classList.remove('loading'), 250);
+        renderCart();
+      });
+    }
+    function renderCart(){
+      const list=document.getElementById('cart-list'); list.innerHTML='';
+      let total=0;
+      CART.forEach(({p,qty}, id)=>{
+        const sub=p.price*qty; total+=sub;
+        const row=document.createElement('div'); row.className='cart-item';
+        row.innerHTML=`
+          <div><strong>${p.name}</strong><div class="muted">${qty} × ${formatEuro(p.price)}</div></div>
+          <div style="display:flex; align-items:center; gap:8px">
+            <div><strong>${formatEuro(sub)}</strong></div>
+            <button class="btn small" data-dec="${id}" aria-label="−">−</button>
+            <button class="btn small" data-inc="${id}" aria-label="+">+</button>
+            <button class="btn small" data-del="${id}" aria-label="x">x</button>
+          </div>
+        `;
+        list.appendChild(row);
+      });
+      document.getElementById('cart-total').textContent = formatEuro(total);
+      list.onclick=(e)=>{
+        const t=e.target;
+        const dec=t.closest('button[data-dec]'); const inc=t.closest('button[data-inc]'); const del=t.closest('button[data-del]');
+        if(dec){ const id=dec.getAttribute('data-dec'); const o=CART.get(id); if(!o) return; o.qty=Math.max(1,o.qty-1); CART.set(id,o); renderCart(); }
+        if(inc){ const id=inc.getAttribute('data-inc'); const o=CART.get(id); if(!o) return; o.qty+=1; CART.set(id,o); renderCart(); }
+        if(del){ const id=del.getAttribute('data-del'); CART.delete(id); renderCart(); }
+      };
+    }
+
+    /* 🇸🇦 نافذة تأكيد + إرسال واتساب للطلبات المجمعة */
+    const modal=document.getElementById('checkout-modal');
+    const coName=document.getElementById('co-name');
+    const coPhone=document.getElementById('co-phone');
+    const coNotes=document.getElementById('co-notes');
+    document.getElementById('cart-checkout').addEventListener('click', ()=>{
+      if(CART.size===0){ alert("Warenkorb ist leer."); return; }
+      modal.classList.add('show'); modal.setAttribute('aria-hidden','false'); coName.focus();
+    });
+    document.getElementById('co-cancel').addEventListener('click', ()=>{ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); });
+    document.getElementById('co-confirm').addEventListener('click', ()=>{
+      const name=coName.value.trim();
+      const phone=coPhone.value.trim();
+      if(!name){ document.querySelector('[data-err="co-name"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; return; }
+      if(!phone){ document.querySelector('[data-err="co-phone"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; return; }
+      document.querySelector('[data-err="co-name"]').textContent="";
+      document.querySelector('[data-err="co-phone"]').textContent="";
+      let lines=[]; let sum=0;
+      CART.forEach(({p,qty})=>{ const sub=p.price*qty; sum+=sub; lines.push(`${p.name} — ${qty} × ${p.price.toFixed(2)} € = ${sub.toFixed(2)} €`); });
+      const message =
+`Betreff: Produktbestellung
+Kunde: ${name}
+Telefon: ${phone}
+Positionen:
+${lines.map(l=>"- "+l).join("\n")}
+Zwischensumme: ${sum.toFixed(2)} €
+Notiz: ${coNotes.value.trim()||"—"}`;
+      window.open(toWhatsAppLink(message),'_blank','noopener');
+      modal.classList.remove('show'); modal.setAttribute('aria-hidden','true');
+    });
+
+    /* 🇸🇦 Booking: جدول زمني + قفل المواعيد محليًا */
+    const SLOT_INTERVAL_MIN=30;
+    function dayIdxToKey(d){ return dayKey(d.getDay()); }
+    function getHoursRangeForDate(date){ return OPENING_HOURS[dayIdxToKey(date)]||null; }
+    function getDateStr(d){ const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), dd=String(d.getDate()).padStart(2,'0'); return `${y}-${m}-${dd}`; }
+    function isExcluded(ds){ return EXCLUDED_DATES.includes(ds); }
+
+    function getTakenSlots(dateStr){
+      const store=JSON.parse(localStorage.getItem('bookedSlots')||'{}');
+      return new Set(store[dateStr]||[]);
+    }
+    function saveBooking(dateStr,timeStr){
+      const store=JSON.parse(localStorage.getItem('bookedSlots')||'{}');
+      store[dateStr]=store[dateStr]||[];
+      if(!store[dateStr].includes(timeStr)) store[dateStr].push(timeStr);
+      localStorage.setItem('bookedSlots', JSON.stringify(store));
+    }
+
+    function generateSlots(date){
+      const ds=getDateStr(date);
+      if(isExcluded(ds)) return [];
+      const range=getHoursRangeForDate(date);
+      if(!range) return [];
+      const [startH,endH]=range;
+      const slots=[];
+      for(let h=startH; h<endH; h++){
+        for(let min=0; min<60; min+=SLOT_INTERVAL_MIN){
+          slots.push(`${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`);
+        }
+      }
+      return slots;
+    }
+    function renderSlotGridForDate(date){
+      const ds=getDateStr(date);
+      const grid=document.getElementById('slot-grid'); grid.innerHTML='';
+      const hidden=document.getElementById('bk-time'); hidden.value='';
+      const slots=generateSlots(date);
+      const taken=getTakenSlots(ds);
+      if(slots.length===0){ grid.innerHTML=`<div class="muted">Dieser Zeitpunkt liegt außerhalb der Öffnungszeiten.</div>`; return; }
+      slots.forEach(time=>{
+        const btn=document.createElement('button');
+        btn.type='button'; btn.className='slot'; btn.textContent=time; btn.setAttribute('role','option'); btn.setAttribute('aria-selected','false');
+        if(taken.has(time)) { btn.classList.add('disabled'); btn.setAttribute('aria-disabled','true'); }
+        btn.addEventListener('click', ()=>{
+          if(btn.classList.contains('disabled')) return;
+          grid.querySelectorAll('.slot').forEach(s=>{ s.classList.remove('selected'); s.setAttribute('aria-selected','false'); });
+          btn.classList.add('selected'); btn.setAttribute('aria-selected','true');
+          hidden.value=time; document.querySelector('[data-err="bk-time"]').textContent="";
+        });
+        grid.appendChild(btn);
+      });
+    }
+
+    function handleBookingSubmit(e){
+      e.preventDefault();
+      const name=document.getElementById('bk-name').value.trim();
+      const phone=document.getElementById('bk-phone').value.trim(); // بدون Pattern
+      const serviceSel=document.getElementById('bk-service');
+      const dateEl=document.getElementById('bk-date');
+      const timeHidden=document.getElementById('bk-time');
+      const barber=document.getElementById('bk-barber').value.trim();
+      const notes=document.getElementById('bk-notes').value.trim();
+
+      let ok=true;
+      if(!name){ document.querySelector('[data-err="bk-name"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; ok=false; } else document.querySelector('[data-err="bk-name"]').textContent="";
+      if(!phone){ document.querySelector('[data-err="bk-phone"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; ok=false; } else document.querySelector('[data-err="bk-phone"]').textContent="";
+      if(!serviceSel.value){ document.querySelector('[data-err="bk-service"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; ok=false; } else document.querySelector('[data-err="bk-service"]').textContent="";
+      if(!dateEl.value){ document.querySelector('[data-err="bk-date"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; ok=false; } else document.querySelector('[data-err="bk-date"]').textContent="";
+      if(!timeHidden.value){ document.querySelector('[data-err="bk-time"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; ok=false; } else document.querySelector('[data-err="bk-time"]').textContent="";
+      if(!ok) return;
+
+      const dateStr=dateEl.value, timeStr=timeHidden.value;
+      // ضمن الدوام
+      const dt=new Date(`${dateStr}T${timeStr}:00`);
+      const range=getHoursRangeForDate(dt);
+      let within=false; if(range){ const [s,e]=range; const h=dt.getHours()+dt.getMinutes()/60; within=h>=s && h<=e; }
+      if(!within){ document.querySelector('[data-err="bk-time"]').textContent="Dieser Zeitpunkt liegt außerhalb der Öffnungszeiten."; return; }
+      if(isExcluded(dateStr)){ document.querySelector('[data-err="bk-date"]').textContent="Dieser Zeitpunkt liegt außerhalb der Öffnungszeiten."; return; }
+
+      const service=SERVICES.find(s=>s.id===serviceSel.value);
+      const dateDE=new Intl.DateTimeFormat('de-DE',{dateStyle:'medium'}).format(new Date(dateStr));
+      const timeDE=timeStr;
+
+      const message =
+`Betreff: Termin-Anfrage
+Name: ${name}
+Telefon: ${phone}
+Dienstleistung: ${service?.name||'-'}
+Datum: ${dateDE}
+Uhrzeit: ${timeDE}
+Barbier: ${barber||'—'}
+Notizen: ${notes||'—'}`;
+
+      const btn=document.getElementById('bk-submit'); const status=document.getElementById('bk-status');
+      btn.classList.add('loading'); status.textContent='Bitte warten…';
+      setTimeout(()=>{
+        btn.classList.remove('loading'); status.textContent='';
+        window.open(toWhatsAppLink(message),'_blank','noopener');
+        // اقفال الوقت محليًا
+        saveBooking(dateStr, timeStr);
+        renderSlotGridForDate(new Date(dateStr));
+      }, 400);
+    }
+
+    /* واتساب عام */
+    function wireContactWhatsApp(){
+      const a=document.getElementById('contact-whatsapp');
+      const hello=`Hallo ${BUSINESS_NAME_DE}! Ich habe eine Frage.`;
+      a.href=toWhatsAppLink(hello);
+    }
+
+    /* تهيئة */
+    function init(){
+      document.getElementById('year').textContent=new Date().getFullYear();
+      renderTodayBadge();
+      renderServices();
+      renderProducts();
+      renderCart();
+      wireContactWhatsApp();
+
+      // تاريخ افتراضي: أول يوم مفتوح
+      const dateEl=document.getElementById('bk-date');
+      const today=new Date(); let d=new Date(today);
+      for(let i=0;i<31;i++){
+        const ds = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+        const k = dayKey(d.getDay());
+        if(OPENING_HOURS[k] && !EXCLUDED_DATES.includes(ds)){ dateEl.value=ds; break; }
+        d.setDate(d.getDate()+1);
+      }
+      renderSlotGridForDate(new Date(dateEl.value));
+
+      dateEl.addEventListener('change', (e)=> renderSlotGridForDate(new Date(e.target.value)));
+      document.getElementById('booking-form').addEventListener('submit', handleBookingSubmit);
+    }
+
+    init();
+  </script>
+</body>
+</html>
