@@ -119,8 +119,22 @@
     .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(212,175,55,.35);border-radius:999px;background:rgba(212,175,55,.08)}
     .icon{width:20px;height:20px;border-radius:8px;background:linear-gradient(135deg, rgba(212,175,55,.35), rgba(255,255,255,.08))}
     .price{font-weight:700}
-    .product img{width:100%;height:180px;object-fit:cover;border-radius:12px}
-    @media (min-width:600px){ .product img{height:170px} }
+:root{
+  --prod-img-h-mobile: 260px;
+  --prod-img-h-sm: 300px;
+  --prod-img-h-lg: 340px;
+}
+
+.product img{
+  width:100%;
+  height:var(--prod-img-h-mobile);
+  object-fit:contain; /* ✅ يعرض الصورة كاملة */
+  background:#0f1016; /* خلفية داكنة حول الصورة عند وجود فراغ */
+  border-radius:12px;
+}
+
+@media (min-width:600px){ .product img{ height:var(--prod-img-h-sm); } }
+@media (min-width:980px){ .product img{ height:var(--prod-img-h-lg); } }    @media (min-width:600px){ .product img{height:170px} }
 
     /* 🇸🇦 أزرار كبيرة للمس + حالات تركيز واضحة */
     .btn{
@@ -475,13 +489,15 @@
     ];
 
     const PRODUCTS = [
-      { id:"pomade",  name:"Haarpomade Strong Hold", price:14.9, img:"https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800&auto=format&fit=crop", f1:"Starker Halt", f2:"Natürlicher Glanz" },
-      { id:"beardoil",name:"Bartöl Zedernholz",      price:12.5, img:"https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800&auto=format&fit=crop", f1:"Pflegt & duftet", f2:"Weiches Finish" },
-      { id:"shampoo", name:"Haarshampoo Mild",       price:9.9,  img:"https://images.unsplash.com/photo-1603650239483-d0a3b08b437e?q=80&w=800&auto=format&fit=crop", f1:"Sanfte Reinigung", f2:"Für tägliche Pflege" },
-      { id:"tonic",   name:"Aftershave Tonic",       price:11.9, img:"https://images.unsplash.com/photo-1576014131795-d8d90b0b8b49?q=80&w=800&auto=format&fit=crop", f1:"Beruhigt die Haut", f2:"Frischer Duft" },
-      { id:"comb",    name:"Bartkamm Holz",          price:7.5,  img:"https://images.unsplash.com/photo-1617575521317-d2974f8a7d1f?q=80&w=800&auto=format&fit=crop", f1:"Antistatisch", f2:"Handlich & robust" },
-      { id:"mask",    name:"Gesichtsmaske Pflege",   price:10.9, img:"https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop", f1:"Feuchtigkeit", f2:"Reinigt porentief" }
-    ];
+    { id:"pomade",  name:"Haarpomade Strong Hold", price:14.9, img:"./t2.jpeg?v=1", f1:"Starker Halt",    f2:"Natürlicher Glanz" },
+    { id:"beardoil",name:"Bartöl Zedernholz",      price:12.5, img:"./t3.jpeg?v=1", f1:"Pflegt & duftet", f2:"Weiches Finish" },
+    { id:"shampoo", name:"Haarshampoo Mild",       price:9.9,  img:"./t4.jpeg?v=1", f1:"Sanfte Reinigung", f2:"Für tägliche Pflege" },
+
+    /* 👇 الباقي بدون تغيير (يبقوا على صورهم الحالية أو بدّلهم لاحقاً إذا حبيت) */
+    { id:"tonic",   name:"Aftershave Tonic",       price:11.9, img:"https://images.unsplash.com/photo-1576014131795-d8d90b0b8b49?q=80&w=800&auto=format&fit=crop", f1:"Beruhigt die Haut", f2:"Frischer Duft" },
+    { id:"comb",    name:"Bartkamm Holz",          price:7.5,  img:"https://images.unsplash.com/photo-1617575521317-d2974f8a7d1f?q=80&w=800&auto=format&fit=crop", f1:"Antistatisch",     f2:"Handlich & robust" },
+    { id:"mask",    name:"Gesichtsmaske Pflege",   price:10.9, img:"https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop", f1:"Feuchtigkeit",     f2:"Reinigt porentief" }
+  ];
 
     /* ===========================================================
        🇸🇦 [تعليق عربي - أدوات مساعدة] تنسيقات واتساب/يورو/أيام
