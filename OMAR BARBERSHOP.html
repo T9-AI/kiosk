@@ -2,12 +2,14 @@
 <html lang="de">
 <head>
   <!-- ============================================= -->
-  <!-- 🇸🇦 [تعليق عربي - Head & SEO]
-       - تهيئة أساسية + OG/Twitter + JSON-LD.
-       - عدّل العنوان/الوصف/الصورة عند الحاجة.
+  <!-- 🇸🇦 [تعليق عربي - Head & SEO (ثابت ومُحسّن للموبايل)]
+       - meta viewport لضبط القياس على الهواتف.
+       - theme-color لواجهة المتصفح الداكنة.
+       - OG/Twitter للصورة (t1.png) حتى تظهر الهوية عند المشاركة.
+       - JSON-LD لنوع Barbershop (محركات البحث).
   -->
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <meta name="theme-color" content="#0b0b0d"/>
   <title>OMAR BARBERSHOP – Präzision & Stil</title>
   <meta name="description" content="OMAR BARBERSHOP: Schnitt, Bart-Rituale & Pflege. Termin buchen oder Produkte shoppen – Bestellung per WhatsApp."/>
@@ -23,7 +25,7 @@
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="OMAR BARBERSHOP – Präzision & Stil"/>
   <meta name="twitter:description" content="Termin online sichern oder Produkte shoppen. WhatsApp-Bestellung in Sekunden."/>
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop"/>
+  <meta name="twitter:image" content="t1.png"/>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -36,7 +38,7 @@
     "@context": "https://schema.org",
     "@type": "Barbershop",
     "name": "OMAR BARBERSHOP",
-    "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop",
+    "image": "t1.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Musterstraße 12",
@@ -61,104 +63,173 @@
 
   <style>
     /* ===========================================================
-       🇸🇦 [تعليق عربي - متغيرات التصميم]
-       عدّل ألوان الثيم من هنا.
+       🇸🇦 [تعليق عربي - متغيرات الثيم]
+       - ثيم داكن فاخر + ذهب.
+       - يمكن تعديل الألوان سريعًا من هنا.
     ============================================================ */
     :root{
       --bg:#0b0b0d; --bg-alt:#121217; --fg:#ededf3;
       --gold:#d4af37; --muted:#8a8ea0; --accent:#7aa2ff;
       --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35); --maxw:1200px;
+      --header-h:64px; /* 🇸🇦 ارتفاع الهيدر لضبط مسافة التمرير للأقسام */
     }
+
+    /* 🇸🇦 قاعدة موبايل أولاً + صندوق القياس */
+    *{box-sizing:border-box}
     html,body{height:100%}
+    html{scroll-behavior:smooth}
     body{
       margin:0; color:var(--fg);
       font-family:Inter, system-ui,-apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:radial-gradient(1200px 800px at 70% -10%, rgba(212,175,55,.12), transparent 60%),
                  linear-gradient(180deg, var(--bg), var(--bg-alt));
       overflow-x:hidden;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      -webkit-tap-highlight-color: transparent; /* 🇸🇦 منع الوميض الأزرق على Android */
     }
-    h1,h2,h3{font-family:"Playfair Display", Georgia, serif; letter-spacing:.2px}
-    h1{font-size:clamp(2rem,4vw,3.25rem); line-height:1.1}
-    h2{font-size:clamp(1.5rem,3vw,2.2rem)}
-    h3{font-size:clamp(1.1rem,2vw,1.35rem)}
-    p{color:#d6d7de}
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+    }
 
-    .container{width:min(100%, var(--maxw)); margin-inline:auto; padding:0 20px}
-    section{padding:64px 0}
-    .grid{display:grid; gap:20px}
-    .grid-2{grid-template-columns:repeat(2, minmax(0,1fr))}
-    .grid-3{grid-template-columns:repeat(3, minmax(0,1fr))}
-    @media (max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+    /* 🇸🇦 عناوين وأحجام خط مرنة للموبايل */
+    h1,h2,h3{font-family:"Playfair Display", Georgia, serif; letter-spacing:.2px; margin:0 0 .4em}
+    h1{font-size:clamp(1.8rem, 4.5vw, 3rem); line-height:1.15}
+    h2{font-size:clamp(1.4rem, 3.8vw, 2.1rem)}
+    h3{font-size:clamp(1.05rem, 3.2vw, 1.3rem)}
+    p{color:#d6d7de; margin:.6em 0}
 
+    /* 🇸🇦 حاويات ومسافات مريحة على الهاتف */
+    .container{width:min(100%, var(--maxw)); margin-inline:auto; padding:0 16px}
+    section{padding:44px 0}
+    @media (min-width:940px){section{padding:64px 0}}
+    section, section *{scroll-margin-top:calc(var(--header-h) + 12px)} /* 🇸🇦 العناوين لا تختبئ خلف الهيدر */
+
+    /* 🇸🇦 شبكات مرنة للموبايل أولاً */
+    .grid{display:grid; gap:16px}
+    .grid-2{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr}
+    @media (min-width:600px){ .grid-2{grid-template-columns:repeat(2, minmax(0,1fr))} }
+    @media (min-width:740px){ .grid-3{grid-template-columns:repeat(2, minmax(0,1fr))} }
+    @media (min-width:980px){ .grid-3{grid-template-columns:repeat(3, minmax(0,1fr))} }
+
+    /* 🇸🇦 بطاقات وأساسيات */
     .card{background:linear-gradient(180deg,#14151a,#0f1014); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); box-shadow:var(--shadow)}
-    .pad{padding:18px}
+    .pad{padding:16px}
     .muted{color:var(--muted)}
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(212,175,55,.35);border-radius:999px;background:rgba(212,175,55,.08);backdrop-filter:blur(6px)}
-    .icon{width:22px;height:22px;flex:0 0 22px;border-radius:8px;background:linear-gradient(135deg, rgba(212,175,55,.35), rgba(255,255,255,.08))}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(212,175,55,.35);border-radius:999px;background:rgba(212,175,55,.08)}
+    .icon{width:20px;height:20px;border-radius:8px;background:linear-gradient(135deg, rgba(212,175,55,.35), rgba(255,255,255,.08))}
     .price{font-weight:700}
-    .product img{width:100%;height:170px;object-fit:cover;border-radius:12px}
+    .product img{width:100%;height:180px;object-fit:cover;border-radius:12px}
+    @media (min-width:600px){ .product img{height:170px} }
 
-    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none}}
-
+    /* 🇸🇦 أزرار كبيرة للمس + حالات تركيز واضحة */
     .btn{
       --btn-bg:linear-gradient(180deg,#1a1b21,#111218); --btn-border:rgba(212,175,55,.45);
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 18px;border-radius:12px;border:1px solid var(--btn-border);
+      min-height:44px; padding:12px 16px;border-radius:12px;border:1px solid var(--btn-border);
       background:var(--btn-bg);color:#fff;text-decoration:none;font-weight:600;
       transition:transform .15s ease,box-shadow .15s ease,border-color .2s ease; box-shadow:0 8px 18px rgba(0,0,0,.35)
     }
+    .btn:active{transform:translateY(0)}
     .btn:hover{transform:translateY(-1px);border-color:rgba(212,175,55,.8)}
     .btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
     .btn.gold{--btn-bg:linear-gradient(180deg,#e6c762,#c7a02c);--btn-border:rgba(0,0,0,.25);color:#111}
     .btn.small{padding:10px 14px;font-size:.95rem;border-radius:10px}
     .btn.loading{pointer-events:none;opacity:.7}
 
+    /* 🇸🇦 رأس الموقع (هيدر) — ثابت وهادئ على الموبايل */
     header{
-      position:sticky; top:0; z-index:10; backdrop-filter:blur(10px);
-      background:linear-gradient(180deg, rgba(11,11,13,.9), rgba(11,11,13,.55));
+      position:sticky; top:0; z-index:20; 
+      background:linear-gradient(180deg, rgba(11,11,13,.95), rgba(11,11,13,.85));
       border-bottom:1px solid rgba(255,255,255,.06);
+      height:var(--header-h);
     }
-    nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
-    .brand img{width:40px;height:40px;border-radius:10px;box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 8px 20px rgba(212,175,55,.25)}
-    .nav-links{display:flex;gap:14px;flex-wrap:wrap}
-    .nav-links a{color:#e9e9ee;text-decoration:none;padding:8px 12px;border-radius:10px}
+    nav{display:flex;align-items:center;justify-content:space-between;height:var(--header-h)}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800; line-height:1}
+    .brand img{width:40px;height:40px;border-radius:10px;object-fit:contain;box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 8px 20px rgba(212,175,55,.25)}
+    .brand span{font-size:1rem}
+    .nav-links{display:none;gap:12px;flex-wrap:wrap}
+    .nav-links a{color:#e9e9ee;text-decoration:none;padding:8px 10px;border-radius:10px}
     .nav-links a:hover{background:rgba(255,255,255,.06)}
 
-    .hero{position:relative;min-height:68vh;display:grid;place-items:center;background:#0b0b0d;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;filter:grayscale(.1) contrast(1.05) brightness(.8)}
-    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 70% 10%, rgba(11,11,13,.1), rgba(11,11,13,.75)),linear-gradient(180deg, rgba(11,11,13,.7), rgba(11,11,13,.95))}
-    .hero-inner{position:relative;z-index:1;text-align:center;padding:60px 0;animation:fadeUp .6s ease both}
-    .hero h1 span{color:var(--gold)}
-    .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-    .hero .today{margin-top:16px}
+    /* 🇸🇦 زر همبرغر للموبايل */
+    .nav-toggle{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:44px; height:44px; border-radius:10px; border:1px solid rgba(255,255,255,.08);
+      background:#15161b; color:#fff; cursor:pointer;
+    }
+    .nav-toggle:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
 
-    /* سلة */
+    /* 🇸🇦 Drawer قائم للموبايل */
+    .drawer{
+      position:fixed; inset:auto 0 0 0; top:var(--header-h);
+      background:linear-gradient(180deg, #121217, #0f1014);
+      border-top:1px solid rgba(255,255,255,.07);
+      transform:translateY(-8px); opacity:0; pointer-events:none;
+      transition:transform .18s ease, opacity .18s ease; z-index:19; padding:12px 16px 18px;
+    }
+    .drawer.open{transform:none; opacity:1; pointer-events:auto}
+    .drawer a{display:block; padding:12px 10px; border-radius:10px; color:#e9e9ee; text-decoration:none; font-weight:600}
+    .drawer a + a{margin-top:6px}
+    .drawer a:hover{background:rgba(255,255,255,.06)}
+
+    /* 🇸🇦 إظهار روابط الديسكتوب عندما تتسع الشاشة */
+    @media (min-width:980px){
+      .nav-toggle{display:none}
+      .nav-links{display:flex}
+      .drawer{display:none}
+      .brand span{font-size:1.05rem}
+    }
+
+    /* 🇸🇦 الهيرو: ارتفاع ثابت للموبايل باستخدام svh لتجنّب “قفز” شريط العنوان */
+    .hero{position:relative; min-height:70svh; display:grid; place-items:center; background:#0b0b0d; overflow:hidden}
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      filter:grayscale(.1) contrast(1.05) brightness(.85);
+      will-change:opacity; /* 🇸🇦 بدون parallax على الموبايل لتثبيت الحركة */
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0;
+      background:radial-gradient(60% 60% at 70% 10%, rgba(11,11,13,.15), rgba(11,11,13,.82)),
+                 linear-gradient(180deg, rgba(11,11,13,.70), rgba(11,11,13,.92));
+    }
+    .hero-inner{position:relative; z-index:1; text-align:center; padding:48px 0}
+    .hero h1 span{color:var(--gold)}
+    .hero-cta{display:grid; gap:10px; grid-template-columns:1fr}
+    @media (min-width:520px){ .hero-cta{grid-template-columns:repeat(2,1fr)} }
+    .hero .today{margin-top:14px}
+
+    /* 🇸🇦 السلة */
     .cart{display:flex;flex-direction:column;gap:8px}
     .cart-item{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#101217;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px}
 
-    /* جدول زمن */
-    .slot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-    @media (max-width:700px){.slot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media (max-width:420px){.slot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    /* 🇸🇦 جدول الزمن للحجز (مرن على الموبايل) */
+    .slot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    @media (min-width:540px){.slot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media (min-width:860px){.slot-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
     .slot{padding:10px 12px;border-radius:12px;text-align:center;cursor:pointer;border:1px solid rgba(255,255,255,.08);background:#0f1016;color:#fff;transition:transform .12s ease,border-color .2s ease,background .2s ease}
     .slot:hover{transform:translateY(-1px);border-color:rgba(212,175,55,.8)}
     .slot.selected{background:linear-gradient(180deg,#e6c762,#c7a02c);color:#111;border-color:rgba(0,0,0,.2)}
     .slot.disabled{opacity:.45;pointer-events:none;text-decoration:line-through}
 
+    /* 🇸🇦 عناصر الإدخال — ارتفاع لمس مريح */
     label{font-weight:600}
     input,select,textarea{
-      width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);
+      width:100%;padding:14px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);
       background:#0f1016;color:var(--fg);box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)
     }
     input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:2px}
     .error{color:#ff8a8a;font-size:.92rem}
     .hint{color:#a7abb8;font-size:.92rem}
 
-    .map{border:0;width:100%;height:320px;border-radius:16px;filter:grayscale(.1) contrast(1.05) brightness(.95)}
-    footer{border-top:1px solid rgba(255,255,255,.06);padding:24px 0;color:#bfc3d1;font-size:.95rem}
+    /* 🇸🇦 الخريطة */
+    .map{border:0;width:100%;height:300px;border-radius:16px;filter:grayscale(.1) contrast(1.05) brightness(.95)}
+    @media (min-width:740px){ .map{height:320px} }
 
-    /* نافذة تأكيد للسلة (Modal بسيط بدون تبعيات) */
+    footer{border-top:1px solid rgba(255,255,255,.06);padding:20px 0;color:#bfc3d1;font-size:.95rem}
+
+    /* 🇸🇦 Modal تأكيد السلة (بدون اهتزاز) */
     .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:50}
     .modal.show{display:flex}
     .modal-box{width:min(92vw,480px);background:#14151a;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
@@ -166,28 +237,42 @@
 </head>
 <body>
   <!-- ============================================= -->
-  <!-- 🇸🇦 [تعليق عربي - الترويسة/اللوجو]
-       - أضفنا SVG ذهبي كـ Data-URI. لتبديله بـ PNG Data-URI:
-         1) استخرج Base64 لملفك PNG.
-         2) ضع الناتج مكان قيمة LOGO_DATA_URI في السكربت (إن وفّرته).
+  <!-- 🇸🇦 [تعليق عربي - ترويسة محسّنة للموبايل]
+       - زر همبرغر يفتح Drawer.
+       - الروابط كبيرة 48px للمس.
+       - الشعار t1.png ثابت 40×40.
   -->
   <header aria-label="Hauptnavigation">
     <div class="container">
       <nav>
         <div class="brand" aria-label="Marke">
-          <!-- 🇸🇦 شعار من ملف محلي t1.png بجانب index.html -->
-        <img alt="OMAR Barbershop Logo" src="./t1.png?v=1" width="100" height="80" />
-
+          <img alt="OMAR Barbershop Logo" src="./t1.png?v=2" />
           <span>OMAR <span class="gold">BARBERSHOP</span></span>
         </div>
+
+        <!-- زر همبرغر للموبايل -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-drawer">
+          <!-- 🇸🇦 أيقونة بسيطة -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+
+        <!-- روابط ديسكتوب -->
         <div class="nav-links" role="navigation" aria-label="Abschnitte">
           <a href="#about">Über uns</a>
           <a href="#services">Services</a>
           <a href="#shop">Shop</a>
-          <a href="#booking" class="btn small gold" aria-label="Zum Terminbereich springen">Termin buchen</a>
+          <a href="#booking" class="btn small gold">Termin buchen</a>
           <a href="#kontakt">Kontakt</a>
         </div>
       </nav>
+    </div>
+    <!-- Drawer موبايل -->
+    <div id="mobile-drawer" class="drawer" role="dialog" aria-modal="false" aria-label="Mobiles Menü">
+      <a href="#about">Über uns</a>
+      <a href="#services">Services</a>
+      <a href="#shop">Shop</a>
+      <a href="#booking">Termin buchen</a>
+      <a href="#kontakt">Kontakt</a>
     </div>
   </header>
 
@@ -214,10 +299,10 @@
         <p class="muted">Ob präziser Fade, klassischer Schnitt oder luxuriöses Bart-Ritual – wir liefern Qualität.</p>
       </div>
       <div class="grid">
-        <div class="card pad"><div class="badge"><span class="icon"></span><strong>Präzision</strong></div><p class="muted">Saubere Linien & detailverliebte Übergänge.</p></div>
-        <div class="card pad"><div class="badge"><span class="icon"></span><strong>Rituale</strong></div><p class="muted">Heißes Tuch, Öle & Pflege für den Bart.</p></div>
-        <div class="card pad"><div class="badge"><span class="icon"></span><strong>VIP</strong></div><p class="muted">Entspannter Service – auf Wunsch diskret.</p></div>
-        <div class="card pad"><div class="badge"><span class="icon"></span><strong>Express</strong></div><p class="muted">Schnell & zuverlässig, wenn’s eilig ist.</p></div>
+        <div class="card pad"><div class="badge"><span class="icon" aria-hidden="true"></span><strong>Präzision</strong></div><p class="muted">Saubere Linien & detailverliebte Übergänge.</p></div>
+        <div class="card pad"><div class="badge"><span class="icon" aria-hidden="true"></span><strong>Rituale</strong></div><p class="muted">Heißes Tuch, Öle & Pflege für den Bart.</p></div>
+        <div class="card pad"><div class="badge"><span class="icon" aria-hidden="true"></span><strong>VIP</strong></div><p class="muted">Entspannter Service – auf Wunsch diskret.</p></div>
+        <div class="card pad"><div class="badge"><span class="icon" aria-hidden="true"></span><strong>Express</strong></div><p class="muted">Schnell & zuverlässig, wenn’s eilig ist.</p></div>
       </div>
     </div>
   </section>
@@ -260,7 +345,7 @@
             <div class="error" data-err="bk-name"></div>
           </div>
           <div>
-            <!-- 🇸🇦 [تعليق] الهاتف الآن بدون Pattern — يقبل أي إدخال -->
+            <!-- 🇸🇦 [تعليق] الهاتف بدون Pattern — يقبل أي إدخال حسب طلبك -->
             <label for="bk-phone">Telefonnummer</label>
             <input id="bk-phone" name="phone" required placeholder="Ihre Nummer"/>
             <div class="error" data-err="bk-phone"></div>
@@ -300,7 +385,7 @@
           <textarea id="bk-notes" name="notes" rows="3" placeholder="Kurze Notiz…"></textarea>
         </div>
 
-        <div style="display:flex; gap:10px; margin-top:14px">
+        <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap">
           <button type="submit" class="btn gold" id="bk-submit">Jetzt absenden</button>
           <span class="muted" aria-live="polite" id="bk-status"></span>
         </div>
@@ -368,9 +453,11 @@
 
   <script>
     /* ===========================================================
-       🇸🇦 [تعليق عربي - ثوابت]
-       - رقم الواتساب بصيغة E.164.
+       🇸🇦 [تعليق عربي - ثوابت أساسية]
+       - رقم الواتساب (E.164).
+       - ساعات العمل/العطل.
        - الخدمات/المنتجات.
+       - كله كما طلبت مع واجهة موبايل محسّنة.
     ============================================================ */
     const WHATSAPP_PHONE_INTL = "+4917670033950";
     const BUSINESS_NAME_DE = "OMAR BARBERSHOP";
@@ -396,7 +483,9 @@
       { id:"mask",    name:"Gesichtsmaske Pflege",   price:10.9, img:"https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop", f1:"Feuchtigkeit", f2:"Reinigt porentief" }
     ];
 
-    /* 🇸🇦 أدوات مساعدة */
+    /* ===========================================================
+       🇸🇦 [تعليق عربي - أدوات مساعدة] تنسيقات واتساب/يورو/أيام
+    ============================================================ */
     const formatEuro = (n)=> new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(n);
     const dayKey = (idx)=>['so','mo','di','mi','do','fr','sa'][idx];
     const toWhatsAppLink = (text)=> `https://wa.me/${WHATSAPP_PHONE_INTL.replace(/\D/g,'')}?text=${encodeURIComponent(text)}`;
@@ -412,13 +501,13 @@
       el.textContent=`Heute geöffnet: ${String(s).padStart(2,'0')}:00–${String(e).padStart(2,'0')}:00`;
     }
 
-    /* 🇸🇦 خدمات */
+    /* 🇸🇦 خدمات + تعبئة القائمة */
     function renderServices(){
       const wrap=document.getElementById('services-list'); wrap.innerHTML='';
       SERVICES.forEach(s=>{
         const card=document.createElement('div'); card.className='card pad';
         card.innerHTML=`
-          <div style="display:flex; justify-content:space-between; align-items:center">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap">
             <h3 style="margin:0">${s.name}</h3>
             <div class="price">${formatEuro(s.price)}</div>
           </div>
@@ -434,21 +523,23 @@
       });
     }
 
-    /* 🇸🇦 متجر + سلة */
+    /* ===========================================================
+       🇸🇦 متجر + سلة — يعمل على الموبايل بسلاسة
+    ============================================================ */
     const CART = new Map(); // id -> {p, qty}
     function renderProducts(){
       const grid=document.getElementById('products-grid'); grid.innerHTML='';
       PRODUCTS.forEach(p=>{
         const card=document.createElement('div'); card.className='card pad product';
         card.innerHTML=`
-          <img src="${p.img}" alt="${p.name}" loading="lazy"/>
+          <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async"/>
           <h3 style="margin:.6rem 0 0">${p.name}</h3>
           <p class="muted" style="margin:.25rem 0">${p.f1} • ${p.f2}</p>
-          <div style="display:flex; align-items:center; justify-content:space-between; margin:.5rem 0">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin:.5rem 0; gap:10px; flex-wrap:wrap">
             <div class="price">${formatEuro(p.price)}</div>
-            <div style="display:flex; align-items:center; gap:10px">
+            <div style="display:flex; align-items:center; gap:8px">
               <label class="muted" for="qty-${p.id}">Menge</label>
-              <input id="qty-${p.id}" type="number" min="1" value="1" style="width:80px"/>
+              <input id="qty-${p.id}" type="number" min="1" value="1" style="width:90px"/>
             </div>
           </div>
           <button class="btn small gold" data-add="${p.id}" aria-label="In den Warenkorb: ${p.name}">In den Warenkorb</button>
@@ -458,9 +549,9 @@
       grid.addEventListener('click', (e)=>{
         const btn=e.target.closest('button[data-add]'); if(!btn) return;
         const id=btn.getAttribute('data-add'); const p=PRODUCTS.find(x=>x.id===id);
-        const qty=parseInt(document.getElementById(`qty-${id}`).value||'1',10);
-        const cur=CART.get(id)||{p, qty:0}; cur.qty += Math.max(1, qty); CART.set(id, cur);
-        btn.classList.add('loading'); setTimeout(()=>btn.classList.remove('loading'), 250);
+        const qty=Math.max(1, parseInt(document.getElementById(`qty-${id}`).value||'1',10));
+        const cur=CART.get(id)||{p, qty:0}; cur.qty += qty; CART.set(id, cur);
+        btn.classList.add('loading'); setTimeout(()=>btn.classList.remove('loading'), 220);
         renderCart();
       });
     }
@@ -499,8 +590,13 @@
     document.getElementById('cart-checkout').addEventListener('click', ()=>{
       if(CART.size===0){ alert("Warenkorb ist leer."); return; }
       modal.classList.add('show'); modal.setAttribute('aria-hidden','false'); coName.focus();
+      // 🇸🇦 إيقاف تمرير الخلفية أثناء فتح المودال لمنع “اهتزاز” الموبايل
+      document.body.style.overflow='hidden';
     });
-    document.getElementById('co-cancel').addEventListener('click', ()=>{ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); });
+    document.getElementById('co-cancel').addEventListener('click', ()=>{
+      modal.classList.remove('show'); modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+    });
     document.getElementById('co-confirm').addEventListener('click', ()=>{
       const name=coName.value.trim();
       const phone=coPhone.value.trim();
@@ -520,14 +616,16 @@ Zwischensumme: ${sum.toFixed(2)} €
 Notiz: ${coNotes.value.trim()||"—"}`;
       window.open(toWhatsAppLink(message),'_blank','noopener');
       modal.classList.remove('show'); modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
     });
 
-    /* 🇸🇦 Booking: جدول زمني + قفل المواعيد محليًا */
+    /* ===========================================================
+       🇸🇦 Booking: جدول زمني + قفل المواعيد محليًا (موبايل ثابت)
+    ============================================================ */
     const SLOT_INTERVAL_MIN=30;
-    function dayIdxToKey(d){ return dayKey(d.getDay()); }
-    function getHoursRangeForDate(date){ return OPENING_HOURS[dayIdxToKey(date)]||null; }
-    function getDateStr(d){ const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), dd=String(d.getDate()).padStart(2,'0'); return `${y}-${m}-${dd}`; }
-    function isExcluded(ds){ return EXCLUDED_DATES.includes(ds); }
+    const getDateStr = (d)=> `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    const getHoursRangeForDate = (date)=> OPENING_HOURS[['so','mo','di','mi','do','fr','sa'][date.getDay()]] || null;
+    const isExcluded = (ds)=> EXCLUDED_DATES.includes(ds);
 
     function getTakenSlots(dateStr){
       const store=JSON.parse(localStorage.getItem('bookedSlots')||'{}');
@@ -586,15 +684,15 @@ Notiz: ${coNotes.value.trim()||"—"}`;
       const notes=document.getElementById('bk-notes').value.trim();
 
       let ok=true;
-      if(!name){ document.querySelector('[data-err="bk-name"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; ok=false; } else document.querySelector('[data-err="bk-name"]').textContent="";
-      if(!phone){ document.querySelector('[data-err="bk-phone"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; ok=false; } else document.querySelector('[data-err="bk-phone"]').textContent="";
-      if(!serviceSel.value){ document.querySelector('[data-err="bk-service"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; ok=false; } else document.querySelector('[data-err="bk-service"]').textContent="";
-      if(!dateEl.value){ document.querySelector('[data-err="bk-date"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; ok=false; } else document.querySelector('[data-err="bk-date"]').textContent="";
-      if(!timeHidden.value){ document.querySelector('[data-err="bk-time"]').textContent="Bitte füllen Sie dieses Pflichtfeld aus."; ok=false; } else document.querySelector('[data-err="bk-time"]').textContent="";
+      const setE=(k,m)=>{ const el=document.querySelector(`[data-err="${k}"]`); if(el) el.textContent=m||""; if(m) ok=false; }
+      setE('bk-name', name? "": "Bitte füllen Sie dieses Pflichtfeld aus.");
+      setE('bk-phone', phone? "": "Bitte füllen Sie dieses Pflichtfeld aus.");
+      setE('bk-service', serviceSel.value? "": "Bitte füllen Sie dieses Pflichtfeld aus.");
+      setE('bk-date', dateEl.value? "": "Bitte füllen Sie dieses Pflichtfeld aus.");
+      setE('bk-time', timeHidden.value? "": "Bitte füllen Sie dieses Pflichtfeld aus.");
       if(!ok) return;
 
       const dateStr=dateEl.value, timeStr=timeHidden.value;
-      // ضمن الدوام
       const dt=new Date(`${dateStr}T${timeStr}:00`);
       const range=getHoursRangeForDate(dt);
       let within=false; if(range){ const [s,e]=range; const h=dt.getHours()+dt.getMinutes()/60; within=h>=s && h<=e; }
@@ -620,20 +718,38 @@ Notizen: ${notes||'—'}`;
       setTimeout(()=>{
         btn.classList.remove('loading'); status.textContent='';
         window.open(toWhatsAppLink(message),'_blank','noopener');
-        // اقفال الوقت محليًا
-        saveBooking(dateStr, timeStr);
+        saveBooking(dateStr, timeStr); // 🇸🇦 اقفال الوقت محليًا
         renderSlotGridForDate(new Date(dateStr));
-      }, 400);
+      }, 350);
     }
 
-    /* واتساب عام */
+    /* 🇸🇦 واتساب عام */
     function wireContactWhatsApp(){
       const a=document.getElementById('contact-whatsapp');
       const hello=`Hallo ${BUSINESS_NAME_DE}! Ich habe eine Frage.`;
       a.href=toWhatsAppLink(hello);
     }
 
-    /* تهيئة */
+    /* 🇸🇦 قائمة الهاتف (Drawer) — فتح/إغلاق + إغلاق تلقائي عند النقر */
+    function wireMobileMenu(){
+      const toggle=document.getElementById('nav-toggle');
+      const drawer=document.getElementById('mobile-drawer');
+      const links=[...drawer.querySelectorAll('a')];
+
+      const close=()=>{ drawer.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
+      const open =()=>{ drawer.classList.add('open'); toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
+
+      toggle.addEventListener('click', ()=> drawer.classList.contains('open') ? close() : open());
+      links.forEach(a=> a.addEventListener('click', close));
+      // اغلاق عند الضغط خارج
+      document.addEventListener('click', (e)=>{
+        if(!drawer.classList.contains('open')) return;
+        if(e.target.closest('#mobile-drawer') || e.target.closest('#nav-toggle')) return;
+        close();
+      });
+    }
+
+    /* 🇸🇦 تهيئة عامة */
     function init(){
       document.getElementById('year').textContent=new Date().getFullYear();
       renderTodayBadge();
@@ -641,6 +757,7 @@ Notizen: ${notes||'—'}`;
       renderProducts();
       renderCart();
       wireContactWhatsApp();
+      wireMobileMenu();
 
       // تاريخ افتراضي: أول يوم مفتوح
       const dateEl=document.getElementById('bk-date');
@@ -653,8 +770,8 @@ Notizen: ${notes||'—'}`;
       }
       renderSlotGridForDate(new Date(dateEl.value));
 
-      dateEl.addEventListener('change', (e)=> renderSlotGridForDate(new Date(e.target.value)));
       document.getElementById('booking-form').addEventListener('submit', handleBookingSubmit);
+      dateEl.addEventListener('change', (e)=> renderSlotGridForDate(new Date(e.target.value)));
     }
 
     init();
