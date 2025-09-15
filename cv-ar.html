@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>السيرة الذاتية – محمد عوض | نسخة عربية فضائية</title>
+<meta name="theme-color" content="#0b0b0f" />
+<meta name="description" content="سيرة ذاتية فضائية عصرية لمحمد عوض: مهندس برمجيات ومدير مشاريع ومطوّر مواقع و أنظمة تداول وذكاء اصطناعي، خبرة +6 سنوات منذ 2019. صفحة واحدة، Timeline، مهارات، مشاريع، إنجازات." />
+
+<!--
+========================================
+COSMIC CV (Arabic) — One-file Implementation
+Implements all requested edits:
+- Education: BSc Software Engineering, MSc Software Engineering – Intelligent Systems
+- Team size = 9; strong emphasis on Team Leader & Project Manager
+- Add Telegram Systems to 20+ projects
+- Remove: Open Source, AI articles, Certifications section, LinkedIn/GitHub badge text, location label "نابلس –", print button, Django/Flask, entire "Tools/Platforms" block
+- Fix Work Experience layout (timeline column vs content column)
+- Keep QR dynamic (user sets link below)
+========================================
+-->
+
+<style>
+/* ================= TOKENS / THEME ================= */
+:root{
+  --bg:#0b0b0f;           /* cosmic dark */
+  --bg2:#0f1020;
+  --card:#141529;
+  --text:#eaf2ff;
+  --muted:#a7b0c8;
+  --line:#23243a;
+  --primary:#5aa9ff;      /* cosmic blue */
+  --accent:#20e3b2;       /* neon green */
+  --violet:#8b5cf6;
+  --chip:#161832;
+  --shadow: 0 14px 44px rgba(0,0,0,.48);
+  --radius:18px;
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f6f8ff; --bg2:#eef2ff; --card:#ffffff; --text:#0b1020;
+    --muted:#4b5563; --line:#e5e7eb; --chip:#eef2ff;
+    --shadow:0 10px 28px rgba(2,6,23,.08);
+  }
+}
+
+/* ================= BASE ================= */
+*{box-sizing:border-box}
+html,body{
+  margin:0;padding:0;
+  background:
+    radial-gradient(1200px 800px at 10% 0%,rgba(91,150,255,.12),transparent 60%),
+    radial-gradient(900px 700px at 100% 10%,rgba(139,92,246,.12),transparent 60%),
+    var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Kufi Arabic","Noto Sans Arabic",Tahoma,Arial,sans-serif;
+  line-height:1.7;
+}
+.container{max-width:1080px;margin:auto;padding:22px}
+
+/* ================= HEADER ================= */
+.header{
+  position:relative;border-radius:24px;padding:28px 22px;overflow:hidden;
+  background:
+    linear-gradient(135deg, rgba(90,169,255,.12), rgba(32,227,178,.12)),
+    linear-gradient(0deg, color-mix(in oklab,var(--card),#fff 3%), var(--card));
+  box-shadow: var(--shadow);
+}
+.header::before,.header::after{
+  content:"";position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;pointer-events:none
+}
+.header::before{
+  width:360px;height:360px;
+  background:radial-gradient(circle at 30% 30%,var(--primary),transparent 60%);
+  left:-120px;top:-140px
+}
+.header::after{
+  width:300px;height:300px;
+  background:radial-gradient(circle at 70% 70%,var(--accent),transparent 60%);
+  right:-100px;bottom:-140px
+}
+.row{display:grid;grid-template-columns:1.3fr .7fr;gap:20px}
+@media (max-width:900px){.row{grid-template-columns:1fr}}
+
+h1{margin:0 0 6px;font-size:34px;letter-spacing:.2px}
+.subtitle{margin:0;color:var(--muted);font-weight:800}
+
+.chips{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{
+  background:var(--chip);border:1px solid var(--line);
+  padding:6px 10px;border-radius:999px;font-size:12.5px
+}
+
+.contact{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 10px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, color-mix(in oklab,var(--card),#fff 2%), var(--card));
+  border-radius:12px;font-weight:700
+}
+.badge svg{width:16px;height:16px}
+
+.note{font-size:12.5px;color:var(--muted)}
+
+/* ================= SECTIONS ================= */
+.sec{
+  margin-top:22px;border:1px solid var(--line);border-radius:var(--radius);
+  background:linear-gradient(180deg, color-mix(in oklab,var(--card),#fff 2%), var(--card));
+  box-shadow: var(--shadow)
+}
+.sec>.head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px dashed var(--line)}
+.sec h2{margin:0;font-size:18px}
+.sec .body{padding:16px}
+
+.muted{color:var(--muted)}
+
+.ico{width:18px;height:18px;display:inline-block;vertical-align:-4px}
+
+/* ================= TIMELINE ================= */
+.timeline{position:relative;padding:4px}
+.tline{position:relative}
+.tline::before{
+  content:"";position:absolute;inset-inline-start:8px;top:2px;bottom:2px;width:2px;background:var(--line)
+}
+.item{
+  display:grid;grid-template-columns:100px 1fr;gap:16px;margin:12px 0
+}
+.year{font-weight:900;color:var(--primary)}
+.dot{position:relative}
+.dot::before{
+  content:"";position:absolute;inset-inline-start:-20px;top:.55em;width:10px;height:10px;border-radius:50%;
+  background:var(--accent);border:2px solid color-mix(in oklab,var(--accent),black 20%)
+}
+
+/* ================= LISTS ================= */
+ul{list-style:none;margin:0;padding:0}
+li{margin:8px 0;padding-inline-start:26px;position:relative}
+li::before{
+  content:"";position:absolute;inset-inline-start:0;top:.7em;width:11px;height:11px;border-radius:3px;
+  background:linear-gradient(135deg,var(--primary),var(--violet))
+}
+
+/* ================= SKILLS ================= */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:900px){.skills{grid-template-columns:1fr 1fr}}
+.card{
+  padding:12px;border:1px dashed var(--line);border-radius:14px;
+  background:linear-gradient(180deg, color-mix(in oklab,var(--card),#fff 2%), var(--card))
+}
+.kv{display:grid;grid-template-columns:220px 1fr;gap:10px}
+.bar{
+  height:10px;border-radius:999px;background:color-mix(in oklab,var(--card),#fff 10%);
+  overflow:hidden;border:1px solid var(--line)
+}
+.fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:inherit;width:0;transition:width .9s ease}
+
+/* ================= PROJECTS ================= */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width:900px){.projects{grid-template-columns:1fr}}
+.pcard{
+  padding:14px;border:1px solid var(--line);border-radius:14px;
+  background:linear-gradient(180deg, color-mix(in oklab,var(--card),#fff 2%), var(--card))
+}
+.ptech{font-size:12px;color:var(--muted);margin-top:6px}
+
+/* ================= PRINT ================= */
+@media print{
+  .sec{break-inside:avoid}
+  .note{display:none}
+}
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ================= HEADER ================= -->
+    <section class="header" id="top">
+      <div class="row">
+        <div>
+          <h1>محمد عوض</h1>
+          <p class="subtitle">مهندس برمجيات | مدير مشاريع | مطوّر مواقع و أنظمة تداول وذكاء اصطناعي</p>
+
+          <div class="chips">
+            <span class="chip">خبرة +6 سنوات (منذ 2019)</span>
+            <span class="chip">قيادة فرق (9 أعضاء)</span>
+            <span class="chip">Trading &amp; Telegram Systems</span>
+            <span class="chip">تعليم إلكتروني &amp; متاجر إلكترونية</span>
+            <span class="chip">سحابة &amp; أمن سيبراني</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact">
+            <span class="badge" title="Email">
+              <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg>
+              meke77t5@gmail.com
+            </span>
+            <!-- LinkedIn/GitHub badge removed per request -->
+            <!-- Location label removed per request -->
+          </div>
+
+          <!-- QR (اختياري — يحدَّث بالرابط أدناه) -->
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SUMMARY ================= -->
+    <section class="sec">
+      <div class="head"><h2>الملخص الاحترافي</h2></div>
+      <div class="body">
+        <p class="muted">
+          قائد تقني ومدير مشاريع يجمع بين العمق الهندسي والرؤية الإدارية منذ 2019، بقدرة عالية على التخطيط،
+          هندسة الحلول، وتنظيم العمل، وتوجيه الفرق (9 أعضاء) عبر كامل دورة حياة المشروع. خبرة متقدمة في
+          الأنظمة التعليمية والمتاجر الإلكترونية وأنظمة التداول وبوتات تلغرام، وبناء حلول أتمتة وذكاء اصطناعي
+          للتحليلات الاقتصادية والمالية، مع تركيز على النتائج القابلة للقياس واستدامة التشغيل.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="sec">
+      <div class="head"><h2>المهارات التقنية</h2></div>
+      <div class="body skills">
+
+        <div class="card">
+          <strong>لغات البرمجة:</strong><br />
+          Python, C++, JavaScript, HTML, CSS
+          <div class="bar"><div class="fill" style="width:92%"></div></div>
+        </div>
+
+        <div class="card">
+          <strong>أطر/مكتبات الواجهة والخلفية:</strong><br />
+          React, Node.js
+          <!-- Django/Flask removed per request -->
+          <div class="bar"><div class="fill" style="width:86%"></div></div>
+        </div>
+
+        <div class="card">
+          <strong>قواعد البيانات:</strong><br />
+          MySQL, MongoDB
+          <div class="bar"><div class="fill" style="width:83%"></div></div>
+        </div>
+
+        <div class="card">
+          <strong>مجالات وخبرات:</strong><br />
+          Cybersecurity, Networking, Trading Systems, AI Bots, Automation, Telegram Bots
+          <div class="bar"><div class="fill" style="width:88%"></div></div>
+        </div>
+
+        <!-- Entire Tools/Platforms block removed as requested -->
+
+        <div class="card">
+          <strong>هندسة الحلول والتكامل:</strong><br />
+          تصميم معماريات، تكامل أنظمة، APIs، الجودة والمراقبة والاختبارات
+          <div class="bar"><div class="fill" style="width:84%"></div></div>
+        </div>
+
+        <div class="card">
+          <strong>قيادة وإدارة:</strong><br />
+          تخطيط، توزيع مهام، معايير جودة، إدارة مخاطر، إدارة أصحاب مصلحة
+          <div class="bar"><div class="fill" style="width:90%"></div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="sec">
+      <div class="head"><h2>الخبرة العملية</h2></div>
+      <div class="body timeline">
+        <div class="tline">
+
+          <!-- Team Leader & Project Manager -->
+          <div class="item">
+            <div class="year dot">2019–الآن</div>
+            <div>
+              <strong>Team Leader &amp; Project Manager</strong>
+              <ul>
+                <li>قيادة فريق مكوّن من <strong>9 أعضاء</strong> عبر مشاريع متعددة (تعليم إلكتروني، متاجر إلكترونية، تداول، <strong>Telegram Systems</strong>).</li>
+                <li>تصميم معماريات حلول وإدارة دورة حياة كاملة (Discovery → Delivery → Maintenance) بموثوقية عالية.</li>
+                <li>إدارة وتنفيذ <strong>+20 مشروع</strong> تشمل Trading, E-learning, E-commerce, Telegram.</li>
+                <li>خفض أعطال الإنتاج بنسبة <strong>40%</strong> عبر تحسينات منهجية في الجودة والعمليات.</li>
+                <li>إطلاقات متدرجة بلا تعطيل، مع خطط رجوع ونسخ احتياطية، ومحاذاة نوافذ الأعمال.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Trading Systems Developer -->
+          <div class="item">
+            <div class="year dot">2020–2023</div>
+            <div>
+              <strong>Trading Systems Developer</strong>
+              <ul>
+                <li>تطوير بوتات تداول متكاملة مع <strong>Telegram</strong> وواجهات Exchanges/APIs، وتنبيهات وعناصر حماية.</li>
+                <li>بناء مؤشرات واستراتيجيات، اختبارات أداء، وتحليلات نتائج.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Cybersecurity Intern -->
+          <div class="item">
+            <div class="year dot">2019</div>
+            <div>
+              <strong>Cybersecurity Intern</strong>
+              <ul>
+                <li>صياغة سياسات وإجراءات أمنية وتشغيل أنظمة مراقبة وتتبّع ثغرات.</li>
+                <li>منع اختراق محتمل عبر معالجة ثغرات حرجة وتحسين الضوابط.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- IT Technician -->
+          <div class="item">
+            <div class="year dot">2018–2019</div>
+            <div>
+              <strong>IT Technician</strong>
+              <ul>
+                <li>دعم تقني للشبكات والأجهزة والأنظمة، وتحسين الاعتمادية للمستخدمين والفرق.</li>
+                <li>معالجة ثغرات أمنية حرجة ورفع جاهزية البنية التحتية.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="sec">
+      <div class="head"><h2>المشاريع البارزة</h2></div>
+      <div class="body projects">
+
+        <div class="pcard">
+          <strong>E-Learning Platform</strong>
+          <div class="ptech">Python, React</div>
+          <ul><li>نظام تعليمي تفاعلي لإدارة المحتوى والمستخدمين والتقييمات والتقارير.</li></ul>
+        </div>
+
+        <div class="pcard">
+          <strong>Trading Automation Bot</strong>
+          <div class="ptech">Python, APIs, Telegram</div>
+          <ul><li>بوت تداول آلي مع تنبيهات وقواعد مرنة وسيناريوهات حماية وإيقاف خسارة.</li></ul>
+        </div>
+
+        <div class="pcard">
+          <strong>AI Competitor Analyzer</strong>
+          <div class="ptech">Python, AI, Automation</div>
+          <ul><li>تحليل منافسين تلقائي، استخراج مؤشرات اتجاهات وفرص تسويق، تقارير تنفيذية.</li></ul>
+        </div>
+
+        <div class="pcard">
+          <strong>E-Commerce Store</strong>
+          <div class="ptech">React, Node.js, MongoDB</div>
+          <ul><li>متجر كامل بسلة، دفع، متابعة طلبات، ولوحات تحكم وإحصاءات.</li></ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section class="sec">
+      <div class="head"><h2>التعليم</h2></div>
+      <div class="body kv">
+        <div class="muted">ماجستير هندسة برمجيات – أنظمة ذكية</div>
+        <div>Saint-Petersburg State University of Aerospace Instrumentation (2022–2025)</div>
+
+        <div class="muted">بكالوريوس هندسة برمجيات</div>
+        <div>Saint-Petersburg State University of Aerospace Instrumentation (2018–2022)</div>
+      </div>
+    </section>
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+    <section class="sec" style="margin-bottom:22px">
+      <div class="head"><h2>الإنجازات</h2></div>
+      <div class="body">
+        <ul>
+          <li>خفض أعطال/مشكلات الإنتاج بنسبة <strong>40%</strong> عبر تحسينات جودة واختبارات وتوثيق تشغيلي.</li>
+          <li>قيادة فريق <strong>9 أشخاص</strong> عبر مشاريع متعددة وتحقيق الأهداف ضمن الوقت والميزانية.</li>
+          <li>إطلاق وتوسعة حلول تداول وتلجرام وأتمتة دون تعطيل العمليات (Zero-Downtime).</li>
+          <li>تحسين زمن معالجة وتدفق العمل بإعادة تصميم مسارات التشغيل وبناء Playbooks.</li>
+        </ul>
+        <!-- Removed: Open Source contributions, AI/automation articles, Certifications -->
+      </div>
+    </section>
+
+  </div>
+
+<script>
+/* Progress Bars animation */
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.fill').forEach(el=>{
+    const m = el.getAttribute('style').match(/width:\s*([\d.]+%)/);
+    const w = m ? m[1] : '80%';
+    el.style.width='0%'; setTimeout(()=>{ el.style.width = w; }, 160);
+  });
+  /* Dynamic QR: ضع رابطك هنا */
+  const link = "mailto:meke77t5@gmail.com"; // مثال: رابط بريدك أو بورتفوليوك
+  const qr = document.getElementById('qr');
+  if(qr){
+    const api = 'https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=';
+    qr.src = api + encodeURIComponent(link);
+  }
+});
+</script>
+
+</body>
+</html>

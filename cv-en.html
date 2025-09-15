@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Resume – Mohammed Awad | Cosmic One-Page</title>
+<meta name="theme-color" content="#0b0b0f" />
+<meta name="description" content="Cosmic one-page resume for Mohammed Awad: Software Engineer & Project Manager, Trading & AI Systemsand Web dev, 6+ years experience since 2019. Timeline, skills, projects, achievements." />
+
+<!--
+========================================
+COSMIC CV (English) — One-file Implementation
+Mirrors Arabic content & user rules:
+- Education: BSc Software Engineering, MSc Software Engineering – Intelligent Systems
+- Team size = 9; strong emphasis on Team Leader & Project Manager
+- Add Telegram Systems to 20+ projects
+- Remove: Open Source, AI articles, Certifications, LinkedIn/GitHub badge text, location label, print button, Django/Flask, whole Tools block
+- Fix Work Experience layout (timeline vs content)
+- Keep QR dynamic (set link below)
+========================================
+-->
+
+<style>
+:root{
+  --bg:#0b0b0f; --bg2:#0f1020; --card:#141529; --text:#eaf2ff; --muted:#a7b0c8;
+  --line:#23243a; --primary:#5aa9ff; --accent:#20e3b2; --violet:#8b5cf6;
+  --chip:#161832; --shadow:0 14px 44px rgba(0,0,0,.48); --radius:18px
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f6f8ff; --bg2:#eef2ff; --card:#ffffff; --text:#0b1020; --muted:#4b5563;
+    --line:#e5e7eb; --chip:#eef2ff; --shadow:0 10px 28px rgba(2,6,23,.08)
+  }
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0;padding:0;
+  background:
+    radial-gradient(1200px 800px at 10% 0%,rgba(91,150,255,.12),transparent 60%),
+    radial-gradient(900px 700px at 100% 10%,rgba(139,92,246,.12),transparent 60%),
+    var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  line-height:1.7;
+}
+.container{max-width:1080px;margin:auto;padding:22px}
+
+.header{
+  position:relative;border-radius:24px;padding:28px 22px;overflow:hidden;
+  background:
+    linear-gradient(135deg, rgba(90,169,255,.12), rgba(32,227,178,.12)),
+    linear-gradient(0deg, color-mix(in oklab,var(--card),#fff 3%), var(--card));
+  box-shadow: var(--shadow)
+}
+.header::before,.header::after{
+  content:"";position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;pointer-events:none
+}
+.header::before{width:360px;height:360px;background:radial-gradient(circle at 30% 30%,var(--primary),transparent 60%);left:-120px;top:-140px}
+.header::after{width:300px;height:300px;background:radial-gradient(circle at 70% 70%,var(--accent),transparent 60%);right:-100px;bottom:-140px}
+
+.row{display:grid;grid-template-columns:1.3fr .7fr;gap:20px}
+@media (max-width:900px){.row{grid-template-columns:1fr}}
+
+h1{margin:0 0 6px;font-size:34px;letter-spacing:.2px}
+.subtitle{margin:0;color:var(--muted);font-weight:800}
+
+.chips{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:var(--chip);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:12.5px}
+
+.contact{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--line);
+  background:linear-gradient(180deg, color-mix(in oklab,var(--card),#fff 2%), var(--card));
+  border-radius:12px;font-weight:700
+}
+.badge svg{width:16px;height:16px}
+
+.sec{
+  margin-top:22px;border:1px solid var(--line);border-radius:var(--radius);
+  background:linear-gradient(180deg, color-mix(in oklab,var(--card),#fff 2%), var(--card));
+  box-shadow: var(--shadow)
+}
+.sec>.head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px dashed var(--line)}
+.sec h2{margin:0;font-size:18px}
+.sec .body{padding:16px}
+
+.muted{color:var(--muted)}
+.ico{width:18px;height:18px;display:inline-block;vertical-align:-4px}
+
+/* Timeline */
+.timeline{position:relative;padding:4px}
+.tline{position:relative}
+.tline::before{content:"";position:absolute;left:8px;top:2px;bottom:2px;width:2px;background:var(--line)}
+.item{display:grid;grid-template-columns:110px 1fr;gap:16px;margin:12px 0}
+.year{font-weight:900;color:var(--primary)}
+.dot{position:relative}
+.dot::before{
+  content:"";position:absolute;left:-20px;top:.55em;width:10px;height:10px;border-radius:50%;
+  background:var(--accent);border:2px solid color-mix(in oklab,var(--accent),black 20%)
+}
+
+/* Lists */
+ul{list-style:none;margin:0;padding:0}
+li{margin:8px 0;padding-left:26px;position:relative}
+li::before{
+  content:"";position:absolute;left:0;top:.7em;width:11px;height:11px;border-radius:3px;
+  background:linear-gradient(135deg,var(--primary),var(--violet))
+}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:900px){.skills{grid-template-columns:1fr 1fr}}
+.card{
+  padding:12px;border:1px dashed var(--line);border-radius:14px;
+  background:linear-gradient(180deg, color-mix(in oklab,var(--card),#fff 2%), var(--card))
+}
+.kv{display:grid;grid-template-columns:260px 1fr;gap:10px}
+.bar{
+  height:10px;border-radius:999px;background:color-mix(in oklab,var(--card),#fff 10%);
+  overflow:hidden;border:1px solid var(--line)
+}
+.fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:inherit;width:0;transition:width .9s ease}
+
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width:900px){.projects{grid-template-columns:1fr}}
+.pcard{
+  padding:14px;border:1px solid var(--line);border-radius:14px;
+  background:linear-gradient(180deg, color-mix(in oklab,var(--card),#fff 2%), var(--card))
+}
+.ptech{font-size:12px;color:var(--muted);margin-top:6px}
+
+/* Print */
+@media print{ .sec{break-inside:avoid} }
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ================= HEADER ================= -->
+    <section class="header" id="top">
+      <div class="row">
+        <div>
+          <h1>Mohammed Awad</h1>
+          <p class="subtitle">Software Engineer • Project Manager • Trading & AI Systems and Web Developer</p>
+
+          <div class="chips">
+            <span class="chip">6+ years experience (since 2019)</span>
+            <span class="chip">Leading teams of 9</span>
+            <span class="chip">Trading & Telegram Systems</span>
+            <span class="chip">E-Learning & E-Commerce</span>
+            <span class="chip">Cloud & Cybersecurity</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact">
+            <span class="badge" title="Email">
+              <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg>
+              meke77t5@gmail.com
+            </span>
+            <!-- LinkedIn/GitHub badge removed per request -->
+            <!-- Location label removed per request -->
+          </div>
+
+          <!-- QR (optional; set link below) -->
+         
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SUMMARY ================= -->
+    <section class="sec">
+      <div class="head"><h2>Professional Summary</h2></div>
+      <div class="body">
+        <p class="muted">
+          Technical leader and project manager blending engineering depth with strategic delivery since 2019.
+          Directed a 9-member team across education, commerce, trading, and Telegram solutions end-to-end.
+          Built AI-driven automations for economic/financial analytics with measurable outcomes and resilient operations.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="sec">
+      <div class="head"><h2>Technical Skills</h2></div>
+      <div class="body skills">
+
+        <div class="card">
+          <strong>Languages:</strong><br />
+          Python, C++, JavaScript, HTML, CSS
+          <div class="bar"><div class="fill" style="width:92%"></div></div>
+        </div>
+
+        <div class="card">
+          <strong>Frameworks/Libraries:</strong><br />
+          React, Node.js
+          <!-- Django/Flask removed -->
+          <div class="bar"><div class="fill" style="width:86%"></div></div>
+        </div>
+
+        <div class="card">
+          <strong>Databases:</strong><br />
+          MySQL, MongoDB
+          <div class="bar"><div class="fill" style="width:83%"></div></div>
+        </div>
+
+        <div class="card">
+          <strong>Domains & Expertise:</strong><br />
+          Cybersecurity, Networking, Trading Systems, AI Bots, Automation, Telegram Bots
+          <div class="bar"><div class="fill" style="width:88%"></div></div>
+        </div>
+
+        <!-- Tools/Platforms block removed per request -->
+
+        <div class="card">
+          <strong>Architecture & Integration:</strong><br />
+          Solution design, APIs, quality, monitoring, testing
+          <div class="bar"><div class="fill" style="width:84%"></div></div>
+        </div>
+
+        <div class="card">
+          <strong>Leadership & Delivery:</strong><br />
+          Planning, task allocation, quality standards, risk & stakeholder management
+          <div class="bar"><div class="fill" style="width:90%"></div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="sec">
+      <div class="head"><h2>Work Experience</h2></div>
+      <div class="body timeline">
+        <div class="tline">
+
+          <div class="item">
+            <div class="year dot">2019–Present</div>
+            <div>
+              <strong>Team Leader &amp; Project Manager</strong>
+              <ul>
+                <li>Led a <strong>9-member</strong> team across education, commerce, trading, and <strong>Telegram Systems</strong>.</li>
+                <li>Solution architecture & full lifecycle: Discovery → Delivery → Maintenance with strong reliability.</li>
+                <li>Managed & shipped <strong>20+ projects</strong> including Trading, E-learning, E-commerce, Telegram.</li>
+                <li>Reduced production incidents by <strong>40%</strong> through process, quality gates, and ops playbooks.</li>
+                <li>Zero-downtime releases with rollbacks, backups, and business-window alignment.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="year dot">2020–2023</div>
+            <div>
+              <strong>Trading Systems Developer</strong>
+              <ul>
+                <li>Built trading bots integrated with <strong>Telegram</strong> and exchange APIs; alerts & guardrails.</li>
+                <li>Engineered indicators/strategies; testing and performance analytics.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="year dot">2019</div>
+            <div>
+              <strong>Cybersecurity Intern</strong>
+              <ul>
+                <li>Policies and monitoring for corporate systems; risk mitigation.</li>
+                <li>Prevented a potential breach by remediating critical vulnerabilities.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="year dot">2018–2019</div>
+            <div>
+              <strong>IT Technician</strong>
+              <ul>
+                <li>Provided network/hardware/software support to users and teams.</li>
+                <li>Closed key security gaps and improved reliability.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="sec">
+      <div class="head"><h2>Highlighted Projects</h2></div>
+      <div class="body projects">
+
+        <div class="pcard">
+          <strong>E-Learning Platform</strong>
+          <div class="ptech">Python, React</div>
+          <ul><li>Interactive LMS: content, users, assessments, reporting.</li></ul>
+        </div>
+
+        <div class="pcard">
+          <strong>Trading Automation Bot</strong>
+          <div class="ptech">Python, APIs, Telegram</div>
+          <ul><li>Automated trading with alerts, flexible rules, and safety guardrails.</li></ul>
+        </div>
+
+        <div class="pcard">
+          <strong>AI Competitor Analyzer</strong>
+          <div class="ptech">Python, AI, Automation</div>
+          <ul><li>Automated competitor scanning, trends, and executive insights.</li></ul>
+        </div>
+
+        <div class="pcard">
+          <strong>E-Commerce Store</strong>
+          <div class="ptech">React, Node.js, MongoDB</div>
+          <ul><li>Storefront with cart, checkout, order tracking, dashboards.</li></ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section class="sec">
+      <div class="head"><h2>Education</h2></div>
+      <div class="body kv">
+        <div class="muted">MSc in Software Engineering – Intelligent Systems</div>
+        <div>Saint-Petersburg State University of Aerospace Instrumentation (2022–2025)</div>
+
+        <div class="muted">BSc in Software Engineering</div>
+        <div>Saint-Petersburg State University of Aerospace Instrumentation (2018–2022)</div>
+      </div>
+    </section>
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+    <section class="sec" style="margin-bottom:22px">
+      <div class="head"><h2>Key Achievements</h2></div>
+      <div class="body">
+        <ul>
+          <li>Reduced production issues by <strong>40%</strong> via process, testing, and operational documentation.</li>
+          <li>Successfully led a <strong>9-person</strong> team across multi-domain deliveries within time & budget.</li>
+          <li>Launched and scaled trading, Telegram, and automation systems with zero-downtime rollouts.</li>
+          <li>Improved processing flow and lead-time by redesigning operational pipelines and playbooks.</li>
+        </ul>
+        <!-- Removed: Open Source, Articles, Certifications -->
+      </div>
+    </section>
+
+  </div>
+
+<script>
+/* Progress Bars animation */
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.fill').forEach(el=>{
+    const m = el.getAttribute('style').match(/width:\s*([\d.]+%)/);
+    const w = m ? m[1] : '80%';
+    el.style.width='0%'; setTimeout(()=>{ el.style.width = w; }, 160);
+  });
+  /* Dynamic QR: set your link here */
+  const link = "mailto:meke77t5@gmail.com"; // e.g., your portfolio/profile/contact
+  const qr = document.getElementById('qr');
+  if(qr){
+    const api = 'https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=';
+    qr.src = api + encodeURIComponent(link);
+  }
+});
+</script>
+
+</body>
+</html>
