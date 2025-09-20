@@ -1,0 +1,3683 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>د. أحمد النجار - خبير تدريب وتقنيات تعليمية | NexGen Academy</title>
+    <meta name="description" content="خبير تدريب معتمد بأكاديمية NexGen، متخصص في تطوير المناهج والتقنيات التعليمية الحديثة والذكاء الاصطناعي التعليمي">
+    <link rel="canonical" href="https://nexgen-academy.com/expert-profile">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="د. أحمد النجار - خبير تدريب NexGen Academy">
+    <meta property="og:description" content="خبير تدريب معتمد متخصص في التقنيات التعليمية والذكاء الاصطناعي">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://nexgen-academy.com/expert-profile">
+    <meta property="og:image" content="https://nexgen-academy.com/expert-photo.jpg">
+    <meta property="og:site_name" content="NexGen Academy">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="د. أحمد النجار - خبير تدريب NexGen Academy">
+    <meta name="twitter:description" content="خبير تدريب معتمد متخصص في التقنيات التعليمية والذكاء الاصطناعي">
+    <meta name="twitter:image" content="https://nexgen-academy.com/expert-photo.jpg">
+
+    <style>
+        /* CSS Variables for Theme Management */
+        :root {
+            --bg: #0b1020;
+            --surface: #0e162b;
+            --primary: #2fb9ff;
+            --accent: #00e0a4;
+            --text: #e6f1ff;
+            --muted: #9fb3c8;
+            --glass-bg: rgba(14, 22, 43, 0.7);
+            --glass-border: rgba(47, 185, 255, 0.2);
+            --shadow: rgba(0, 0, 0, 0.3);
+            --shadow-strong: rgba(0, 0, 0, 0.5);
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--accent));
+            --gradient-bg: linear-gradient(135deg, var(--bg) 0%, var(--surface) 100%);
+        }
+        
+        .light-theme {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --primary: #0ea5e9;
+            --accent: #10b981;
+            --text: #1e293b;
+            --muted: #64748b;
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(14, 165, 233, 0.2);
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-strong: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--gradient-bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Accessibility: Respect reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Glass effect utility */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            backdrop-filter: blur(15px);
+            background: var(--glass-bg);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary);
+            background: rgba(47, 185, 255, 0.1);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle,
+        .lang-toggle {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text);
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover,
+        .lang-toggle:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                flex-direction: column;
+                background: var(--glass-bg);
+                backdrop-filter: blur(15px);
+                border: 1px solid var(--glass-border);
+                padding: 2rem;
+                transition: 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.2rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .hero-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-photo {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 50px rgba(47, 185, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 70px rgba(47, 185, 255, 0.5);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            color: var(--text);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow);
+        }
+
+        /* Canvas Background */
+        .hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-info {
+            background: var(--glass-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .info-value {
+            color: var(--text);
+        }
+
+        /* Animated Counters */
+        .counters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .counter-item {
+            background: var(--glass-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .counter-label {
+            color: var(--muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .skill-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-item {
+            background: var(--glass-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .skill-level {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .skill-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--surface);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 4px;
+            transition: width 2s ease;
+            width: 0;
+        }
+
+        /* Portfolio Section */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .portfolio-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-description {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .lightbox-prev { left: -60px; }
+        .lightbox-next { right: -60px; }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: var(--glass-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .timeline-description {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid var(--bg);
+        }
+
+        /* Certificates */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .certificate-item {
+            background: var(--glass-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px var(--shadow);
+        }
+
+        .certificate-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .certificate-org {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .certificate-date {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .certificate-verify {
+            margin-top: 1rem;
+        }
+
+        .certificate-verify a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-item {
+            background: var(--glass-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px var(--shadow);
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .service-price {
+            color: var(--primary);
+            font-weight: 700;
+            background: rgba(47, 185, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .service-outcomes {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-outcomes li {
+            padding: 0.5rem 0;
+            color: var(--muted);
+            position: relative;
+            padding-right: 1.5rem;
+        }
+
+        .service-outcomes li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Testimonials Slider */
+        .testimonials {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-item {
+            min-width: 100%;
+            background: var(--glass-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            margin: 0 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .testimonial-info h4 {
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .testimonials-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* FAQ Accordion */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+            text-align: right;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(47, 185, 255, 0.05);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* Vision Section */
+        .vision-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .vision-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: var(--text);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            background: var(--glass-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px var(--shadow);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .value-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-description {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Contact Form */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: var(--glass-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(47, 185, 255, 0.2);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-error {
+            color: #ef4444;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .contact-info {
+            space-y: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 8px 25px var(--shadow);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .contact-details h4 {
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-details a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--surface);
+            padding: 3rem 0 1rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--muted);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            display: flex;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--shadow);
+        }
+
+        /* Print Styles */
+        @media print {
+            .header,
+            .hero-canvas,
+            .cta-buttons,
+            .back-to-top,
+            .nav-controls,
+            .lightbox,
+            .testimonials-controls {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+
+            .section {
+                padding: 2rem 0;
+                page-break-inside: avoid;
+            }
+
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+
+            .hero-content {
+                display: block;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+                float: right;
+                margin: 0 0 1rem 1rem;
+            }
+
+            .glass {
+                background: #f8f9fa !important;
+                border: 1px solid #dee2e6 !important;
+                box-shadow: none !important;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .timeline::before {
+                left: 2rem;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 4rem;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-dot {
+                left: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .counters {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .counters {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .testimonial-item {
+                padding: 2rem 1rem;
+            }
+
+            .profile-photo {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        .btn:focus,
+        .nav-menu a:focus,
+        .theme-toggle:focus,
+        .lang-toggle:focus,
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Hidden class for JavaScript */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+/* ====== Injected: Vertical Hero like reference (keep original intact) ====== */
+.hero.section.hero-centered{
+  min-height: clamp(620px, 84vh, 900px);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; overflow:hidden;
+  text-align:center;
+}
+/* starfield background */
+.hero.section.hero-centered::before{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(500px 350px at 80% 20%, rgba(47,185,255,.12) 0, transparent 70%),
+    radial-gradient(700px 420px at 20% 80%, rgba(139,92,246,.10) 0, transparent 75%),
+    radial-gradient(circle at 50% -20%, rgba(255,255,255,.04), transparent 60%);
+  pointer-events:none;
+}
+.hero.section.hero-centered::after{
+  /* tiny stars */
+  content:""; position:absolute; inset:-10%;
+  background-image: radial-gradient(rgba(47,185,255,.7) 1px, transparent 1.5px);
+  background-size: 6px 6px; opacity:.18; filter:blur(.2px);
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 100%);
+  pointer-events:none;
+}
+
+/* inner content */
+.hero.section.hero-centered .hero-content{
+  display:block !important; max-width: 860px; margin: 0 auto; text-align:center;
+  padding-inline: clamp(16px, 4vw, 28px);
+}
+
+/* avatar on top */
+.hero.section.hero-centered .hero-image{ margin-bottom: 14px; }
+.hero.section.hero-centered .avatar{
+  width: 210px; height: 210px; margin: 0 auto calc(var(--space, 18px)*1.2);
+  border-radius:50%; position:relative; display:grid; place-items:center;
+}
+.hero.section.hero-centered .avatar::before{
+  content:""; position:absolute; inset:-12px; border-radius:50%;
+  border: 2px solid var(--primary, #2fb9ff); opacity:.55; animation:heroPulse 2s infinite ease-in-out;
+  box-shadow: 0 0 28px rgba(47,185,255,.35);
+}
+.hero.section.hero-centered .profile-photo{
+  width:100%; height:100%; border-radius:50%; object-fit:cover;
+  border: 4px solid var(--primary, #2fb9ff);
+  box-shadow: 0 0 22px rgba(47,185,255,.4), 0 10px 30px rgba(0,0,0,.45);
+  display:block; background:#0f1730;
+}
+@keyframes heroPulse{
+  0%{transform:scale(1); opacity:.45}
+  50%{transform:scale(1.05); opacity:.75}
+  100%{transform:scale(1); opacity:.45}
+}
+
+/* headings & lead */
+.hero.section.hero-centered .hero-text h1,
+.hero.section.hero-centered h1.title{ 
+  font-weight:800; font-size:clamp(26px, 5vw, 42px); margin: 6px 0 10px;
+  letter-spacing:.2px;
+}
+.hero.section.hero-centered .hero-text .subtitle,
+.hero.section.hero-centered p.subtitle{
+  color: var(--muted, #9fb0d9); font-size:clamp(15px, 2.2vw, 18px); margin: 0 0 12px;
+}
+.hero.section.hero-centered .hero-text .lead,
+.hero.section.hero-centered p.lead{
+  background:linear-gradient(180deg, #dff3ff, #a6c7ff);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  font-weight:700; font-size:clamp(15px, 2.3vw, 18px); margin: 0 0 22px;
+}
+
+/* stats layout */
+.hero.section.hero-centered .hero-stats,
+.hero.section.hero-centered .stats{
+  display:flex !important; justify-content:center; gap: clamp(14px, 2.8vw, 26px);
+  flex-wrap:wrap; margin: calc(var(--space, 18px)*1.2) 0 calc(var(--space, 18px)*1.4);
+}
+.hero.section.hero-centered .stat-item, 
+.hero.section.hero-centered .stat{
+  min-width:160px; padding:16px 18px; border-radius:14px;
+  background:linear-gradient(180deg, rgba(18,24,51,.8), rgba(18,24,51,.55));
+  border:1px solid rgba(255,255,255,.06); 
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  text-align:center;
+}
+.hero.section.hero-centered .stat-number, 
+.hero.section.hero-centered .num{
+  font-size:clamp(28px, 4.6vw, 36px); font-weight:800; color: var(--primary, #2fb9ff); line-height:1;
+}
+.hero.section.hero-centered .stat-label, 
+.hero.section.hero-centered .label{
+  color: var(--muted, #9fb0d9); font-weight:600; margin-top:6px; font-size:14px;
+}
+
+/* ctas */
+.hero.section.hero-centered .cta-buttons,
+.hero.section.hero-centered .ctas{
+  display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
+  margin-top: calc(var(--space, 18px)*1.2);
+}
+.hero.section.hero-centered .cta-buttons .btn,
+.hero.section.hero-centered .ctas .btn{
+  appearance:none; cursor:pointer; border:1px solid rgba(255,255,255,.10);
+  padding:12px 16px; border-radius:12px; font-weight:800; letter-spacing:.2px;
+  background:linear-gradient(180deg, #13204a, #101738); color:#eaf5ff; transition:.2s; text-decoration:none; display:inline-flex; align-items:center; gap:10px
+}
+.hero.section.hero-centered .cta-buttons .btn:hover,
+.hero.section.hero-centered .ctas .btn:hover{ transform:translateY(-1px); box-shadow:0 0 0 3px rgba(47,185,255,.25) }
+.hero.section.hero-centered .cta-buttons .btn-primary,
+.hero.section.hero-centered .ctas .btn-primary{
+  background:linear-gradient(180deg, #2fb9ff, #1a9ad6); color:#012031; border-color:transparent
+}
+.hero.section.hero-centered .cta-buttons .btn-ghost,
+.hero.section.hero-centered .ctas .btn-ghost{ background:transparent }
+
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo">
+                <span>🎓</span>
+                <span data-i18n="logo">NexGen Expert</span>
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" data-i18n="nav.home">الرئيسية</a></li>
+                <li><a href="#about" data-i18n="nav.about">من أنا</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">المهارات</a></li>
+                <li><a href="#portfolio" data-i18n="nav.portfolio">الأعمال</a></li>
+                <li><a href="#milestones" data-i18n="nav.milestones">الإنجازات</a></li>
+                <li><a href="#certificates" data-i18n="nav.certificates">الشهادات</a></li>
+                <li><a href="#services" data-i18n="nav.services">الخدمات</a></li>
+                <li><a href="#testimonials" data-i18n="nav.testimonials">الآراء</a></li>
+                <li><a href="#faq" data-i18n="nav.faq">الأسئلة الشائعة</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">تواصل</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="تبديل الوضع المظلم">
+                    🌙
+                </button>
+                <button class="lang-toggle" id="lang-toggle" aria-label="تبديل اللغة">
+                    EN
+                </button>
+                <div class="hamburger" id="hamburger" aria-controls="nav-menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+  <!-- Hero Section -->
+  <section class="hero section hero-centered" id="home">
+    <canvas class="hero-canvas" id="hero-canvas"></canvas>
+    <div class="hero-content">
+
+      <!-- الصورة في الأعلى -->
+      <div class="hero-image" style="margin-top:90px; margin-bottom:20px;">
+        <div class="avatar" style="width:160px; height:160px; margin:0 auto;">
+          <img 
+            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1MCIgcj0iMTUwIiBmaWxsPSJsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjMmZiOWZmLCAjMDBlMGE0KSIvPgo8Y2lyY2xlIGN4PSIxNTAiIGN5PSIxMjAiIHI9IjQwIiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjkiLz4KPHBhdGggZD0iTTEwMCAyMDBIMjAwVjIyMEMxOTAgMjMwIDE2MCAyMzAgMTUwIDIzMEMxNDAgMjMwIDExMCAyMzAgMTAwIDIyMFYyMDBaIiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjkiLz4KPHN2Zz4K" 
+            alt="Dr. Ahmed Al-Najjar" 
+            class="profile-photo" 
+            loading="lazy" 
+            style="width:100%; height:100%; border-radius:50%; object-fit:cover; border:4px solid var(--primary); box-shadow:0 0 16px rgba(47,185,255,.4);" />
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <h1 data-i18n="hero.name">د. أحمد النجار</h1>
+        <p class="subtitle" data-i18n="hero.role">خبير تدريب وتقنيات تعليمية – NexGen Academy</p>
+        <p data-i18n="hero.description">
+          متخصص في تطوير المناهج التعليمية والتقنيات الحديثة، مع خبرة واسعة في الذكاء الاصطناعي التعليمي وتدريب المدربين على أحدث الأساليب.
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-counter="8">8</span>
+            <span class="stat-label" data-i18n="hero.stats.years">سنوات خبرة</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-counter="4200">4200</span>
+            <span class="stat-label" data-i18n="hero.stats.learners">متدرب</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-counter="35">35</span>
+            <span class="stat-label" data-i18n="hero.stats.courses">دورة</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-counter="120">120</span>
+            <span class="stat-label" data-i18n="hero.stats.projects">مشروع</span>
+          </div>
+        </div>
+
+        <div class="cta-buttons">
+          <a href="https://wa.me/905xxxxxxx" class="btn btn-primary" target="_blank">
+            📱 <span data-i18n="hero.cta.whatsapp">واتساب</span>
+          </a>
+          <button class="btn btn-secondary" id="download-cv">
+            📄 <span data-i18n="hero.cta.cv">تحميل السيرة</span>
+          </button>
+          <a href="#contact" class="btn btn-secondary">
+            📅 <span data-i18n="hero.cta.consultation">احجز استشارة</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section-title" data-i18n="about.title">من أنا</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-i18n="about.paragraph1">
+                            خبير تدريب معتمد بأكاديمية NexGen مع أكثر من 8 سنوات من الخبرة في مجال التعليم والتدريب. متخصص في تصميم وتطوير المناهج التعليمية التفاعلية باستخدام أحدث التقنيات والذكاء الاصطناعي.
+                        </p>
+                        <p data-i18n="about.paragraph2">
+                            أعمل على تمكين المؤسسات التعليمية والشركات من تحقيق أهدافها التدريبية من خلال برامج مبتكرة ومناهج متطورة تركز على التطبيق العملي وقياس الأثر.
+                        </p>
+                        <p data-i18n="about.paragraph3">
+                            شغفي الحقيقي هو رؤية تأثير التعلم الإيجابي على الأفراد والمؤسسات، والمساهمة في بناء جيل من المهنيين المؤهلين القادرين على مواكبة التطورات التقنية المتسارعة.
+                        </p>
+
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary" id="download-cv-about">
+                                📄 <span data-i18n="about.cta.cv">تحميل السيرة الذاتية</span>
+                            </button>
+                            <button class="btn btn-secondary" id="download-vcard">
+                                📇 <span data-i18n="about.cta.vcard">تحميل بطاقة الاتصال</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="about-info glass">
+                        <div class="info-item">
+                            <span class="info-label" data-i18n="about.info.location">الموقع:</span>
+                            <span class="info-value">إسطنبول، تركيا</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label" data-i18n="about.info.affiliation">الجهة:</span>
+                            <span class="info-value">NexGen Academy</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label" data-i18n="about.info.email">البريد:</span>
+                            <span class="info-value">expert@nexgen-academy.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label" data-i18n="about.info.phone">الهاتف:</span>
+                            <span class="info-value">+90 5xx xxx xx xx</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label" data-i18n="about.info.specialization">التخصص:</span>
+                            <span class="info-value">تقنيات التعليم والتدريب</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="counters">
+                    <div class="counter-item">
+                        <span class="counter-number" data-counter="120">0</span>
+                        <span class="counter-label" data-i18n="about.counters.projects">مشروع منجز</span>
+                    </div>
+                    <div class="counter-item">
+                        <span class="counter-number" data-counter="4200">0</span>
+                        <span class="counter-label" data-i18n="about.counters.students">طالب مدرب</span>
+                    </div>
+                    <div class="counter-item">
+                        <span class="counter-number" data-counter="8500">0</span>
+                        <span class="counter-label" data-i18n="about.counters.hours">ساعة تدريب</span>
+                    </div>
+                    <div class="counter-item">
+                        <span class="counter-number" data-counter="95">0</span>
+                        <span class="counter-label" data-i18n="about.counters.satisfaction">% رضا العملاء</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <div class="container">
+                <h2 class="section-title" data-i18n="skills.title">المهارات والخبرات</h2>
+                
+                <div class="skill-filters">
+                    <button class="filter-btn active" data-filter="all" data-i18n="skills.filters.all">جميع المهارات</button>
+                    <button class="filter-btn" data-filter="تدريبية" data-i18n="skills.filters.training">تدريبية</button>
+                    <button class="filter-btn" data-filter="تقنية" data-i18n="skills.filters.technical">تقنية</button>
+                    <button class="filter-btn" data-filter="إدارية" data-i18n="skills.filters.management">إدارية</button>
+                </div>
+
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Skills will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="section" id="portfolio">
+            <div class="container">
+                <h2 class="section-title" data-i18n="portfolio.title">معرض الأعمال</h2>
+                
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all" data-i18n="portfolio.filters.all">جميع الأعمال</button>
+                    <button class="filter-btn" data-filter="دورات" data-i18n="portfolio.filters.courses">دورات</button>
+                    <button class="filter-btn" data-filter="مشاريع" data-i18n="portfolio.filters.projects">مشاريع</button>
+                    <button class="filter-btn" data-filter="ورش" data-i18n="portfolio.filters.workshops">ورش</button>
+                    <button class="filter-btn" data-filter="محتوى" data-i18n="portfolio.filters.content">محتوى</button>
+                </div>
+
+                <div class="portfolio-grid" id="portfolio-grid">
+                    <!-- Portfolio items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightbox-close">&times;</button>
+                <button class="lightbox-nav lightbox-prev" id="lightbox-prev">❮</button>
+                <button class="lightbox-nav lightbox-next" id="lightbox-next">❯</button>
+                <img src="" alt="" class="lightbox-image" id="lightbox-image">
+            </div>
+        </div>
+
+        <!-- Milestones Section -->
+        <section class="section" id="milestones">
+            <div class="container">
+                <h2 class="section-title" data-i18n="milestones.title">الرحلة والإنجازات</h2>
+                
+                <div class="timeline" id="timeline">
+                    <!-- Timeline items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section class="section" id="certificates">
+            <div class="container">
+                <h2 class="section-title" data-i18n="certificates.title">الشهادات المعتمدة</h2>
+                
+                <div class="certificates-grid" id="certificates-grid">
+                    <!-- Certificates will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section" id="services">
+            <div class="container">
+                <h2 class="section-title" data-i18n="services.title">الخدمات والدورات</h2>
+                
+                <div class="services-grid" id="services-grid">
+                    <!-- Services will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="section" id="vision">
+            <div class="container">
+                <h2 class="section-title" data-i18n="vision.title">الرؤية والقيم</h2>
+                
+                <div class="vision-content">
+                    <p class="vision-text" data-i18n="vision.text">
+                        نؤمن في NexGen Academy أن التعليم الحقيقي يحدث عندما نربط بين النظرية والتطبيق، ونستثمر في قوة التقنيات الناشئة لخلق تجارب تعلم تفاعلية تلهم المتدربين وتحقق نتائج ملموسة. رؤيتنا هي بناء جيل من المهنيين المتمكنين الذين يقودون التغيير في مؤسساتهم ومجتمعاتهم.
+                    </p>
+                    
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon">🎯</div>
+                            <h3 class="value-title" data-i18n="vision.values.quality.title">الجودة</h3>
+                            <p class="value-description" data-i18n="vision.values.quality.description">التزام بأعلى معايير التدريب والتطوير</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">⚡</div>
+                            <h3 class="value-title" data-i18n="vision.values.practical.title">قابلية التطبيق</h3>
+                            <p class="value-description" data-i18n="vision.values.practical.description">مهارات عملية قابلة للتطبيق فورياً</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">📈</div>
+                            <h3 class="value-title" data-i18n="vision.values.impact.title">الأثر المهني</h3>
+                            <p class="value-description" data-i18n="vision.values.impact.description">تأثير إيجابي قابل للقياس على الأداء</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🤝</div>
+                            <h3 class="value-title" data-i18n="vision.values.ethics.title">الأخلاقيات</h3>
+                            <p class="value-description" data-i18n="vision.values.ethics.description">ممارسات تدريبية مسؤولة ونزيهة</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">📊</div>
+                            <h3 class="value-title" data-i18n="vision.values.measurement.title">قياس النتائج</h3>
+                            <p class="value-description" data-i18n="vision.values.measurement.description">تقييم مستمر لفعالية التدريب</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section" id="testimonials">
+            <div class="container">
+                <h2 class="section-title" data-i18n="testimonials.title">آراء المتدربين</h2>
+                
+                <div class="testimonials">
+                    <div class="testimonials-container" id="testimonials-container">
+                        <!-- Testimonials will be populated by JavaScript -->
+                    </div>
+                    <div class="testimonials-controls" id="testimonials-controls">
+                        <!-- Dots will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" id="faq">
+            <div class="container">
+                <h2 class="section-title" data-i18n="faq.title">الأسئلة الشائعة</h2>
+                
+                <div class="faq-list" id="faq-list">
+                    <!-- FAQ items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <h2 class="section-title" data-i18n="contact.title">تواصل معي</h2>
+                
+                <div class="contact-content">
+                    <div class="contact-form glass">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label" data-i18n="contact.form.name">الاسم الكامل</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                                <div class="form-error" id="name-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label" data-i18n="contact.form.email">البريد الإلكتروني</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                                <div class="form-error" id="email-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label" data-i18n="contact.form.phone">رقم الهاتف</label>
+                                <input type="tel" id="phone" name="phone" class="form-input">
+                                <div class="form-error" id="phone-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label" data-i18n="contact.form.message">الرسالة</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                                <div class="form-error" id="message-error"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                📤 <span data-i18n="contact.form.submit">إرسال الرسالة</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4 data-i18n="contact.info.email.title">البريد الإلكتروني</h4>
+                                <p><a href="mailto:expert@nexgen-academy.com">expert@nexgen-academy.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h4 data-i18n="contact.info.phone.title">الهاتف</h4>
+                                <p><a href="tel:+905xxxxxxx">+90 5xx xxx xx xx</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h4 data-i18n="contact.info.location.title">الموقع</h4>
+                                <p data-i18n="contact.info.location.address">إسطنبول، تركيا</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">💬</div>
+                            <div class="contact-details">
+                                <h4 data-i18n="contact.info.whatsapp.title">واتساب</h4>
+                                <p><a href="https://wa.me/905xxxxxxx" target="_blank">+90 5xx xxx xx xx</a></p>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://linkedin.com/in/expert" class="social-link" target="_blank" aria-label="LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="https://twitter.com/expert" class="social-link" target="_blank" aria-label="Twitter">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="https://instagram.com/expert" class="social-link" target="_blank" aria-label="Instagram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="https://youtube.com/@expert" class="social-link" target="_blank" aria-label="YouTube">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                            <a href="https://t.me/expert" class="social-link" target="_blank" aria-label="Telegram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                                </svg>
+                            </a>
+                            <a href="https://nexgen-academy.com" class="social-link" target="_blank" aria-label="Website">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-i18n="footer.quicklinks.title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about" data-i18n="footer.quicklinks.about">من أنا</a></li>
+                        <li><a href="#skills" data-i18n="footer.quicklinks.skills">المهارات</a></li>
+                        <li><a href="#portfolio" data-i18n="footer.quicklinks.portfolio">الأعمال</a></li>
+                        <li><a href="#services" data-i18n="footer.quicklinks.services">الخدمات</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-i18n="footer.contact.title">تواصل</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:expert@nexgen-academy.com">expert@nexgen-academy.com</a></li>
+                        <li><a href="tel:+905xxxxxxx">+90 5xx xxx xx xx</a></li>
+                        <li><a href="https://wa.me/905xxxxxxx" target="_blank">واتساب</a></li>
+                        <li><a href="https://nexgen-academy.com" target="_blank">NexGen Academy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-i18n="footer.services.title">الخدمات</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services" data-i18n="footer.services.consultation">استشارة تعليمية</a></li>
+                        <li><a href="#services" data-i18n="footer.services.curriculum">بناء مناهج</a></li>
+                        <li><a href="#services" data-i18n="footer.services.training">تدريب فرق</a></li>
+                        <li><a href="#services" data-i18n="footer.services.digital">تحويل رقمي</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> <span data-i18n="footer.copyright">د. أحمد النجار - NexGen Academy. جميع الحقوق محفوظة.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="العودة للأعلى">
+        ↑
+    </button>
+
+    <!-- Registration Modal -->
+    <div class="lightbox" id="registration-modal">
+        <div class="lightbox-content" style="max-width: 500px;">
+            <button class="lightbox-close" id="modal-close">&times;</button>
+            <div style="background: var(--glass-bg); padding: 2rem; border-radius: 16px; border: 1px solid var(--glass-border);">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--text);" data-i18n="modal.registration.title">تسجيل في الخدمة</h3>
+                <form id="registration-form">
+                    <div class="form-group">
+                        <label for="reg-name" class="form-label" data-i18n="modal.registration.name">الاسم الكامل</label>
+                        <input type="text" id="reg-name" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email" class="form-label" data-i18n="modal.registration.email">البريد الإلكتروني</label>
+                        <input type="email" id="reg-email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-phone" class="form-label" data-i18n="modal.registration.phone">رقم الهاتف</label>
+                        <input type="tel" id="reg-phone" name="phone" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-service" class="form-label" data-i18n="modal.registration.service">الخدمة المطلوبة</label>
+                        <input type="text" id="reg-service" name="service" class="form-input" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-message" class="form-label" data-i18n="modal.registration.message">رسالة إضافية</label>
+                        <textarea id="reg-message" name="message" class="form-textarea" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        📤 <span data-i18n="modal.registration.submit">إرسال طلب التسجيل</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "د. أحمد النجار",
+        "jobTitle": "خبير تدريب وتقنيات تعليمية",
+        "affiliation": {
+            "@type": "Organization",
+            "name": "NexGen Academy",
+            "url": "https://nexgen-academy.com"
+        },
+        "url": "https://nexgen-academy.com/expert-profile",
+        "email": "expert@nexgen-academy.com",
+        "telephone": "+90 5xx xxx xx xx",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "إسطنبول",
+            "addressCountry": "TR"
+        },
+        "sameAs": [
+            "https://linkedin.com/in/expert",
+            "https://twitter.com/expert",
+            "https://instagram.com/expert",
+            "https://youtube.com/@expert"
+        ],
+        "knowsAbout": [
+            "تطوير المناهج التعليمية",
+            "الذكاء الاصطناعي في التعليم",
+            "تدريب المدربين",
+            "التقنيات التعليمية",
+            "إدارة منصات التعلم الإلكتروني"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NexGen Academy",
+        "url": "https://nexgen-academy.com",
+        "logo": "https://nexgen-academy.com/logo.png",
+        "description": "أكاديمية متخصصة في التدريب والتقنيات التعليمية الحديثة"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "د. أحمد النجار - خبير NexGen Academy",
+        "url": "https://nexgen-academy.com/expert-profile",
+        "description": "صفحة شخصية لخبير التدريب والتقنيات التعليمية د. أحمد النجار"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "الرئيسية",
+                "item": "https://nexgen-academy.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "خبراء الأكاديمية",
+                "item": "https://nexgen-academy.com/experts"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "د. أحمد النجار",
+                "item": "https://nexgen-academy.com/expert-profile"
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        // Profile Data
+        const PROFILE = {
+            name: "د. أحمد النجار",
+            role: "خبير تدريب وتقنيات تعليمية – NexGen Academy",
+            photo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1MCIgcj0iMTUwIiBmaWxsPSJsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjMmZiOWZmLCAjMDBlMGE0KSIvPgo8Y2lyY2xlIGN4PSIxNTAiIGN5PSIxMjAiIHI9IjQwIiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjkiLz4KPHBhdGggZD0iTTEwMCAyMDBIMjAwVjIyMEMxOTAgMjMwIDE2MCAyMzAgMTUwIDIzMEMxNDAgMjMwIDExMCAyMzAgMTAwIDIyMFYyMDBaIiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjkiLz4KPHN2Zz4K",
+            location: "إسطنبول، تركيا",
+            email: "expert@nexgen-academy.com",
+            phone: "+90 5xx xxx xx xx",
+            socials: {
+                linkedin: "https://linkedin.com/in/expert",
+                twitter: "https://twitter.com/expert",
+                instagram: "https://instagram.com/expert",
+                youtube: "https://youtube.com/@expert",
+                telegram: "https://t.me/expert",
+                website: "https://nexgen-academy.com"
+            },
+            stats: { years: 8, learners: 4200, courses: 35, projects: 120 },
+            skills: [
+                { name: "إستراتيجيات التعلم الحديثة", level: 92, cat: "تدريبية" },
+                { name: "تصميم وتطوير المناهج", level: 88, cat: "تدريبية" },
+                { name: "ChatGPT & AI Tools", level: 90, cat: "تقنية" },
+                { name: "Midjourney & تصميم بالذكاء الاصطناعي", level: 85, cat: "تقنية" },
+                { name: "n8n & أتمتة العمليات", level: 87, cat: "تقنية" },
+                { name: "إنتاج محتوى تعليمي مصور", level: 86, cat: "تقنية" },
+                { name: "إدارة منصات التعلم الإلكتروني", level: 84, cat: "إدارية" },
+                { name: "تسويق المحتوى التعليمي", level: 82, cat: "إدارية" },
+                { name: "تقييم وقياس الأثر التدريبي", level: 89, cat: "إدارية" }
+            ],
+            portfolio: [
+                { 
+                    title: "برنامج إعداد مدربين NexGen", 
+                    cat: "دورات", 
+                    media: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjMmZiOWZmLCAjMDBlMGE0KSIvPgo8dGV4dCB4PSIyMDAiIHk9IjE1MCIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPvCfjoXvuI8gQnJhbmRpbmcgUHJvamVjdDwvdGV4dD4KPHN2Zz4K",
+                    caption: "برنامج شامل لإعداد المدربين المحترفين باستخدام أحدث التقنيات التعليمية",
+                    link: "#"
+                },
+                {
+                    title: "تحويل محتوى إلى E-Learning تفاعلي",
+                    cat: "مشاريع",
+                    media: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjZmY2YjM1LCAjZjU5ZTBiKSIvPgo8dGV4dCB4PSIyMDAiIHk9IjE1MCIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPvCfkrvvuI8gV2ViIERldmVsb3BtZW50PC90ZXh0Pgo8L3N2Zz4K",
+                    caption: "مشروع تحويل مناهج تقليدية إلى محتوى رقمي تفاعلي",
+                    link: "#"
+                },
+                {
+                    title: "معسكر مهارات الذكاء الاصطناعي",
+                    cat: "ورش",
+                    media: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjOGI1Y2Y2LCAjN2M0ZGZmKSIvPgo8dGV4dCB4PSIyMDAiIHk9IjE1MCIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPvCfpJYgQUkgV29ya3Nob3A8L3RleHQ+Cjwvc3ZnPgo=",
+                    caption: "معسكر تدريبي مكثف لتعلم تقنيات الذكاء الاصطناعي التطبيقية",
+                    link: "#"
+                },
+                {
+                    title: "منصة تدريب شركة تقنية رائدة",
+                    cat: "مشاريع",
+                    media: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjMTBiOTgxLCAjMDU5NjY5KSIvPgo8dGV4dCB4PSIyMDAiIHk9IjE1MCIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPvCfj6Egb0NvcnBvcmF0ZSBUcmFpbmluZzwvdGV4dD4KPHN2Zz4K",
+                    caption: "تطوير منصة تدريب متكاملة للموظفين",
+                    link: "#"
+                },
+                {
+                    title: "سلسلة محتوى تعليمي يوتيوب",
+                    cat: "محتوى",
+                    media: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjZWY0NDQ0LCAjZGMyNjI2KSIvPgo8dGV4dCB4PSIyMDAiIHk9IjE1MCIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPvCfk7kgWW91VHViZSBDb250ZW50PC90ZXh0Pgo8L3N2Zz4K",
+                    caption: "سلسلة فيديوهات تعليمية متخصصة في التقنيات الحديثة",
+                    link: "#"
+                },
+                {
+                    title: "ورشة إنتاجية المدربين",
+                    cat: "ورش",
+                    media: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjMDZiNmQ0LCAjMGE5MWFiKSIvPgo8dGV4dCB4PSIyMDAiIHk9IjE1MCIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPvCfkZUgUHJvZHVjdGl2aXR5IFdvcmtzaG9wPC90ZXh0Pgo8L3N2Zz4K",
+                    caption: "ورشة مخصصة لتطوير مهارات الإنتاجية لدى المدربين",
+                    link: "#"
+                }
+            ],
+            milestones: [
+                { year: "2016", title: "بداية الرحلة التدريبية", desc: "إطلاق أول برنامج تدريبي متخصص في تطوير المهارات المهنية" },
+                { year: "2018", title: "تطوير المناهج الرقمية", desc: "بناء أول منهج تعليمي رقمي تفاعلي باستخدام التقنيات الحديثة" },
+                { year: "2020", title: "دخول عالم الذكاء الاصطناعي", desc: "تخصص في تقنيات الذكاء الاصطناعي وتطبيقاتها في التعليم" },
+                { year: "2022", title: "توسع إقليمي", desc: "تنفيذ برامج تدريبية في عدة دول بالمنطقة مع أكثر من 50 مؤسسة" },
+                { year: "2024", title: "شراكة NexGen Academy", desc: "الانضمام لأكاديمية NexGen كخبير معتمد لتطوير مسارات تعليمية متطورة" }
+            ],
+            certificates: [
+                { title: "مدرب معتمد TOT", org: "المؤسسة العالمية للتدريب", date: "2020", verify: "#" },
+                { title: "Instructional Design Professional", org: "ATD", date: "2021", verify: "#" },
+                { title: "AI in Education Specialist", org: "Stanford Online", date: "2022", verify: "#" },
+                { title: "Digital Learning Expert", org: "MIT Professional", date: "2023", verify: "#" },
+                { title: "NexGen Certified Expert", org: "NexGen Academy", date: "2024", verify: "#" }
+            ],
+            services: [
+                {
+                    name: "استشارة تعليمية متخصصة",
+                    price: "$150/ساعة",
+                    outcomes: ["تشخيص شامل للاحتياجات التدريبية", "وضع خارطة طريق مخصصة", "خطة تطبيق عملية مرحلية"],
+                    cta: "#"
+                },
+                {
+                    name: "بناء مناهج تفاعلية",
+                    price: "حسب النطاق",
+                    outcomes: ["تحليل دقيق للأهداف التعليمية", "تصميم وحدات تعليمية تفاعلية", "نظام تقييم وقياس التعلم"],
+                    cta: "#"
+                },
+                {
+                    name: "تدريب فرق العمل",
+                    price: "باقات مرنة",
+                    outcomes: ["خطط تدريب مخصصة للفرق", "مواد تطبيقية عملية", "متابعة وقياس الأداء"],
+                    cta: "#"
+                },
+                {
+                    name: "تحويل المحتوى الرقمي",
+                    price: "من $50/ساعة محتوى",
+                    outcomes: ["تحويل المحتوى التقليدي لرقمي", "إضافة عناصر تفاعلية متطورة", "تحسين تجربة المتعلم"],
+                    cta: "#"
+                },
+                {
+                    name: "إدارة أكاديمية تعليمية",
+                    price: "باقات شاملة",
+                    outcomes: ["إعداد استراتيجية الأكاديمية", "تطوير النظم والعمليات", "إدارة جودة المحتوى"],
+                    cta: "#"
+                }
+            ],
+            testimonials: [
+                {
+                    name: "أحمد محمد — مدير أكاديمية الإبداع",
+                    text: "تعاون رائع مع د. أحمد النجار حقق نقلة نوعية في مخرجاتنا التعليمية. استطاع تطوير مناهجنا وتحويلها لمحتوى تفاعلي حديث يواكب التطورات التقنية.",
+                    avatar: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiMyZmI5ZmYiLz4KPGNpcmNsZSBjeD0iMzAiIGN5PSIyNSIgcj0iOCIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE1IDQ1VjQyQzE1IDM4IDE4IDM1IDI1IDM1SDM1QzQyIDM1IDQ1IDM4IDQ1IDQyVjQ1SDE1WiIgZmlsbD0id2hpdGUiLz4KPHN2Zz4K"
+                },
+                {
+                    name: "ليلى السعد — قائدة فريق التطوير",
+                    text: "أسلوب عملي ممتاز مع تركيز واضح على النتائج. د. أحمد ساعدنا في بناء قدرات فريقنا التدريبي وتمكينهم من استخدام أحدث أدوات الذكاء الاصطناعي بفعالية.",
+                    avatar: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiMwMGUwYTQiLz4KPGNpcmNsZSBjeD0iMzAiIGN5PSIyNSIgcj0iOCIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE1IDQ1VjQyQzE1IDM4IDE4IDM1IDI1IDM1SDM1QzQyIDM1IDQ1IDM4IDQ1IDQyVjQ1SDE1WiIgZmlsbD0id2hpdGUiLz4KPHN2Zz4K"
+                },
+                {
+                    name: "محمد العتيبي — مدير شركة تقنية",
+                    text: "مستوى احترافي عالي في تحليل احتياجاتنا التدريبية وتقديم حلول مبتكرة. البرنامج المخصص الذي طوره لفريقنا حسّن من أدائهم بشكل ملحوظ.",
+                    avatar: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiM4YjVjZjYiLz4KPGNpcmNsZSBjeD0iMzAiIGN5PSIyNSIgcj0iOCIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE1IDQ1VjQyQzE1IDM4IDE4IDM1IDI1IDM1SDM1QzQyIDM1IDQ1IDM4IDQ1IDQyVjQ1SDE1WiIgZmlsbD0id2hpdGUiLz4KPHN2Zz4K"
+                },
+                {
+                    name: "فاطمة النجار — مديرة تطوير الموارد",
+                    text: "خبرة واسعة في مجال التدريب مع قدرة استثنائية على توصيل المعلومات المعقدة بطريقة سهلة ومفهومة. أنصح بخدماته لأي مؤسسة تسعى للتطور.",
+                    avatar: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiNlZjQ0NDQiLz4KPGNpcmNsZSBjeD0iMzAiIGN5PSIyNSIgcj0iOCIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE1IDQ1VjQyQzE1IDM4IDE4IDM1IDI1IDM1SDM1QzQyIDM1IDQ1IDM4IDQ1IDQyVjQ1SDE1WiIgZmlsbD0id2hpdGUiLz4KPHN2Zz4K"
+                },
+                {
+                    name: "خالد الزهراني — رائد أعمال",
+                    text: "ساعدني د. أحمد في تطوير برنامج تدريبي شامل لموظفي شركتي الناشئة. النتائج فاقت توقعاتي وانعكست إيجابياً على إنتاجية الفريق وجودة العمل.",
+                    avatar: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiMxMGI5ODEiLz4KPGNpcmNsZSBjeD0iMzAiIGN5PSIyNSIgcj0iOCIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE1IDQ1VjQyQzE1IDM4IDE4IDM1IDI1IDM1SDM1QzQyIDM1IDQ1IDM4IDQ1IDQyVjQ1SDE1WiIgZmlsbD0id2hpdGUiLz4KPHN2Zz4K"
+                }
+            ],
+            faq: [
+                {
+                    q: "كيف يتم قياس أثر وفعالية التدريب؟",
+                    a: "نستخدم منهجية شاملة تشمل تقييمات قبل وبعد التدريب، اختبارات عملية، مشاريع تطبيقية، واستبيانات رضا. كما نتابع الأداء لفترة 3-6 أشهر لقياس الأثر الفعلي على العمل."
+                },
+                {
+                    q: "هل تقدم خطط محتوى تعليمية مخصصة؟",
+                    a: "بالتأكيد، نوفر خطط محتوى مصممة خصيصاً لاحتياجات كل مؤسسة مع قوالب جاهزة للتطبيق ونظام لتتبع الإنجاز وقياس التقدم بشكل مستمر."
+                },
+                {
+                    q: "ما هي التقنيات المستخدمة في التدريب؟",
+                    a: "نستخدم مزيجاً من التقنيات الحديثة مثل الذكاء الاصطناعي (ChatGPT، Midjourney)، منصات التعلم التفاعلية، الواقع المعزز، والأتمتة (n8n) لتحسين تجربة التعلم وزيادة الفعالية."
+                },
+                {
+                    q: "كم يستغرق تطوير برنامج تدريبي مخصص؟",
+                    a: "يعتمد على نطاق ومعقدة المشروع، لكن عادة ما يستغرق من 2-8 أسابيع شاملة مراحل التحليل والتصميم والتطوير والاختبار، مع إمكانية التطوير على مراحل للمشاريع الكبيرة."
+                },
+                {
+                    q: "هل توفر دعم ومتابعة بعد انتهاء التدريب؟",
+                    a: "نعم، نوفر دعم متابعة لمدة 3 أشهر مجاناً يشمل الإجابة على الاستفسارات، تحديثات المحتوى، وجلسات متابعة دورية لضمان تطبيق ما تم تعلمه بفعالية."
+                },
+                {
+                    q: "ما الذي يميز منهجيتك التدريبية؟",
+                    a: "نركز على التطبيق العملي أكثر من النظرية، نستخدم أحدث التقنيات والأدوات، نصمم محتوى مخصص لكل عميل، ونقيس النتائج بدقة لضمان تحقيق الأهداف المرجوة من التدريب."
+                }
+            ]
+        };
+
+        // Internationalization
+        const i18n = {
+            ar: {
+                logo: "NexGen Expert",
+                nav: {
+                    home: "الرئيسية",
+                    about: "من أنا", 
+                    skills: "المهارات",
+                    portfolio: "الأعمال",
+                    milestones: "الإنجازات",
+                    certificates: "الشهادات",
+                    services: "الخدمات",
+                    testimonials: "الآراء",
+                    faq: "الأسئلة الشائعة",
+                    contact: "تواصل"
+                },
+                hero: {
+                    name: "د. أحمد النجار",
+                    role: "خبير تدريب وتقنيات تعليمية – NexGen Academy",
+                    description: "متخصص في تطوير المناهج التعليمية والتقنيات الحديثة، مع خبرة واسعة في الذكاء الاصطناعي التعليمي وتدريب المدربين على أحدث الأساليب.",
+                    stats: {
+                        years: "سنوات خبرة",
+                        learners: "متدرب",
+                        courses: "دورة",
+                        projects: "مشروع"
+                    },
+                    cta: {
+                        whatsapp: "واتساب",
+                        cv: "تحميل السيرة",
+                        consultation: "احجز استشارة"
+                    }
+                },
+                about: {
+                    title: "من أنا",
+                    paragraph1: "خبير تدريب معتمد بأكاديمية NexGen مع أكثر من 8 سنوات من الخبرة في مجال التعليم والتدريب. متخصص في تصميم وتطوير المناهج التعليمية التفاعلية باستخدام أحدث التقنيات والذكاء الاصطناعي.",
+                    paragraph2: "أعمل على تمكين المؤسسات التعليمية والشركات من تحقيق أهدافها التدريبية من خلال برامج مبتكرة ومناهج متطورة تركز على التطبيق العملي وقياس الأثر.",
+                    paragraph3: "شغفي الحقيقي هو رؤية تأثير التعلم الإيجابي على الأفراد والمؤسسات، والمساهمة في بناء جيل من المهنيين المؤهلين القادرين على مواكبة التطورات التقنية المتسارعة.",
+                    info: {
+                        location: "الموقع:",
+                        affiliation: "الجهة:",
+                        email: "البريد:",
+                        phone: "الهاتف:",
+                        specialization: "التخصص:"
+                    },
+                    counters: {
+                        projects: "مشروع منجز",
+                        students: "طالب مدرب", 
+                        hours: "ساعة تدريب",
+                        satisfaction: "% رضا العملاء"
+                    },
+                    cta: {
+                        cv: "تحميل السيرة الذاتية",
+                        vcard: "تحميل بطاقة الاتصال"
+                    }
+                },
+                skills: {
+                    title: "المهارات والخبرات",
+                    filters: {
+                        all: "جميع المهارات",
+                        training: "تدريبية",
+                        technical: "تقنية",
+                        management: "إدارية"
+                    }
+                },
+                portfolio: {
+                    title: "معرض الأعمال",
+                    filters: {
+                        all: "جميع الأعمال",
+                        courses: "دورات",
+                        projects: "مشاريع",
+                        workshops: "ورش",
+                        content: "محتوى"
+                    }
+                },
+                milestones: {
+                    title: "الرحلة والإنجازات"
+                },
+                certificates: {
+                    title: "الشهادات المعتمدة"
+                },
+                services: {
+                    title: "الخدمات والدورات"
+                },
+                vision: {
+                    title: "الرؤية والقيم",
+                    text: "نؤمن في NexGen Academy أن التعليم الحقيقي يحدث عندما نربط بين النظرية والتطبيق، ونستثمر في قوة التقنيات الناشئة لخلق تجارب تعلم تفاعلية تلهم المتدربين وتحقق نتائج ملموسة. رؤيتنا هي بناء جيل من المهنيين المتمكنين الذين يقودون التغيير في مؤسساتهم ومجتمعاتهم.",
+                    values: {
+                        quality: {
+                            title: "الجودة",
+                            description: "التزام بأعلى معايير التدريب والتطوير"
+                        },
+                        practical: {
+                            title: "قابلية التطبيق",
+                            description: "مهارات عملية قابلة للتطبيق فورياً"
+                        },
+                        impact: {
+                            title: "الأثر المهني",
+                            description: "تأثير إيجابي قابل للقياس على الأداء"
+                        },
+                        ethics: {
+                            title: "الأخلاقيات",
+                            description: "ممارسات تدريبية مسؤولة ونزيهة"
+                        },
+                        measurement: {
+                            title: "قياس النتائج",
+                            description: "تقييم مستمر لفعالية التدريب"
+                        }
+                    }
+                },
+                testimonials: {
+                    title: "آراء المتدربين"
+                },
+                faq: {
+                    title: "الأسئلة الشائعة"
+                },
+                contact: {
+                    title: "تواصل معي",
+                    form: {
+                        name: "الاسم الكامل",
+                        email: "البريد الإلكتروني",
+                        phone: "رقم الهاتف",
+                        message: "الرسالة",
+                        submit: "إرسال الرسالة"
+                    },
+                    info: {
+                        email: {
+                            title: "البريد الإلكتروني"
+                        },
+                        phone: {
+                            title: "الهاتف"
+                        },
+                        location: {
+                            title: "الموقع",
+                            address: "إسطنبول، تركيا"
+                        },
+                        whatsapp: {
+                            title: "واتساب"
+                        }
+                    }
+                },
+                footer: {
+                    quicklinks: {
+                        title: "روابط سريعة",
+                        about: "من أنا",
+                        skills: "المهارات",
+                        portfolio: "الأعمال",
+                        services: "الخدمات"
+                    },
+                    contact: {
+                        title: "تواصل"
+                    },
+                    services: {
+                        title: "الخدمات",
+                        consultation: "استشارة تعليمية",
+                        curriculum: "بناء مناهج",
+                        training: "تدريب فرق",
+                        digital: "تحويل رقمي"
+                    },
+                    copyright: "د. أحمد النجار - NexGen Academy. جميع الحقوق محفوظة."
+                },
+                modal: {
+                    registration: {
+                        title: "تسجيل في الخدمة",
+                        name: "الاسم الكامل",
+                        email: "البريد الإلكتروني",
+                        phone: "رقم الهاتف",
+                        service: "الخدمة المطلوبة",
+                        message: "رسالة إضافية",
+                        submit: "إرسال طلب التسجيل"
+                    }
+                }
+            },
+            en: {
+                logo: "NexGen Expert",
+                nav: {
+                    home: "Home",
+                    about: "About",
+                    skills: "Skills",
+                    portfolio: "Portfolio",
+                    milestones: "Milestones",
+                    certificates: "Certificates",
+                    services: "Services",
+                    testimonials: "Testimonials",
+                    faq: "FAQ",
+                    contact: "Contact"
+                },
+                hero: {
+                    name: "Dr. Ahmed Al-Najjar",
+                    role: "Training Expert & Educational Technologies - NexGen Academy",
+                    description: "Specialized in developing educational curricula and modern technologies, with extensive experience in educational AI and training trainers on the latest methods.",
+                    stats: {
+                        years: "Years Experience",
+                        learners: "Trainees",
+                        courses: "Courses",
+                        projects: "Projects"
+                    },
+                    cta: {
+                        whatsapp: "WhatsApp",
+                        cv: "Download CV",
+                        consultation: "Book Consultation"
+                    }
+                },
+                about: {
+                    title: "About Me",
+                    paragraph1: "Certified training expert at NexGen Academy with over 8 years of experience in education and training. Specialized in designing and developing interactive educational curricula using the latest technologies and artificial intelligence.",
+                    paragraph2: "I work to enable educational institutions and companies to achieve their training goals through innovative programs and advanced curricula that focus on practical application and impact measurement.",
+                    paragraph3: "My real passion is seeing the positive impact of learning on individuals and institutions, and contributing to building a generation of qualified professionals capable of keeping up with rapid technological developments.",
+                    info: {
+                        location: "Location:",
+                        affiliation: "Affiliation:",
+                        email: "Email:",
+                        phone: "Phone:",
+                        specialization: "Specialization:"
+                    },
+                    counters: {
+                        projects: "Completed Projects",
+                        students: "Trained Students",
+                        hours: "Training Hours",
+                        satisfaction: "% Client Satisfaction"
+                    },
+                    cta: {
+                        cv: "Download Resume",
+                        vcard: "Download Contact Card"
+                    }
+                },
+                skills: {
+                    title: "Skills & Expertise",
+                    filters: {
+                        all: "All Skills",
+                        training: "Training",
+                        technical: "Technical",
+                        management: "Management"
+                    }
+                },
+                portfolio: {
+                    title: "Portfolio",
+                    filters: {
+                        all: "All Works",
+                        courses: "Courses",
+                        projects: "Projects",
+                        workshops: "Workshops",
+                        content: "Content"
+                    }
+                },
+                milestones: {
+                    title: "Journey & Achievements"
+                },
+                certificates: {
+                    title: "Certified Credentials"
+                },
+                services: {
+                    title: "Services & Courses"
+                },
+                vision: {
+                    title: "Vision & Values",
+                    text: "At NexGen Academy, we believe that true learning happens when we connect theory and practice, and invest in the power of emerging technologies to create interactive learning experiences that inspire learners and achieve tangible results. Our vision is to build a generation of empowered professionals who lead change in their organizations and communities.",
+                    values: {
+                        quality: {
+                            title: "Quality",
+                            description: "Commitment to highest standards of training and development"
+                        },
+                        practical: {
+                            title: "Applicability",
+                            description: "Practical skills applicable immediately"
+                        },
+                        impact: {
+                            title: "Professional Impact",
+                            description: "Measurable positive impact on performance"
+                        },
+                        ethics: {
+                            title: "Ethics",
+                            description: "Responsible and fair training practices"
+                        },
+                        measurement: {
+                            title: "Results Measurement",
+                            description: "Continuous evaluation of training effectiveness"
+                        }
+                    }
+                },
+                testimonials: {
+                    title: "Client Testimonials"
+                },
+                faq: {
+                    title: "Frequently Asked Questions"
+                },
+                contact: {
+                    title: "Contact Me",
+                    form: {
+                        name: "Full Name",
+                        email: "Email Address",
+                        phone: "Phone Number",
+                        message: "Message",
+                        submit: "Send Message"
+                    },
+                    info: {
+                        email: {
+                            title: "Email"
+                        },
+                        phone: {
+                            title: "Phone"
+                        },
+                        location: {
+                            title: "Location",
+                            address: "Istanbul, Turkey"
+                        },
+                        whatsapp: {
+                            title: "WhatsApp"
+                        }
+                    }
+                },
+                footer: {
+                    quicklinks: {
+                        title: "Quick Links",
+                        about: "About",
+                        skills: "Skills",
+                        portfolio: "Portfolio",
+                        services: "Services"
+                    },
+                    contact: {
+                        title: "Contact"
+                    },
+                    services: {
+                        title: "Services",
+                        consultation: "Educational Consultation",
+                        curriculum: "Curriculum Development",
+                        training: "Team Training",
+                        digital: "Digital Transformation"
+                    },
+                    copyright: "Dr. Ahmed Al-Najjar - NexGen Academy. All rights reserved."
+                },
+                modal: {
+                    registration: {
+                        title: "Service Registration",
+                        name: "Full Name",
+                        email: "Email Address",
+                        phone: "Phone Number",
+                        service: "Requested Service",
+                        message: "Additional Message",
+                        submit: "Send Registration Request"
+                    }
+                }
+            }
+        };
+
+        // Current language
+        let currentLang = 'ar';
+
+        // DOM Elements
+        const html = document.documentElement;
+        const header = document.getElementById('header');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const themeToggle = document.getElementById('theme-toggle');
+        const langToggle = document.getElementById('lang-toggle');
+        const backToTop = document.getElementById('back-to-top');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        const registrationModal = document.getElementById('registration-modal');
+        const modalClose = document.getElementById('modal-close');
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+
+        function initializeApp() {
+            renderContent();
+            setupEventListeners();
+            setupScrollEffects();
+            setupAnimations();
+            initializeCanvas();
+            setupIntersectionObserver();
+            updateCurrentYear();
+        }
+
+        function renderContent() {
+            renderSkills();
+            renderPortfolio();
+            renderTimeline();
+            renderCertificates();
+            renderServices();
+            renderTestimonials();
+            renderFAQ();
+            updateLanguage();
+        }
+
+        function renderSkills() {
+            const skillsGrid = document.getElementById('skills-grid');
+            skillsGrid.innerHTML = '';
+            
+            PROFILE.skills.forEach(skill => {
+                const skillItem = document.createElement('div');
+                skillItem.className = 'skill-item fade-in';
+                skillItem.setAttribute('data-category', skill.cat);
+                skillItem.innerHTML = `
+                    <div class="skill-header">
+                        <span class="skill-name">${skill.name}</span>
+                        <span class="skill-level">${skill.level}%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-level="${skill.level}"></div>
+                    </div>
+                    <span class="skill-category">${skill.cat}</span>
+                `;
+                skillsGrid.appendChild(skillItem);
+            });
+        }
+
+        function renderPortfolio() {
+            const portfolioGrid = document.getElementById('portfolio-grid');
+            portfolioGrid.innerHTML = '';
+            
+            PROFILE.portfolio.forEach((item, index) => {
+                const portfolioItem = document.createElement('div');
+                portfolioItem.className = 'portfolio-item fade-in';
+                portfolioItem.setAttribute('data-category', item.cat);
+                portfolioItem.innerHTML = `
+                    <img src="${item.media}" alt="${item.title}" class="portfolio-image" loading="lazy">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">${item.title}</h3>
+                        <span class="portfolio-category">${item.cat}</span>
+                        <p class="portfolio-description">${item.caption}</p>
+                    </div>
+                `;
+                portfolioItem.addEventListener('click', () => openLightbox(index));
+                portfolioGrid.appendChild(portfolioItem);
+            });
+        }
+
+        function renderTimeline() {
+            const timeline = document.getElementById('timeline');
+            timeline.innerHTML = '';
+            
+            PROFILE.milestones.forEach(milestone => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item fade-in';
+                timelineItem.innerHTML = `
+                    <div class="timeline-content">
+                        <div class="timeline-year">${milestone.year}</div>
+                        <h3 class="timeline-title">${milestone.title}</h3>
+                        <p class="timeline-description">${milestone.desc}</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                `;
+                timeline.appendChild(timelineItem);
+            });
+        }
+
+        function renderCertificates() {
+            const certificatesGrid = document.getElementById('certificates-grid');
+            certificatesGrid.innerHTML = '';
+            
+            PROFILE.certificates.forEach(cert => {
+                const certItem = document.createElement('div');
+                certItem.className = 'certificate-item fade-in';
+                certItem.innerHTML = `
+                    <h3 class="certificate-title">${cert.title}</h3>
+                    <p class="certificate-org">${cert.org}</p>
+                    <p class="certificate-date">${cert.date}</p>
+                    <div class="certificate-verify">
+                        <a href="${cert.verify}" target="_blank">تحقق من الشهادة</a>
+                    </div>
+                `;
+                certificatesGrid.appendChild(certItem);
+            });
+        }
+
+        function renderServices() {
+            const servicesGrid = document.getElementById('services-grid');
+            servicesGrid.innerHTML = '';
+            
+            PROFILE.services.forEach(service => {
+                const serviceItem = document.createElement('div');
+                serviceItem.className = 'service-item fade-in';
+                serviceItem.innerHTML = `
+                    <div class="service-header">
+                        <h3 class="service-name">${service.name}</h3>
+                        <span class="service-price">${service.price}</span>
+                    </div>
+                    <ul class="service-outcomes">
+                        ${service.outcomes.map(outcome => `<li>${outcome}</li>`).join('')}
+                    </ul>
+                    <button class="btn btn-primary" onclick="openRegistrationModal('${service.name}')">
+                        📝 سجّل الآن
+                    </button>
+                `;
+                servicesGrid.appendChild(serviceItem);
+            });
+        }
+
+        function renderTestimonials() {
+            const container = document.getElementById('testimonials-container');
+            const controls = document.getElementById('testimonials-controls');
+            
+            container.innerHTML = '';
+            controls.innerHTML = '';
+            
+            PROFILE.testimonials.forEach((testimonial, index) => {
+                const testimonialItem = document.createElement('div');
+                testimonialItem.className = 'testimonial-item';
+                testimonialItem.innerHTML = `
+                    <p class="testimonial-text">"${testimonial.text}"</p>
+                    <div class="testimonial-author">
+                        <img src="${testimonial.avatar}" alt="${testimonial.name}" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>${testimonial.name.split(' — ')[0]}</h4>
+                            <p>${testimonial.name.split(' — ')[1] || ''}</p>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(testimonialItem);
+                
+                const dot = document.createElement('div');
+                dot.className = `testimonial-dot ${index === 0 ? 'active' : ''}`;
+                dot.addEventListener('click', () => goToTestimonial(index));
+                controls.appendChild(dot);
+            });
+            
+            initTestimonialSlider();
+        }
+
+        function renderFAQ() {
+            const faqList = document.getElementById('faq-list');
+            faqList.innerHTML = '';
+            
+            PROFILE.faq.forEach(item => {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item fade-in';
+                faqItem.innerHTML = `
+                    <button class="faq-question" aria-expanded="false">
+                        <span>${item.q}</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">${item.a}</div>
+                    </div>
+                `;
+                faqList.appendChild(faqItem);
+            });
+        }
+
+        function setupEventListeners() {
+            // Navigation
+            hamburger.addEventListener('click', toggleMobileMenu);
+            
+            // Theme toggle
+            themeToggle.addEventListener('click', toggleTheme);
+            
+            // Language toggle
+            langToggle.addEventListener('click', toggleLanguage);
+            
+            // Scroll to top
+            backToTop.addEventListener('click', scrollToTop);
+            
+            // Lightbox
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxPrev.addEventListener('click', previousImage);
+            lightboxNext.addEventListener('click', nextImage);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            
+            // Modal
+            modalClose.addEventListener('click', closeRegistrationModal);
+            registrationModal.addEventListener('click', (e) => {
+                if (e.target === registrationModal) closeRegistrationModal();
+            });
+            
+            // Forms
+            document.getElementById('contact-form').addEventListener('submit', handleContactForm);
+            document.getElementById('registration-form').addEventListener('submit', handleRegistrationForm);
+            
+            // CV Download
+            document.getElementById('download-cv').addEventListener('click', downloadCV);
+            document.getElementById('download-cv-about').addEventListener('click', downloadCV);
+            document.getElementById('download-vcard').addEventListener('click', downloadVCard);
+            
+            // Skill filters
+            document.querySelectorAll('.skill-filters .filter-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => filterSkills(e.target.dataset.filter));
+            });
+            
+            // Portfolio filters
+            document.querySelectorAll('.portfolio-filters .filter-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => filterPortfolio(e.target.dataset.filter));
+            });
+            
+            // FAQ items
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('faq-question')) {
+                    toggleFAQ(e.target.closest('.faq-item'));
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', handleKeyboardNavigation);
+            
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(anchor.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        function setupScrollEffects() {
+            let scrolled = false;
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset;
+                
+                // Header background
+                if (scrollTop > 100 && !scrolled) {
+                    header.classList.add('scrolled');
+                    scrolled = true;
+                } else if (scrollTop <= 100 && scrolled) {
+                    header.classList.remove('scrolled');
+                    scrolled = false;
+                }
+                
+                // Back to top button
+                if (scrollTop > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+                
+                // Active navigation highlighting
+                updateActiveNavigation();
+            });
+        }
+
+        function setupAnimations() {
+            // Animate progress bars when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progressFill = entry.target.querySelector('.progress-fill');
+                        if (progressFill) {
+                            const level = progressFill.dataset.level;
+                            progressFill.style.width = level + '%';
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('.skill-item').forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        function initializeCanvas() {
+            const canvas = document.getElementById('hero-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Respect reduced motion preference
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                return;
+            }
+            
+            let animationId;
+            let particles = [];
+            
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+            
+            function createParticle() {
+                return {
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1,
+                    speedX: (Math.random() - 0.5) * 0.5,
+                    speedY: (Math.random() - 0.5) * 0.5,
+                    opacity: Math.random() * 0.5 + 0.2
+                };
+            }
+            
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < 50; i++) {
+                    particles.push(createParticle());
+                }
+            }
+            
+            function updateParticles() {
+                particles.forEach(particle => {
+                    particle.x += particle.speedX;
+                    particle.y += particle.speedY;
+                    
+                    if (particle.x > canvas.width) particle.x = 0;
+                    if (particle.x < 0) particle.x = canvas.width;
+                    if (particle.y > canvas.height) particle.y = 0;
+                    if (particle.y < 0) particle.y = canvas.height;
+                });
+            }
+            
+            function drawParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach(particle => {
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(47, 185, 255, ${particle.opacity})`;
+                    ctx.fill();
+                });
+                
+                // Draw connections
+                particles.forEach((particle, i) => {
+                    particles.slice(i + 1).forEach(otherParticle => {
+                        const distance = Math.hypot(
+                            particle.x - otherParticle.x,
+                            particle.y - otherParticle.y
+                        );
+                        
+                        if (distance < 100) {
+                            ctx.beginPath();
+                            ctx.moveTo(particle.x, particle.y);
+                            ctx.lineTo(otherParticle.x, otherParticle.y);
+                            ctx.strokeStyle = `rgba(47, 185, 255, ${0.1 * (100 - distance) / 100})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    });
+                });
+            }
+            
+            function animate() {
+                updateParticles();
+                drawParticles();
+                animationId = requestAnimationFrame(animate);
+            }
+            
+            // Initialize
+            resizeCanvas();
+            initParticles();
+            animate();
+            
+            // Handle resize
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                initParticles();
+            });
+            
+            // Cleanup on page unload
+            window.addEventListener('beforeunload', () => {
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                }
+            });
+        }
+
+        function setupIntersectionObserver() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '-50px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Animate counters
+                        if (entry.target.classList.contains('counter-item')) {
+                            animateCounter(entry.target);
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in, .counter-item').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        function animateCounter(element) {
+            const numberElement = element.querySelector('.counter-number, [data-counter]');
+            if (!numberElement) return;
+            
+            const target = parseInt(numberElement.dataset.counter || numberElement.textContent);
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                numberElement.textContent = Math.floor(current);
+            }, 16);
+        }
+
+        // Event Handlers
+        function toggleMobileMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !expanded);
+        }
+
+        function toggleTheme() {
+            html.classList.toggle('light-theme');
+            const isLight = html.classList.contains('light-theme');
+            themeToggle.textContent = isLight ? '🌙' : '☀️';
+            themeToggle.setAttribute('aria-label', isLight ? 'تبديل للوضع المظلم' : 'تبديل للوضع المضيء');
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            html.setAttribute('lang', currentLang);
+            html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+            langToggle.textContent = currentLang === 'ar' ? 'EN' : 'AR';
+            updateLanguage();
+        }
+
+        function updateLanguage() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let value = i18n[currentLang];
+                
+                for (const k of keys) {
+                    if (value && value[k] !== undefined) {
+                        value = value[k];
+                    } else {
+                        value = key; // Fallback to key if translation not found
+                        break;
+                    }
+                }
+                
+                if (typeof value === 'string') {
+                    el.textContent = value;
+                }
+            });
+        }
+
+        function updateActiveNavigation() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Lightbox functions
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImage.src = PROFILE.portfolio[index].media;
+            lightboxImage.alt = PROFILE.portfolio[index].title;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + PROFILE.portfolio.length) % PROFILE.portfolio.length;
+            lightboxImage.src = PROFILE.portfolio[currentImageIndex].media;
+            lightboxImage.alt = PROFILE.portfolio[currentImageIndex].title;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % PROFILE.portfolio.length;
+            lightboxImage.src = PROFILE.portfolio[currentImageIndex].media;
+            lightboxImage.alt = PROFILE.portfolio[currentImageIndex].title;
+        }
+
+        // Testimonial slider
+        let currentTestimonial = 0;
+        let testimonialInterval;
+
+        function initTestimonialSlider() {
+            startTestimonialAutoplay();
+            
+            const container = document.getElementById('testimonials-container');
+            container.addEventListener('mouseenter', stopTestimonialAutoplay);
+            container.addEventListener('mouseleave', startTestimonialAutoplay);
+        }
+
+        function goToTestimonial(index) {
+            currentTestimonial = index;
+            const container = document.getElementById('testimonials-container');
+            container.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+            
+            document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentTestimonial);
+            });
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % PROFILE.testimonials.length;
+            goToTestimonial(currentTestimonial);
+        }
+
+        function startTestimonialAutoplay() {
+            testimonialInterval = setInterval(nextTestimonial, 5000);
+        }
+
+        function stopTestimonialAutoplay() {
+            clearInterval(testimonialInterval);
+        }
+
+        // Filter functions
+        function filterSkills(category) {
+            const skills = document.querySelectorAll('.skill-item');
+            const buttons = document.querySelectorAll('.skill-filters .filter-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            skills.forEach(skill => {
+                if (category === 'all' || skill.dataset.category === category) {
+                    skill.style.display = 'block';
+                } else {
+                    skill.style.display = 'none';
+                }
+            });
+        }
+
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.portfolio-filters .filter-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // FAQ toggle
+        function toggleFAQ(faqItem) {
+            const question = faqItem.querySelector('.faq-question');
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        // Form handlers
+        function handleContactForm(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone') || '';
+            const message = formData.get('message');
+            
+            // Validate form
+            if (!validateForm(e.target)) {
+                return;
+            }
+            
+            // Create mailto link
+            const subject = `استفسار من ${name}`;
+            const body = `الاسم: ${name}\nالبريد: ${email}\n${phone ? `الهاتف: ${phone}\n` : ''}\nالرسالة:\n${message}`;
+            const mailtoLink = `mailto:expert@nexgen-academy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            showNotification('تم إرسال رسالتك بنجاح!', 'success');
+            e.target.reset();
+        }
+
+        function handleRegistrationForm(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const service = formData.get('service');
+            const message = formData.get('message') || '';
+            
+            // Create mailto link
+            const subject = `طلب تسجيل - ${service}`;
+            const body = `الاسم: ${name}\nالبريد: ${email}\nالهاتف: ${phone}\nالخدمة المطلوبة: ${service}\n${message ? `رسالة إضافية:\n${message}` : ''}`;
+            const mailtoLink = `mailto:expert@nexgen-academy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            window.location.href = mailtoLink;
+            
+            closeRegistrationModal();
+            showNotification('تم إرسال طلب التسجيل بنجاح!', 'success');
+        }
+
+        function validateForm(form) {
+            const inputs = form.querySelectorAll('input[required], textarea[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                const errorElement = document.getElementById(input.name + '-error');
+                
+                if (!input.value.trim()) {
+                    if (errorElement) {
+                        errorElement.textContent = 'هذا الحقل مطلوب';
+                        errorElement.style.display = 'block';
+                    }
+                    input.style.borderColor = '#ef4444';
+                    isValid = false;
+                } else if (input.type === 'email' && !isValidEmail(input.value)) {
+                    if (errorElement) {
+                        errorElement.textContent = 'البريد الإلكتروني غير صحيح';
+                        errorElement.style.display = 'block';
+                    }
+                    input.style.borderColor = '#ef4444';
+                    isValid = false;
+                } else {
+                    if (errorElement) {
+                        errorElement.style.display = 'none';
+                    }
+                    input.style.borderColor = '';
+                }
+            });
+            
+            return isValid;
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? 'var(--accent)' : 'var(--primary)'};
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                z-index: 10001;
+                animation: slideInRight 0.3s ease;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Modal functions
+        function openRegistrationModal(serviceName) {
+            document.getElementById('reg-service').value = serviceName;
+            registrationModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('reg-name').focus();
+        }
+
+        function closeRegistrationModal() {
+            registrationModal.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('registration-form').reset();
+        }
+
+        // Download functions
+        function downloadCV() {
+            // Print the page as PDF
+            window.print();
+        }
+
+        function downloadVCard() {
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:${PROFILE.name}
+TITLE:${PROFILE.role}
+ORG:NexGen Academy
+EMAIL:${PROFILE.email}
+TEL:${PROFILE.phone}
+ADR:;;${PROFILE.location};;;Turkey
+URL:${PROFILE.socials.website}
+END:VCARD`;
+
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ahmed-najjar-contact.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Keyboard navigation
+        function handleKeyboardNavigation(e) {
+            if (lightbox.classList.contains('active')) {
+                switch(e.key) {
+                    case 'Escape':
+                        closeLightbox();
+                        break;
+                    case 'ArrowLeft':
+                        previousImage();
+                        break;
+                    case 'ArrowRight':
+                        nextImage();
+                        break;
+                }
+            }
+            
+            if (registrationModal.classList.contains('active') && e.key === 'Escape') {
+                closeRegistrationModal();
+            }
+        }
+
+        // Utility functions
+        function updateCurrentYear() {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        }
+
+        // Animation keyframes (added via JavaScript for better performance)
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            
+            @keyframes slideOutRight {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+            
+            @keyframes fadeInUp {
+                from { transform: translateY(30px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            
+            .fade-in {
+                animation: fadeInUp 0.6s ease forwards;
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .hero-content {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                }
+                
+                .profile-photo {
+                    width: 200px;
+                    height: 200px;
+                }
+                
+                .hero-text h1 {
+                    font-size: 2rem;
+                }
+                
+                .cta-buttons {
+                    justify-content: center;
+                }
+                
+                .lightbox-nav {
+                    display: none;
+                }
+                
+                .testimonial-item {
+                    padding: 2rem 1rem;
+                }
+                
+                .timeline-content {
+                    margin-left: 2rem;
+                }
+                
+                .nav-container {
+                    padding: 0 1rem;
+                }
+                
+                .container {
+                    padding: 0 1rem;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .hero-text h1 {
+                    font-size: 1.8rem;
+                }
+                
+                .section-title {
+                    font-size: 1.8rem;
+                }
+                
+                .btn {
+                    padding: 0.8rem 1.5rem;
+                    font-size: 0.9rem;
+                }
+                
+                .hero-stats {
+                    grid-template-columns: 1fr 1fr;
+                }
+                
+                .values-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+            
+            /* Print styles */
+            @media print {
+                .header,
+                .hero-canvas,
+                .cta-buttons,
+                .back-to-top,
+                .nav-controls,
+                .lightbox,
+                .testimonials-controls,
+                .social-links,
+                .contact-form {
+                    display: none !important;
+                }
+                
+                body {
+                    background: white !important;
+                    color: black !important;
+                    font-size: 12pt;
+                    line-height: 1.4;
+                }
+                
+                .section {
+                    padding: 1rem 0;
+                    page-break-inside: avoid;
+                }
+                
+                .hero {
+                    min-height: auto;
+                    padding: 1rem 0;
+                }
+                
+                .profile-photo {
+                    width: 120px;
+                    height: 120px;
+                }
+                
+                .glass {
+                    background: #f8f9fa !important;
+                    border: 1px solid #dee2e6 !important;
+                    box-shadow: none !important;
+                }
+                
+                h1, h2, h3 {
+                    color: black !important;
+                }
+                
+                .hero-text h1 {
+                    font-size: 24pt;
+                }
+                
+                .section-title {
+                    font-size: 18pt;
+                }
+            }
+            
+            /* Focus styles for accessibility */
+            *:focus {
+                outline: 2px solid var(--primary);
+                outline-offset: 2px;
+            }
+            
+            .btn:focus,
+            .nav-menu a:focus,
+            .theme-toggle:focus,
+            .lang-toggle:focus {
+                outline: 2px solid var(--primary);
+                outline-offset: 2px;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Make functions globally available
+        window.openRegistrationModal = openRegistrationModal;
+        window.closeRegistrationModal = closeRegistrationModal;
+        
+        // Service Worker registration (optional, for offline functionality)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Note: You would need to create a service worker file for this to work
+                // navigator.serviceWorker.register('/sw.js');
+            });
+        }
+
+        // Performance optimization: Lazy load images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Error handling for failed image loads
+        document.addEventListener('error', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZjNmNGY2Ii8+Cjx0ZXh0IHg9IjE1MCIgeT0iMTUwIiBmb250LWZhbWlseT0ic3lzdGVtLXVpIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOWNhM2FmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5JbWFnZSBub3QgYXZhaWxhYmxlPC90ZXh0Pgo8L3N2Zz4K';
+            }
+        }, true);
+    </script>
+</body>
+</html>
+            
